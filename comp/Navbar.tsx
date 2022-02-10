@@ -14,25 +14,26 @@ const Navbar = () => {
                 <div className={styles.icon_div}><Link href="/"><BellIcon className={styles.icon} /></Link></div>
 
             </div>
-            <div className={styles.below_icons}>
+            <div className={styles.below_icon}>
                 <div className={styles.icon_div}>
                     <Link href="/"><MoonIcon className={styles.icon } /></Link>
-
+            
                 </div>
-                <Link href="/">
-                        <div className={styles.picture_div}>
-                            <Image
-                                
-                                width="100%"
-                                height="100%"
-                                src="/profile.jpg"
-                                alt="profile-picture"
-                            />
-
-                         </div>
-                    </Link>
-
             </div>
+            <div className={styles.picture}>
+                <Link href="/"> 
+                    <div className={styles.profile_div}>          
+                        <Image                            
+                            width="100%"
+                            height="100%"
+                            src="/profile.jpg"
+                            alt="profile-picture"
+                        />
+                    </div> 
+                </Link>    
+             </div>    
+
+            
             
 
 
