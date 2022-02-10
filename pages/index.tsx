@@ -7,18 +7,11 @@ import { getFeed } from "public-square-api";
 
 const Home: NextPage = () => {
 
-  async function loadTribusFeed() {
-    const feed = await getFeed();
 
-    return console.log(feed);
-    
-}
-  loadTribusFeed();
 
   return (
     <>
-  
-      <Navbar />
+      <div>hello</div>
 
 
     </>
