@@ -1,11 +1,11 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.sass'
-import Navbar from '../comp/Navbar'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '../styles/Home.module.sass';
+import Navbar from '../comp/Navbar';
 import { getFeed } from "public-square-api";
-import Link from 'next/link'
-import { PhotoIcon, EmojiHappyIcon, SendIcon } from "@iconicicons/react"
+import Link from 'next/link';
+import { PhotoIcon, EmojiHappyIcon, SendIcon } from "@iconicicons/react";
 
 const Home: NextPage = () => {
 
@@ -32,14 +32,15 @@ const Home: NextPage = () => {
                 />
           </form>
           <div className={styles.emojis}>
-            <PhotoIcon />
-            <EmojiHappyIcon />
-          </div>
-          <div className={styles.weeve_button}>
+            <div className={styles.icon}><PhotoIcon /></div>
+            <div className={styles.icon}><EmojiHappyIcon /></div>
+            <div className={styles.weeve_button}>
             <button>
               Weeve! 
-              <SendIcon />
+              <SendIcon className={styles.weeve_icon} />
             </button>  
+            
+          </div>
             
           </div>
         </div>
