@@ -8,27 +8,33 @@
         top: 5vh
         left: 15%
     width: 45%
-.happening_container
+
+
+.home_page_containers
     box-shadow: -5px 5px $almost-white
     border-radius: 25px
-    height: 14vh
+    margin:
+        bottom: 7vh
 
     .profile_div
         margin:
-            left: 3vh
+            left: 1vw
             top: 2vh
+            bottom: 2vh
         height: 5vh
-        width: 5vh
+        width: 2.5vw
         border-radius: 26px
         overflow: hidden
-        margin:
-            bottom: 2vh
+        padding:
+            top: 2vh
+            left: 0.2vw
+
     form
         position: absolute
         top: 0
         margin: 
-            left: 11vh
-            top: 2vh
+            left: 5vw
+            top: 4vh
         width: 35%
         ::placeholder
             font-size: 1rem
@@ -37,21 +43,26 @@
         width: 200%
         height: 5vh
         border: none
+
     .emojis
         display: flex
+        padding:
+            bottom: 2vh
         
     .icon
         height: 3vh
-        width: 3vh
+        width: 1.5vw
         margin:
-            left: 3vh
+            top: 1vh
+            left: 1vw
         color: $lighter-text
 .weeve_button
     margin:
-        left: 60%
+        left: 67%
     display: flex
-    width: 20vh
+    width: 8vw
     height: 5vh
+    
 
     button
         width: 100%
@@ -62,18 +73,90 @@
         font-size: 1rem
         text-align: center
         text-decoration: none
-        display: inline-block
+
         .weeve_icon
             margin:
                 left: 1vh
-            width: 2.5vh
-            height: 2.5vh
-    
+            width: 2vw
+            height: 5vh
+            display: inline-block
+            vertical-align: -0.8rem
+            
+            
+
     button:hover
         color: $lighter-theme-solid
         background: #fff
         border: solid 2px $lighter-theme-solid
         transition: 0.3s
+
+.upper_post
+    position: relative
+    width: 95%
+
+    .user_name
+        position: absolute
+        top: 0
+        margin:
+            top: 2vh
+            left: 5vw
+        font-size:1.2rem
+
+    .profile_name
+        position: absolute
+        top: 0
+        margin: 
+            top: 5vh
+            left: 5vw
+        font-size: 0.8rem
+        color: $lighter-text
+    
+    .time
+        position: absolute
+        top: 0
+        right: 0
+        margin:
+            top: 2vh
+        color: $lighter-text
+        font-size: 0.8rem
+
+    .link_post
+        position: absolute
+        top: 0
+        right: 0
+        top: 4.5vh
+        color: $lighter-theme-solid
+        font-size: 0.55rem
+
+.post_content
+    margin:
+        left: 5vw
+    width: 86%
+
+.below_post
+    margin:
+        top: 2vh
+        left: 5vw
+    display: flex
+    color: $lighter-text
+    letter-spacing: 0.1rem
+    padding:
+        bottom: 2vh
+    .like_section
+        margin:
+            left: 2rem
+    .share_section
+        margin:
+            left: 2rem
+    .post_icons
+        vertical-align: -0.4rem
+
+
+
+
+
+
+        
         
 
         
