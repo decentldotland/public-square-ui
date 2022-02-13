@@ -45,6 +45,27 @@ const Right_Side = () => {
                             </div>
                         </div>
                     </div>
+                    <div className={styles.suggestions_div}>
+                        <div className={styles.suggestion_div}>
+                            <div className={styles.profile_div}>
+                                <Image
+                                    width="100%"
+                                    height="100%"
+                                    src="/profile.jpg"
+                                    alt="profile-picutre"
+                                />
+                            </div>
+                            <div className={styles.user_name}>
+                                Zsombor Nagy
+                            </div>
+                            <div className={styles.profile_name}>
+                                @zsombinagy
+                            </div>
+                            <div className={styles.button_div}>
+                                <button>Follow</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div className={styles.footer}>
                     <a>Terms of Service</a>
