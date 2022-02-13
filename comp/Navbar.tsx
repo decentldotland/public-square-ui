@@ -13,7 +13,7 @@ const Navbar = () => {
             
             <div className={styles.upper_icons}>
                 <div className={styles.icon_div}><Link href="/"><HomeIcon className={styles.icon} /></Link></div>
-                <div className={styles.icon_div }><Link href="/"><GlobeIcon className={styles.icon} /></Link></div>
+                <div className={styles.icon_div }><Link href="/explore"><GlobeIcon className={styles.icon} /></Link></div>
                 <div className={styles.icon_div}><Link href="/"><BellIcon className={styles.icon} /></Link></div>
                 <div className={styles.icon_div }><Link href="/"><UserIcon className={styles.icon} /></Link></div>
 
