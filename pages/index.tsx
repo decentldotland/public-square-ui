@@ -5,6 +5,8 @@ import styles from "../styles/Home.module.sass";
 import Navbar from "../comp/Navbar";
 import { getFeed } from "public-square-api";
 import Link from "next/link";
+import profilePic from "../public/profile.jpg"
+
 import {
   PhotoIcon,
   EmojiHappyIcon,
@@ -50,13 +52,8 @@ const Home: NextPage = () => {
         <div className={styles.home_page_containers}>
           <div className={styles.upper_post}>
             <div className={styles.left_section}>
-              <div className={styles.profile_div}>
-                <Image
-                  width="100%"
-                  height="100%"
-                  src="/profile.jpg"
-                  alt="profile-picutre"
-                />
+              <div className={styles.profile_div}> 
+              <img src="/profile.png" alt="profile-picutre" />
               </div>
               <div className={styles.data_user}>
                 <div className={styles.user_name}>Axel</div>
