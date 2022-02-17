@@ -1,147 +1,190 @@
 @import Variables.sass
 
 .home_page
-    display: none
-
-.home_page_containers
-    box-shadow: -5px 5px $almost-white
-    border-radius: 25px
+    display: flex
+    position: absolute
     margin:
-        bottom: 7vh
+        left: 11%
+    width: 50vw
+    flex-wrap: wrap
 
-    .profile_div
-        margin:
-            left: 1vw
-            top: 2vh
-            bottom: 2vh
-        height: 5vh
-        width: 2.5vw
-        border-radius: 26px
-        overflow: hidden
-        padding:
-            top: 2vh
-            left: 0.2vw
+.top_container
+    margin:
+        top: 3em
+    display: flex
+    width: 100%
+    box-shadow: 0px 10px 25px rgba(149, 147, 255, 0.13)
+    border-radius: 35px
+    padding: 2em
+    flex-wrap: wrap
 
-    form
-        position: absolute
-        top: 0
+.upper_items
+    width: 100%
+    display: flex
+    input
+        border: none
+        outline: none
         margin:
-            left: 5vw
-            top: 4vh
-        width: 35%
+            left: 1em
+        font-family: Poppins
+        font-style: normal
+        font-weight: 500
+        font-size: 1.2rem
+        line-height: 27px
+        width: 70%
         ::placeholder
             font-size: 1rem
-            color: #131313
-    input
-        width: 200%
-        height: 4vh
-        border: none
-        padding: 0.5rem
+            color: #666666
+.profile_div
+    border-radius: 50px
+    overflow: hidden
+    height: 3em
+    width: 3em
+    cursor: pointer
 
-    .emojis
-        display: flex
-        padding:
-            bottom: 2vh
-
-    .icon
-        height: 3vh
-        width: 1.5vw
-        margin:
-            top: 1vh
-            left: 1vw
-        color: $lighter-text
-.weeve_button
-    margin:
-        left: 62%
+.below_items
     display: flex
-    width: 10vw
-    height: 5.5vh
+    justify-content: space-between
+    width: 100%
+    margin:
+        top: 1em
+    .icons_div
+        display: flex
+        cursor: pointer
+    .emojis
+        width: 1.8em
+        height: 1.8em
+        color: $lighter-text
+    .emojis:first-child
+        margin:
+            right: 1em
 
+.weeve_button
     button
+        padding: 0.5em
+        display: flex
+        align-items: center
         width: 100%
         border: none
-        background: $lighter-theme-solid
+        background-color: $lighter-theme-solid
         color: #fff
         border-radius: 8px
         font-size: 1rem
-        text-align: center
         text-decoration: none
         border: solid 2px #fff
-
-        .weeve_icon
-            margin:
-                left: 1vh
-            width: 1.8vw
-            height: 4vh
-            display: inline-block
-            vertical-align: -0.5rem
-
-    button:hover
-        color: $lighter-theme-solid
-        background: #fff
-        border: solid 2px $lighter-theme-solid
         transition: 0.3s
+        cursor: pointer
+        &:hover
+            border: 2px solid $lighter-theme-solid
+            background-color: rgba(254, 254, 254, 0)
+            color: $lighter-theme-solid
 
+
+.weeve_icon
+    margin:
+        left: 0.5em
+.home_page_containers
+    box-shadow: 0px 10px 25px rgba(149, 147, 255, 0.13)
+    border-radius: 35px
+    display: flex
+    margin:
+        top: 2em
+    flex-wrap: wrap
+    padding: 2em
 .upper_post
-    position: relative
-    width: 95%
-
-    .user_name
-        position: absolute
-        top: 0
+    display: flex
+    justify-content: space-between
+    width: 100%
+    .left_section
+        display: flex
+        align-items: center
+    .data_user
         margin:
-            top: 0.8em
-            left: 5vw
-        font-size: 1.2rem
-
+            left: 1.2em
+        
     .profile_name
-        position: absolute
-        top: 0
-        margin:
-            top: 2.8em
-            left: 5vw
-        font-size: 0.8rem
-        color: $lighter-text
-
+        font-family: Poppins
+        font-style: normal
+        font-weight: 500
+        font-size:  0.8em
+        line-height: 1em
+        cursor: pointer
+    .user_name
+        font-family: Poppins
+        font-style: normal
+        font-weight: 500
+        font-size: 1.4em
+        line-height: 1em
     .time
-        position: absolute
-        top: 0
-        right: 0
-        margin:
-            top: 1em
-        color: $lighter-text
-        font-size: 0.8rem
+        font-family: Poppins
+        font-style: normal
+        font-weight: 500
+        font-size: 1em
 
     .link_post
-        position: absolute
-        top: 0
-        right: 0
-        top: 3.5em
+        font-family: Poppins
+        font-style: normal
+        font-weight: normal
+        font-size: 0.6em
         color: $lighter-theme-solid
-        font-size: 0.55rem
+        cursor: pointer
+    .right_section
+        text-align: right
 
 .post_content
     margin:
-        top: 1.8em
-        left: 5vw
-    width: 84%
+        left: 4.2em
+        top: 1em
+    font-family: Poppins
+    font-style: normal
+    font-weight: normal
+    font-size: 1em
+    line-height: 1.4em
+    letter-spacing: 0.02em
+
+
 
 .below_post
-    margin:
-        top: 2vh
-        left: 5vw
     display: flex
     color: $lighter-text
     letter-spacing: 0.1rem
-    padding:
-        bottom: 2vh
+    margin:
+        left: 4.2em
+        top: 0.5em
+
+    .comment_section
+        display: flex
+        align-items: center
+        font-family: Poppins
+        font-style: normal
+        font-weight: 500
+        font-size: 1em
+        line-height: 1.5em
+        margin:
+            right: 2em
+        cursor: pointer
     .like_section
+        display: flex
+        align-items: center
+        font-family: Poppins
+        font-style: normal
+        font-weight: 500
+        font-size: 1em
+        line-height: 1.5em
         margin:
-            left: 2rem
+            right: 2em
+        cursor: pointer
+
     .share_section
-        margin:
-            left: 2rem
+        display: flex
+        align-items: center
+        font-family: Poppins
+        font-style: normal
+        font-weight: 500
+        font-size: 1em
+        line-height: 1.5em
+        cursor: pointer
+
     .post_icons
-        padding:
-            right: 0.5rem
-        vertical-align: -0.4rem
+        margin:
+            right: 0.5em

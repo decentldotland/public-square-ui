@@ -11,34 +11,33 @@ import {
   SendIcon,
   HeartIcon,
   ShareIcon,
+  MessageIcon
 } from "@iconicicons/react";
 
 const Home: NextPage = () => {
   return (
     <>
       <div className={styles.home_page}>
-        <div
-          className={styles.home_page_containers + " " + styles.top_container}
-        >
-          <Link href="/">
-            <div className={styles.profile_div}>
-              <Image
-                width="100%"
-                height="100%"
-                src="/profile.jpg"
-                alt="profile-picutre"
-              />
-            </div>
-          </Link>
-          <form>
+        <div className={styles.top_container}>
+          <div className={styles.upper_items}>
+            <Link href="/">
+              <div className={styles.profile_div}>
+                <Image
+                  width="100%"
+                  height="100%"
+                  src="/profile.jpg"
+                  alt="profile-picutre"
+                />
+              </div>
+            </Link>
+
             <input type="text" placeholder="What's happening?" />
-          </form>
-          <div className={styles.emojis}>
-            <div className={styles.icon}>
-              <PhotoIcon />
-            </div>
-            <div className={styles.icon}>
-              <EmojiHappyIcon />
+          </div>
+          <div className={styles.below_items}>
+            <div className={styles.icons_div}>
+              <PhotoIcon className={styles.emojis} />
+
+              <EmojiHappyIcon className={styles.emojis} />
             </div>
             <div className={styles.weeve_button}>
               <button>
@@ -50,19 +49,25 @@ const Home: NextPage = () => {
         </div>
         <div className={styles.home_page_containers}>
           <div className={styles.upper_post}>
-            <div className={styles.profile_div}>
-              <Image
-                width="100%"
-                height="100%"
-                src="/profile.jpg"
-                alt="profile-picutre"
-              />
+            <div className={styles.left_section}>
+              <div className={styles.profile_div}>
+                <Image
+                  width="100%"
+                  height="100%"
+                  src="/profile.jpg"
+                  alt="profile-picutre"
+                />
+              </div>
+              <div className={styles.data_user}>
+                <div className={styles.user_name}>Axel</div>
+                <div className={styles.profile_name}>@bidetaggle</div>
+              </div>
             </div>
-            <div className={styles.user_name}>Axel</div>
-            <div className={styles.profile_name}>@bidetaggle</div>
-            <div className={styles.time}>3 hours ago</div>
-            <div className={styles.link_post}>
-              <a>sf3ZF...eBCK4</a>
+            <div className={styles.right_section}>
+              <div className={styles.time}>3 hours ago</div>
+              <div className={styles.link_post}>
+                <a>sf3ZF...eBCK4</a>
+              </div>
             </div>
           </div>
           <div className={styles.post_content}>
@@ -74,7 +79,7 @@ const Home: NextPage = () => {
             remaining essentially unchanged.
           </div>
           <div className={styles.below_post}>
-            <div className={styles.comment_section}>10 Comments</div>
+            <div className={styles.comment_section}> <MessageIcon className={styles.post_icons}/> 10 Comments</div>
             <div className={styles.like_section}>
               <HeartIcon className={styles.post_icons} />
               28 likes
@@ -87,19 +92,25 @@ const Home: NextPage = () => {
         </div>
         <div className={styles.home_page_containers}>
           <div className={styles.upper_post}>
-            <div className={styles.profile_div}>
-              <Image
-                width="100%"
-                height="100%"
-                src="/profile.jpg"
-                alt="profile-picutre"
-              />
+            <div className={styles.left_section}>
+              <div className={styles.profile_div}>
+                <Image
+                  width="100%"
+                  height="100%"
+                  src="/profile.jpg"
+                  alt="profile-picutre"
+                />
+              </div>
+              <div className={styles.data_user}>
+                <div className={styles.user_name}>Axel</div>
+                <div className={styles.profile_name}>@bidetaggle</div>
+              </div>
             </div>
-            <div className={styles.user_name}>Axel</div>
-            <div className={styles.profile_name}>@bidetaggle</div>
-            <div className={styles.time}>3 hours ago</div>
-            <div className={styles.link_post}>
-              <a>sf3ZF...eBCK4</a>
+            <div className={styles.right_section}>
+              <div className={styles.time}>3 hours ago</div>
+              <div className={styles.link_post}>
+                <a>sf3ZF...eBCK4</a>
+              </div>
             </div>
           </div>
           <div className={styles.post_content}>
@@ -111,7 +122,7 @@ const Home: NextPage = () => {
             remaining essentially unchanged.
           </div>
           <div className={styles.below_post}>
-            <div className={styles.comment_section}>10 Comments</div>
+            <div className={styles.comment_section}> <MessageIcon className={styles.post_icons}/> 10 Comments</div>
             <div className={styles.like_section}>
               <HeartIcon className={styles.post_icons} />
               28 likes
@@ -124,19 +135,25 @@ const Home: NextPage = () => {
         </div>
         <div className={styles.home_page_containers}>
           <div className={styles.upper_post}>
-            <div className={styles.profile_div}>
-              <Image
-                width="100%"
-                height="100%"
-                src="/profile.jpg"
-                alt="profile-picutre"
-              />
+            <div className={styles.left_section}>
+              <div className={styles.profile_div}>
+                <Image
+                  width="100%"
+                  height="100%"
+                  src="/profile.jpg"
+                  alt="profile-picutre"
+                />
+              </div>
+              <div className={styles.data_user}>
+                <div className={styles.user_name}>Axel</div>
+                <div className={styles.profile_name}>@bidetaggle</div>
+              </div>
             </div>
-            <div className={styles.user_name}>Axel</div>
-            <div className={styles.profile_name}>@bidetaggle</div>
-            <div className={styles.time}>3 hours ago</div>
-            <div className={styles.link_post}>
-              <a>sf3ZF...eBCK4</a>
+            <div className={styles.right_section}>
+              <div className={styles.time}>3 hours ago</div>
+              <div className={styles.link_post}>
+                <a>sf3ZF...eBCK4</a>
+              </div>
             </div>
           </div>
           <div className={styles.post_content}>
@@ -148,7 +165,7 @@ const Home: NextPage = () => {
             remaining essentially unchanged.
           </div>
           <div className={styles.below_post}>
-            <div className={styles.comment_section}>10 Comments</div>
+            <div className={styles.comment_section}> <MessageIcon className={styles.post_icons}/> 10 Comments</div>
             <div className={styles.like_section}>
               <HeartIcon className={styles.post_icons} />
               28 likes
