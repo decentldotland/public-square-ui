@@ -1,148 +1,241 @@
 @import Variables.sass
+@import url('https://fonts.googleapis.com/css2?family=Poppins:normal:wght@400,500,600&display=swap')
     
 .page
     position: absolute
-    top: 0
     margin:
-        top: 5vh
-        left: 15%
-    width: 53%
+        left: 14%
+    width: 52%
+    
 
     .popular_profiles
+        display: flex
+        flex-wrap: wrap
+        margin:
+            top: 2em
         width: 100%
-    h1
-        font-size: 1.3rem
+        justify-content: space-between
+        h1
+            width: 100%
+            font-family: Poppins
+            font-style: normal
+            font-weight: 600
+            font-size: 1.5em
+        img
+            width: 3.2em
+            height: 3.2em
+
     .popular_profile_div
-        width: 20%
-        box-shadow: -5px 5px $almost-white
-        border-radius: 25px
+
+        box-shadow: 0px 10px 25px rgba(149, 147, 255, 0.13)
+        border-radius: 20px
+        display: flex
+        flex-wrap: wrap
         text-align: center
         margin:
-            bottom: 1em
-            right: 5%
-        display: inline-block
+            top: 2em
+        width: 19%
+        
 
+        
     .picture_div
         width: 100%
-        display: flex
-        justify-content: center
-        padding:
-            top: 2em
         margin:
+            top: 2em
             bottom: 0.5em
-    .img
-        height: 5vw
-        width: 5vw
-        border-radius: 26px
-        overflow: hidden
     .user_name
-        font-size: 1em
         margin:
             bottom: 0.2em
+        width: 100%
+        font-family: Poppins
+        font-style: normal
+        font-weight: 500
+        font-size: 1em
     .profile_name1
+        width: 100%
+        font-family: Poppins
+        font-style: normal
+        font-weight: 500
         font-size: 0.7em
-        letter-spacing: 1px
         margin:
             bottom: 2em
 
+
     .follow_button
+        width: 100%
+        margin:
+            bottom: 2em
+        
         button
+            background-color: rgba(254, 254, 254, 0)
             border: 2px solid $lighter-theme-solid
-            background: none
             color: $lighter-theme-solid
+            transition: 0.3s
+            padding: 0.7em 1.5em
             border-radius: 10px
-            padding: 0.5em 1.8em
-            margin:
-                bottom: 2em
         button:hover
-            border: 2px solid #fff
+            border: 2px solid $lighter-theme-solid
             color: #fff
             background: $lighter-theme-solid
-            transition: 0.3s
 
+.profile_div
+    
+    cursor: pointer
+    img
+        width: 2.2em
+        height: 2.2em
+        filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.2))
+        border-radius: 47px
 
-
-.trending_posts
-    box-shadow: -5px 5px $almost-white
-    border-radius: 25px
+.below_items
+    display: flex
+    justify-content: space-between
+    width: 100%
     margin:
-        bottom: 7vh
-
-    .profile_div
+        top: 1em
+    .icons_div
+        display: flex
+        cursor: pointer
+    .emojis
+        width: 1.8em
+        height: 1.8em
+        color: $lighter-text
+    .emojis:first-child
         margin:
-            left: 1vw
-            top: 2vh
-            bottom: 2vh
-        height: 5vh
-        width: 2.5vw
-        border-radius: 26px
-        overflow: hidden
-        padding:
-            top: 2vh
-            left: 0.2vw
+            right: 1em
 
+.weeve_button
+    button
+        padding: 0.5em 0.8em
+        display: flex
+        align-items: center
+        width: 100%
+        border: none
+        background-color: $lighter-theme-solid
+        color: #fff
+        border-radius: 12px
+        font-size: 1em
+        text-decoration: none
+        border: solid 2px $lighter-theme-solid
+        transition: 0.3s
+        cursor: pointer
 
+        &:hover
+            border: 2px solid $lighter-theme-solid
+            background-color: rgba(254, 254, 254, 0)
+            color: $lighter-theme-solid
+        &:active
+            transform: scale(.89)        
+
+.trending_weeves
+    h1
+        font-family: Poppins
+        font-style: normal
+        font-weight: 600
+
+.trending_weeve
+    box-shadow: 0px 10px 25px rgba(149, 147, 255, 0.13)
+    border-radius: 35px
+    display: flex
+    margin:
+        top: 2em
+    flex-wrap: wrap
+    padding: 2em
 .upper_post
-    position: relative
-    width: 95%
-
-    .user_name
-        position: absolute
-        top: 0
+    display: flex
+    justify-content: space-between
+    width: 100%
+    .left_section
+        display: flex
+        align-items: center
+    .data_user
         margin:
-            top: 0.8em
-            left: 5vw
-        font-size: 1.2rem
-
+            left: 1.2em
+        
     .profile_name
-        position: absolute
-        top: 0
-        margin:
-            top: 2.8em
-            left: 5vw
-        font-size: 0.8rem
-        color: $lighter-text
-
+        font-family: Poppins
+        font-style: normal
+        font-weight: 500
+        font-size:  0.8em
+        line-height: 1em
+        cursor: pointer
+    .user_name
+        font-family: Poppins
+        font-style: normal
+        font-weight: 500
+        font-size: 1.4em
+        line-height: 1em
     .time
-        position: absolute
-        top: 0
-        right: 0
-        margin:
-            top: 1em
-        color: $lighter-text
-        font-size: 0.8rem
+        font-family: Poppins
+        font-style: normal
+        font-weight: 500
+        font-size: 0.9em
 
     .link_post
-        position: absolute
-        top: 0
-        right: 0
-        top: 3.5em
+        font-family: Poppins
+        font-style: normal
+        font-weight: normal
+        font-size: 0.6em
         color: $lighter-theme-solid
-        font-size: 0.55rem
+        cursor: pointer
+    .right_section
+        text-align: right
 
 .post_content
     margin:
-        top: 1.8em
-        left: 5vw
-    width: 84%
+        left: 4em
+        top: 1em
+    font-family: Poppins
+    font-style: normal
+    font-weight: normal
+    font-size: 0.9em
+    line-height: 1.4em
+    letter-spacing: 0.02em
 
 .below_post
-    margin:
-        top: 2vh
-        left: 5vw
     display: flex
     color: $lighter-text
     letter-spacing: 0.1rem
-    padding:
-        bottom: 2vh
+    margin:
+        left: 4.2em
+        top: 1em
+
+    .comment_section
+        display: flex
+        align-items: center
+        font-family: Poppins
+        font-style: normal
+        font-weight: 500
+        font-size: 1em
+        line-height: 1.5em
+        margin:
+            right: 2em
+        cursor: pointer
     .like_section
+        display: flex
+        align-items: center
+        font-family: Poppins
+        font-style: normal
+        font-weight: 500
+        font-size: 1em
+        line-height: 1.5em
         margin:
-            left: 2rem
+            right: 2em
+        cursor: pointer
+
     .share_section
-        margin:
-            left: 2rem
-        
+        display: flex
+        align-items: center
+        font-family: Poppins
+        font-style: normal
+        font-weight: 500
+        font-size: 1em
+        line-height: 1.5em
+        cursor: pointer
+
     .post_icons
-        padding:
-            right: 0.5rem
-        vertical-align: -0.4rem
+        margin:
+            right: 0.6em
+
+
+

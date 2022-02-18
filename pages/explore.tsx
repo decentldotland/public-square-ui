@@ -1,6 +1,6 @@
 import styles from "../styles/Explore.module.sass";
 import Image from "next/image";
-import { ShareIcon, HeartIcon } from "@iconicicons/react";
+import { ShareIcon, HeartIcon, MessageIcon } from "@iconicicons/react";
 import Link from "next/link";
 const Explore = () => {
   return (
@@ -11,13 +11,20 @@ const Explore = () => {
           <div className={styles.popular_profile_div}>
             <div className={styles.picture_div}>
               <Link href="/">
+                <img src="/profile.png" alt="" />
+              </Link>
+            </div>
+            <div className={styles.user_name}>Marton Lederer</div>
+            <div className={styles.profile_name1}>@martonlederer</div>
+            <div className={styles.follow_button}>
+              <button>Follow</button>
+            </div>
+          </div>
+          <div className={styles.popular_profile_div}>
+            <div className={styles.picture_div}>
+              <Link href="/">
                 <div className={styles.img}>
-                  <Image
-                    width="100%"
-                    height="100%"
-                    src="/profile.jpg"
-                    alt="profile-picutre"
-                  />
+                  <img src="/profile.png" alt="" />
                 </div>
               </Link>
             </div>
@@ -31,12 +38,7 @@ const Explore = () => {
             <div className={styles.picture_div}>
               <Link href="/">
                 <div className={styles.img}>
-                  <Image
-                    width="100%"
-                    height="100%"
-                    src="/profile.jpg"
-                    alt="profile-picutre"
-                  />
+                  <img src="/profile.png" alt="" />
                 </div>
               </Link>
             </div>
@@ -50,36 +52,12 @@ const Explore = () => {
             <div className={styles.picture_div}>
               <Link href="/">
                 <div className={styles.img}>
-                  <Image
-                    width="100%"
-                    height="100%"
-                    src="/profile.jpg"
-                    alt="profile-picutre"
-                  />
+                  <img src="/profile.png" alt="" />
                 </div>
               </Link>
             </div>
             <div className={styles.user_name}>Marton Lederer</div>
             <div className={styles.profile_name1}>@martonlederer</div>
-            <div className={styles.follow_button}>
-              <button>Follow</button>
-            </div>
-          </div>
-          <div className={styles.popular_profile_div}>
-            <div className={styles.picture_div}>
-              <Link href="/">
-                <div className={styles.img}>
-                  <Image
-                    width="100%"
-                    height="100%"
-                    src="/profile.jpg"
-                    alt="profile-picutre"
-                  />
-                </div>
-              </Link>
-            </div>
-            <div className={styles.user_name}>Marton Lederer</div>
-            <div className={styles.profile_name}>@martonlederer</div>
             <div className={styles.follow_button}>
               <button>Follow</button>
             </div>
@@ -87,21 +65,22 @@ const Explore = () => {
         </div>
         <div className={styles.trending_weeves}>
           <h1>Trending weeves</h1>
-          <div className={styles.trending_posts}>
+          <div className={styles.trending_weeve}>
             <div className={styles.upper_post}>
-              <div className={styles.profile_div}>
-                <Image
-                  width="100%"
-                  height="100%"
-                  src="/profile.jpg"
-                  alt="profile-picutre"
-                />
+              <div className={styles.left_section}>
+                <div className={styles.profile_div}>
+                  <img src="/profile.png" alt="profile-picutre" />
+                </div>
+                <div className={styles.data_user}>
+                  <div className={styles.user_name}>Axel</div>
+                  <div className={styles.profile_name}>@bidetaggle</div>
+                </div>
               </div>
-              <div className={styles.user_name}>Axel</div>
-              <div className={styles.profile_name}>@bidetaggle</div>
-              <div className={styles.time}>3 hours ago</div>
-              <div className={styles.link_post}>
-                <a>sf3ZF...eBCK4</a>
+              <div className={styles.right_section}>
+                <div className={styles.time}>3 hours ago</div>
+                <div className={styles.link_post}>
+                  <a>sf3ZF...eBCK4</a>
+                </div>
               </div>
             </div>
             <div className={styles.post_content}>
@@ -113,7 +92,10 @@ const Explore = () => {
               electronic typesetting, remaining essentially unchanged.
             </div>
             <div className={styles.below_post}>
-              <div className={styles.comment_section}>10 Comments</div>
+              <div className={styles.comment_section}>
+                
+                <MessageIcon className={styles.post_icons} /> 10 Comments
+              </div>
               <div className={styles.like_section}>
                 <HeartIcon className={styles.post_icons} />
                 28 likes
