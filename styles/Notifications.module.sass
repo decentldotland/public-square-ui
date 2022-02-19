@@ -18,20 +18,21 @@
         align-items: center
         font-family: Poppins
         font-style: normal
-        font-weight: 500
+        
         flex-wrap: wrap
         margin:
             top: 1em
         h2
-            color: $lighter-text
+            font-weight: 400
             display: flex
             align-items: center
             width: 100%
-            font-size: 1.3em
+            font-size: 1em
         span
             margin:
                 right: 0.3em
-            color: #131313
+            font-weight: 600
+
         .heart
             margin:
                 right: 0.3em
@@ -44,8 +45,32 @@
             margin:
                 right: 0.3em
             color: $lighter-theme-solid
+.profil_data
+    display: flex
+    .data_user2
+        margin:
+            left: 1.3em
+.follow_button
+    button
+        border-radius: 12px
+        background-color: rgba(254, 254, 254, 0)
+        padding: 0.5em 1.8em
+        color: $lighter-theme-solid
+        border: 2px solid $lighter-theme-solid
+        transition: 0.3s
+        cursor: pointer
+        font-family: Poppins
+        ont-style: normal
+        font-weight: 500
+        &:hover
+            background: $lighter-theme-solid
+            border: 2px solid $lighter-theme-solid
+            color: #fff
+            transition: 0.3s
 
-.profile_div    
+            
+
+.profile_div
     cursor: pointer
     img
         width: 2.2em
@@ -71,14 +96,12 @@
     .data_user
         margin:
             left: 1.2em
-.profile_data
-    display: flex
-        
+
     .profile_name
         font-family: Poppins
         font-style: normal
         font-weight: 500
-        font-size:  0.8em
+        font-size: 0.8em
         line-height: 1em
         cursor: pointer
     .user_name
@@ -114,15 +137,14 @@
     line-height: 1.4em
     letter-spacing: 0.02em
 
-
-
 .below_post
     display: flex
     color: $lighter-text
     letter-spacing: 0.1rem
     margin:
-        left: 4.2em
+        left: 3.5em
         top: 1em
+
 
     .comment_section
         display: flex
@@ -130,8 +152,7 @@
         font-family: Poppins
         font-style: normal
         font-weight: 500
-        font-size: 1em
-        line-height: 1.5em
+        font-size: 0.8em
         margin:
             right: 2em
         cursor: pointer
@@ -141,8 +162,7 @@
         font-family: Poppins
         font-style: normal
         font-weight: 500
-        font-size: 1em
-        line-height: 1.5em
+        font-size: 0.8em
         margin:
             right: 2em
         cursor: pointer
@@ -153,8 +173,7 @@
         font-family: Poppins
         font-style: normal
         font-weight: 500
-        font-size: 1em
-        line-height: 1.5em
+        font-size: 0.8em
         cursor: pointer
 
     .post_icons

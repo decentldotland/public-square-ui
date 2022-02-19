@@ -66,27 +66,26 @@ const Notifications = () => {
             <h2>
               <UserPlusIcon
                 className={styles.post_icons + " " + styles.plus_user}
-              />{" "}
+              />
               <span> Marton Lederer</span> now follows you
             </h2>
             <div className={styles.notification_containers}>
               <div className={styles.upper_post}>
-                <div className={styles.data_users}>
+                <div className={styles.profil_data}>
                   <div className={styles.profile_div}>
                     <img src="/profile.png" alt="profile-picutre" />
                   </div>
-                  <div className={styles.user_name}>Axel</div>
-                  <div className={styles.profile_name}>@bidetaggle</div>
+                  <div className={styles.data_user2}>
+                    <div className={styles.user_name}>Axel</div>
+                    <div className={styles.profile_name}>@bidetaggle</div>
+                  </div>
                 </div>
                 <div className={styles.follow_button}>
-                  <button>follow</button>
+                  <button>Follow</button>
                 </div>
               </div>
               <div className={styles.post_content}>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+                This is the users bio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa fugiat neque qui id beatae rerum maiores quaerat, ducimus voluptates, exercitationem ipsam facere. Nam, libero maxime. Molestiae doloremque tempore placeat soluta.
               </div>
             </div>
           </div>
