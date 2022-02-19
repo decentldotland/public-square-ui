@@ -45,11 +45,14 @@
             padding: 0.25em
             align-items: center
             transition: 0.3s
+            cursor: pointer
         .icon_div:hover
             background-color: #fff
             border: 2px solid $lighter-theme-solid
             .icon
                 color: $lighter-theme-solid
+            &:active
+                transform: scale(.89)
         .icon
             color: #fff
     .suggestion_section
@@ -71,7 +74,6 @@
         font-size: 1.5em
         letter-spacing: 1px
     .title_button
-        button
         border: none
         background-color: rgba(254, 254, 254, 0)
         color: $lighter-theme-solid
@@ -83,6 +85,8 @@
         letter-spacing: 0.4px
         margin:
             right: 1em
+        &:active
+            transform: scale(.89)    
     .suggestions_div
         display: flex
         flex-wrap: wrap
@@ -142,6 +146,8 @@
             border: 2px solid $lighter-theme-solid
             color: #fff
             transition: 0.3s
+        &:active
+            transform: scale(.89)
             
 
 .footer
