@@ -1,87 +1,102 @@
 @import Variables.sass
-
-.home_page
-    display: flex
-    position: fixed
+    
+.page
+    position: absolute
     margin:
         left: 14%
     width: 52vw
+    display: flex
     flex-wrap: wrap
-
-.top_container
-    margin:
-        top: 3em
-    display: flex
-    width: 100%
-    box-shadow: 0px 10px 25px rgba(149, 147, 255, 0.13)
-    border-radius: 35px
-    padding: 2em
-    flex-wrap: wrap
-
-.upper_items
-    width: 100%
-    display: flex
-    input
-        border: none
-        outline: none
-        margin:
-            left: 1em
-        font-family: Poppins
-        font-style: normal
-        font-weight: 50
-        font-size: 1.3em
-        line-height: 27px
-        width: 70%
-        ::placeholder
-            font-size: 1rem
-            color: #666666
-
-
-.below_items
-    display: flex
-    justify-content: space-between
-    width: 100%
-    margin:
-        top: 1em
-    .icons_div
+    font-family: Poppins
+    font-style: normal
+    .top_section
+        width: 100%
         display: flex
-        cursor: pointer
-    .emojis
-        width: 1.8em
-        height: 1.8em
-        color: $lighter-text
-    .emojis:first-child
+        justify-content: space-between
         margin:
-            right: 1em
-
-.weeve_button
-    button
-        padding: 0.5em 0.8em
+            top: 2em
+            align-items: center
+    .left_section
         display: flex
         align-items: center
-        width: 100%
-        border: none
-        background-color: $lighter-theme-solid
-        color: #fff
-        border-radius: 12px
-        font-size: 1em
-        text-decoration: none
-        border: solid 2px $lighter-theme-solid
-        transition: 0.3s
+    .arrow_icon
+        color: $lighter-text
+        margin:
+            right: 1em
+        cursor: pointer
+    h2
+        font-size: 1.5em
+        font-weight: 600
+
+    a
+        font-weight: 500
+        color: $lighter-theme-solid
+        font-size: 0.8em
         cursor: pointer
 
-        &:hover
-            border: 2px solid $lighter-theme-solid
-            background-color: rgba(254, 254, 254, 0)
-            color: $lighter-theme-solid
-        &:active
-            transform: scale(.89)        
-
-
-.weeve_icon
+.data_user1
     margin:
-        left: 0.5em
-.home_page_containers
+        top: 1em
+    display: flex
+    .picture_div
+        filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.2))
+        img
+            width: 9em
+            height: 9em
+            border-radius: 130px
+    .right_site
+        display: flex
+        flex-wrap: wrap
+        margin:
+            left: 1.5em
+    .upper_section   
+        width: 100%
+        display: flex
+        justify-content: space-between
+    .user_name1
+        font-weight: 600
+        font-size: 2em
+    .profile_name1
+        font-weight: 400
+        font-size: 1em
+        margin:
+            top: -0.5em
+
+    .edit_button
+        button
+            border-radius: 12px
+            background-color: rgba(254, 254, 254, 0)
+            padding: 0.5em 3em
+            color: $lighter-theme-solid
+            border: 2px solid $lighter-theme-solid
+            transition: 0.3s
+            cursor: pointer
+            font-family: Poppins
+            ont-style: normal
+            font-weight: 500
+
+        button:hover
+            background: $lighter-theme-solid
+            border: 2px solid $lighter-theme-solid
+            color: #fff
+            transition: 0.3s
+
+    .bio
+        margin:
+            top: 0.5em
+        font-size: 0.9em
+
+.users_weeves
+    display: flex
+    flex-wrap: wrap
+    margin:
+        top: 2em
+    h1
+        width: 100%
+        font-size: 1.5em
+        font-weight: 600
+
+.weeve_containers
     box-shadow: 0px 10px 25px rgba(149, 147, 255, 0.13)
     border-radius: 35px
     display: flex
@@ -90,7 +105,6 @@
     flex-wrap: wrap
     padding: 2em
 .profile_div
-    
     cursor: pointer
     img
         width: 2.2em
@@ -190,3 +204,7 @@
     .post_icons
         margin:
             right: 0.6em
+
+
+
+        

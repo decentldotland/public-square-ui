@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.sass";
 import Navbar from "../comp/Navbar";
 import { getFeed } from "public-square-api";
 import Link from "next/link";
-import profilePic from "../public/profile.jpg"
+import profilePic from "../public/profile.jpg";
 
 import {
   PhotoIcon,
@@ -13,7 +13,7 @@ import {
   SendIcon,
   HeartIcon,
   ShareIcon,
-  MessageIcon
+  MessageIcon,
 } from "@iconicicons/react";
 
 const Home: NextPage = () => {
@@ -24,7 +24,7 @@ const Home: NextPage = () => {
           <div className={styles.upper_items}>
             <Link href="/">
               <div className={styles.profile_div}>
-              <img src="/profile.png" alt="profile-picutre" />
+                <img src="/profile.png" alt="profile-picutre" />
               </div>
             </Link>
 
@@ -47,7 +47,7 @@ const Home: NextPage = () => {
         <div className={styles.home_page_containers}>
           <div className={styles.upper_post}>
             <div className={styles.left_section}>
-              <div className={styles.profile_div}> 
+              <div className={styles.profile_div}>
                 <img src="/profile.png" alt="profile-picutre" />
               </div>
               <div className={styles.data_user}>
@@ -71,7 +71,10 @@ const Home: NextPage = () => {
             remaining essentially unchanged.
           </div>
           <div className={styles.below_post}>
-            <div className={styles.comment_section}> <MessageIcon className={styles.post_icons}/> 10 Comments</div>
+            <div className={styles.comment_section}>
+              {" "}
+              <MessageIcon className={styles.post_icons} /> 10 Comments
+            </div>
             <div className={styles.like_section}>
               <HeartIcon className={styles.post_icons} />
               28 likes
@@ -86,7 +89,7 @@ const Home: NextPage = () => {
           <div className={styles.upper_post}>
             <div className={styles.left_section}>
               <div className={styles.profile_div}>
-              <img src="/profile.png" alt="profile-picutre" />
+                <img src="/profile.png" alt="profile-picutre" />
               </div>
               <div className={styles.data_user}>
                 <div className={styles.user_name}>Axel</div>
@@ -109,7 +112,10 @@ const Home: NextPage = () => {
             remaining essentially unchanged.
           </div>
           <div className={styles.below_post}>
-            <div className={styles.comment_section}> <MessageIcon className={styles.post_icons}/> 10 Comments</div>
+            <div className={styles.comment_section}>
+              {" "}
+              <MessageIcon className={styles.post_icons} /> 10 Comments
+            </div>
             <div className={styles.like_section}>
               <HeartIcon className={styles.post_icons} />
               28 likes
@@ -124,7 +130,7 @@ const Home: NextPage = () => {
           <div className={styles.upper_post}>
             <div className={styles.left_section}>
               <div className={styles.profile_div}>
-              <img src="/profile.png" alt="profile-picutre" />
+                <img src="/profile.png" alt="profile-picutre" />
               </div>
               <div className={styles.data_user}>
                 <div className={styles.user_name}>Axel</div>
@@ -147,7 +153,10 @@ const Home: NextPage = () => {
             remaining essentially unchanged.
           </div>
           <div className={styles.below_post}>
-            <div className={styles.comment_section}> <MessageIcon className={styles.post_icons}/> 10 Comments</div>
+            <div className={styles.comment_section}>
+              {" "}
+              <MessageIcon className={styles.post_icons} /> 10 Comments
+            </div>
             <div className={styles.like_section}>
               <HeartIcon className={styles.post_icons} />
               28 likes

@@ -33,7 +33,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className={styles.icon_div}>
-            <Link href="/">
+            <Link href="/user">
               <UserIcon className={styles.icon} />
             </Link>
           </div>
