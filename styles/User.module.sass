@@ -9,13 +9,14 @@
     flex-wrap: wrap
     font-family: Poppins
     font-style: normal
+    min-width: 30em
     .top_section
         width: 100%
         display: flex
         justify-content: space-between
         margin:
             top: 2em
-            align-items: center
+        align-items: center
     .left_section
         display: flex
         align-items: center
@@ -61,27 +62,11 @@
         font-size: 1em
         margin:
             top: -0.5em
+        color: $lighter-text
 
     .edit_button
         button
-            border-radius: 12px
-            background-color: rgba(254, 254, 254, 0)
             padding: 0.5em 3em
-            color: $lighter-theme-solid
-            border: 2px solid $lighter-theme-solid
-            transition: 0.3s
-            cursor: pointer
-            font-family: Poppins
-            ont-style: normal
-            font-weight: 500
-
-        button:hover
-            background: $lighter-theme-solid
-            border: 2px solid $lighter-theme-solid
-            color: #fff
-            transition: 0.3s
-        &:active
-            transform: scale(.89)
 
     .bio
         margin:
@@ -131,6 +116,7 @@
         font-size:  0.8em
         line-height: 1em
         cursor: pointer
+        color: $lighter-text
     .user_name
         font-family: Poppins
         font-style: normal

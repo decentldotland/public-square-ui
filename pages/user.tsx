@@ -6,6 +6,7 @@ import {
   MessageIcon,
 } from "@iconicicons/react";
 import Link from "next/link";
+import Button from "../comp/Button/Button";
 
 const User = () => {
   return (
@@ -32,7 +33,7 @@ const User = () => {
                 <div className={styles.profile_name1}>@bidetaggle</div>
               </div>
               <div className={styles.edit_button}>
-                <button>Edit</button>
+                <Button>Edit</Button>
               </div>
             </div>
             <div className={styles.bio}>

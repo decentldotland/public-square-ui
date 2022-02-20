@@ -15,12 +15,15 @@
     width: 100%
     box-shadow: 0px 10px 25px rgba(149, 147, 255, 0.13)
     border-radius: 35px
-    padding: 2em
+    padding: 1.5em
     flex-wrap: wrap
+    min-width: 30em
 
 .upper_items
     width: 100%
     display: flex
+    margin:
+        left: 0.5em
     input
         border: none
         outline: none
@@ -29,20 +32,20 @@
         font-family: Poppins
         font-style: normal
         font-weight: 50
-        font-size: 1.3em
+        font-size: 1.1em
         line-height: 27px
         width: 70%
         ::placeholder
-            font-size: 1rem
-            color: #666666
+            font-size: 1em
 
 
 .below_items
+    margin:
+        left: 0.5em
     display: flex
     justify-content: space-between
     width: 100%
-    margin:
-        top: 1em
+    align-items: flex-end
     .icons_div
         display: flex
         cursor: pointer
@@ -82,6 +85,7 @@
     margin:
         left: 0.5em
 .home_page_containers
+    min-width: 30em
     box-shadow: 0px 10px 25px rgba(149, 147, 255, 0.13)
     border-radius: 35px
     display: flex
@@ -89,6 +93,7 @@
         top: 2em
     flex-wrap: wrap
     padding: 2em
+    width: 100%
 .profile_div
     
     cursor: pointer
@@ -115,6 +120,7 @@
         font-size:  0.8em
         line-height: 1em
         cursor: pointer
+        color: $lighter-text
     .user_name
         font-family: Poppins
         font-style: normal

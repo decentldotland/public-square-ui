@@ -6,7 +6,7 @@ export default function Button  ({
 }) {
     return (
         <>
-        <div className={styles.button_div} onClick={onclick}>
+        <div className={styles.button_div}>
         <button>{children}</button>
         </div>
         </>
