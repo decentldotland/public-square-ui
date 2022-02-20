@@ -6,6 +6,7 @@ import {
   MessageIcon,
 } from "@iconicicons/react";
 import Image from "next/image";
+import Button from "../comp/Button/Button";
 
 const Notifications = () => {
   return (
@@ -80,9 +81,7 @@ const Notifications = () => {
                     <div className={styles.profile_name}>@bidetaggle</div>
                   </div>
                 </div>
-                <div className={styles.follow_button}>
-                  <button>Follow</button>
-                </div>
+                <Button>Follow</Button>
               </div>
               <div className={styles.post_content}>
                 This is the users bio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa fugiat neque qui id beatae rerum maiores quaerat, ducimus voluptates, exercitationem ipsam facere. Nam, libero maxime. Molestiae doloremque tempore placeat soluta.

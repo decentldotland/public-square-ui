@@ -1,7 +1,8 @@
 import '../styles/globals.sass';
 import type { AppProps } from 'next/app';
-import Navbar from '../comp/Navbar';
-import Right_Side from '../comp/Right_Side';
+
+import Right_Side from '../comp/Right_side/Right_Side';
+import Navbar from '../comp/Navbar/Navbar';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return( 

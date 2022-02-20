@@ -2,6 +2,7 @@ import styles from "../styles/Explore.module.sass";
 import Image from "next/image";
 import { ShareIcon, HeartIcon, MessageIcon } from "@iconicicons/react";
 import Link from "next/link";
+import Button from "../comp/Button/Button";
 const Explore = () => {
   return (
     <>
@@ -17,7 +18,7 @@ const Explore = () => {
             <div className={styles.user_name}>Marton Lederer</div>
             <div className={styles.profile_name1}>@martonlederer</div>
             <div className={styles.follow_button}>
-              <button>Follow</button>
+              <Button>Follow</Button>
             </div>
           </div>
           <div className={styles.popular_profile_div}>
@@ -31,7 +32,7 @@ const Explore = () => {
             <div className={styles.user_name}>Marton Lederer</div>
             <div className={styles.profile_name1}>@martonlederer</div>
             <div className={styles.follow_button}>
-              <button>Follow</button>
+              <Button>Follow</Button>
             </div>
           </div>
           <div className={styles.popular_profile_div}>
@@ -45,7 +46,7 @@ const Explore = () => {
             <div className={styles.user_name}>Marton Lederer</div>
             <div className={styles.profile_name1}>@martonlederer</div>
             <div className={styles.follow_button}>
-              <button>Follow</button>
+              <Button>Follow</Button>
             </div>
           </div>
           <div className={styles.popular_profile_div}>
@@ -59,7 +60,7 @@ const Explore = () => {
             <div className={styles.user_name}>Marton Lederer</div>
             <div className={styles.profile_name1}>@martonlederer</div>
             <div className={styles.follow_button}>
-              <button>Follow</button>
+              <Button>Follow</Button>
             </div>
           </div>
         </div>

@@ -1,6 +1,8 @@
 import { SearchIcon } from "@iconicicons/react";
-import styles from "../styles/Right_Side.module.sass";
+import styles from "../Right_side/Right_Side.module.sass";
 import Image from "next/image";
+
+import Button from "../Button/Button";
 
 const Right_Side = () => {
   return (
@@ -32,9 +34,7 @@ const Right_Side = () => {
                     <div className={styles.profile_name}>@martonlederer</div>
                   </div>
                 </div>
-                <div className={styles.button_div}>
-                  <button>Follow</button>
-                </div>
+                <Button>Follow</Button>
               </div>
 
               <div className={styles.suggestion_div}>
@@ -47,9 +47,7 @@ const Right_Side = () => {
                     <div className={styles.profile_name}>@zsombinagy</div>
                   </div>
                 </div>
-                <div className={styles.button_div}>
-                  <button>Follow</button>
-                </div>
+                <Button>Follow</Button>
               </div>
             </div>
           </div>

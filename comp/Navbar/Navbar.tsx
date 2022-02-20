@@ -1,4 +1,4 @@
-import styles from "../styles/Navbar.module.sass";
+import styles from "../Navbar/Navbar.module.sass";
 import {
   HomeIcon,
   BellIcon,
