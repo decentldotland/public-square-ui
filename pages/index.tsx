@@ -44,6 +44,7 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
+        <div className={styles.posts}>
         <div className={styles.home_page_containers}>
           <div className={styles.upper_post}>
             <div className={styles.left_section}>
@@ -166,6 +167,7 @@ const Home: NextPage = () => {
               share
             </div>
           </div>
+        </div>
         </div>
       </div>
     </>
