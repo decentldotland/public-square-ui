@@ -1,21 +1,31 @@
 @import "../../styles/Variables.sass"
     
-.button_div
-    button
-        border-radius: 12px
-        background-color: rgba(254, 254, 254, 0)
-        padding: 0.6em 1.8em
+.button
+    display: flex
+    align-items: center
+    border-radius: 12px
+    background-color: $lighter-theme-solid
+    padding: 0.6em 1.8em
+    color: #fff
+    border: 2px solid $lighter-theme-solid
+    cursor: pointer
+    font-family: Poppins
+    font-style: normal
+    font-weight: 500
+    outline: none
+    transition: 0.3s
+
+    &:hover
+        background-color: transparent
         color: $lighter-theme-solid
-        border: 2px solid $lighter-theme-solid
-        transition: 0.3s
-        cursor: pointer
-        font-family: Poppins
-        ont-style: normal
-        font-weight: 500
+
+    &.outlined
+        background-color: transparent
+        color: $lighter-theme-solid
+
         &:hover
-            background: $lighter-theme-solid
-            border: 2px solid $lighter-theme-solid
+            background-color: $lighter-theme-solid
             color: #fff
-            transition: 0.3s
-        &:active
-            transform: scale(.89)
+
+    &:active
+        transform: scale(.89)

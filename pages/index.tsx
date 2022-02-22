@@ -15,6 +15,7 @@ import {
   ShareIcon,
   MessageIcon,
 } from "@iconicicons/react";
+import Button from "../comp/Button/Button"
 
 const Home: NextPage = () => {
   return (
@@ -37,10 +38,10 @@ const Home: NextPage = () => {
               <EmojiHappyIcon className={styles.emojis} />
             </div>
             <div className={styles.weeve_button}>
-              <button>
-                Weeve!
+              <Button>
+                Post!
                 <SendIcon className={styles.weeve_icon} />
-              </button>
+              </Button>
             </div>
           </div>
         </div>
