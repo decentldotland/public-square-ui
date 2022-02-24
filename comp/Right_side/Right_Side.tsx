@@ -10,17 +10,14 @@ const Right_Side = () => {
       <div className={styles.right_side}>
         <div className={styles.upper_section}>
           <div className={styles.searcher}>
-            <input
-              type="text"
-              placeholder="@username / wallet id / community"
-            />
+            <input type="text" placeholder="@username / wallet id" />
             <div className={styles.icon_div}>
               <SearchIcon className={styles.icon} />
             </div>
           </div>
           <div className={styles.suggestion_section}>
             <div className={styles.title_section}>
-              <div className={styles.title}>Suggestion</div>
+              <div className={styles.title}>Suggestions</div>
               <button className={styles.title_button}>See All</button>
             </div>
             <div className={styles.suggestions_div}>

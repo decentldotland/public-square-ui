@@ -1,7 +1,5 @@
 import styles from "../styles/User.module.sass";
-import {
-  ArrowLeftIcon
-} from "@iconicicons/react";
+import { ArrowLeftIcon } from "@iconicicons/react";
 import Link from "next/link";
 import Button from "../comp/Button/Button";
 import Post from "../comp/Post/Post";
@@ -45,42 +43,43 @@ const User = () => {
         </div>
         <div className={styles.users_weeves}>
           <h1>Weeves</h1>
-          <Post 
-          id="sf3ZF...eBCK4"
-          body="Lorem Ipsum is simply dummy text of the printing and typesetting
+          <Post
+            id="sf3ZF...eBCK4"
+            body="Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
             and scrambled it to make a type specimen book. It has survived not
             only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged." 
-          user={{
+            remaining essentially unchanged."
+            user={{
               avatar: "/profile.png",
               name: "Axel",
-              username: "bidataggle"
+              username: "bidataggle",
             }}
-          interactions={{
-            comments: 5,
-            likes: 30
-          }}
-        />
-        
-        <Post 
-          id="sf3ZF...eBCK4"
-          body="Lorem Ipsum is simply dummy text of the printing and typesetting
+            interactions={{
+              comments: 5,
+              likes: 30,
+            }}
+          />
+
+          <Post
+            id="sf3ZF...eBCK4"
+            body="Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s, when an unknown printer took a galley of type
             and scrambled it to make a type specimen book. It has survived not
             only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged." 
-          user={{
+            remaining essentially unchanged."
+            user={{
               avatar: "/profile.png",
               name: "Axel",
-              username: "bidataggle"
+              username: "bidataggle",
             }}
-          interactions={{
-            comments: 1,
-            likes: 14
-          }} />
+            interactions={{
+              comments: 1,
+              likes: 14,
+            }}
+          />
         </div>
       </div>
     </>
