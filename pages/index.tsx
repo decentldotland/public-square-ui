@@ -38,13 +38,13 @@ const Home: NextPage = () => {
             <div className={styles.weeve_button}>
               <Button>
                 Weeve!
-                <SendIcon className={styles.weeve_icon} />
+                <SendIcon className={styles.icon} />
               </Button>
             </div>
           </div>
         </div>
         <div className={styles.posts}>
-        <Post notification
+        <Post
           id="sf3ZF...eBCK4"
           body="Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
@@ -60,8 +60,7 @@ const Home: NextPage = () => {
           interactions={{
             comments: 5,
             likes: 30
-          }}
-        />
+          }} nofication></Post>
         
         <Post 
           id="sf3ZF...eBCK4"

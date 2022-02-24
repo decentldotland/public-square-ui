@@ -34,7 +34,7 @@ const User = () => {
                 <div className={styles.profile_name1}>@bidetaggle</div>
               </div>
               <div className={styles.edit_button}>
-                <Button>Edit</Button>
+                <Button outlined>Edit</Button>
               </div>
             </div>
             <div className={styles.bio}>
