@@ -1,9 +1,6 @@
 import styles from "../styles/User.module.sass";
 import {
-  ArrowLeftIcon,
-  ShareIcon,
-  HeartIcon,
-  MessageIcon,
+  ArrowLeftIcon
 } from "@iconicicons/react";
 import Link from "next/link";
 import Button from "../comp/Button/Button";

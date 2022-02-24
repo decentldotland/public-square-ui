@@ -35,9 +35,9 @@ const Home: NextPage = () => {
 
               <EmojiHappyIcon className={styles.emojis} />
             </div>
-            <div className={styles.weeve_button}>
+            <div className={styles.posts_button}>
               <Button>
-                Weeve!
+                Post!
                 <SendIcon className={styles.icon} />
               </Button>
             </div>
@@ -60,7 +60,7 @@ const Home: NextPage = () => {
           interactions={{
             comments: 5,
             likes: 30
-          }} nofication></Post>
+          }}></Post>
         
         <Post 
           id="sf3ZF...eBCK4"

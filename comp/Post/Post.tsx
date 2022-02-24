@@ -27,7 +27,6 @@ export default function Post({ user, id, body, interactions, notification = fals
           </div>
           <div className={styles.below_post}>
             <div className={styles.comment_section}>
-              {" "}
               <MessageIcon className={styles.post_icons} /> {interactions.comments} Comments
             </div>
             <div className={styles.like_section}>
