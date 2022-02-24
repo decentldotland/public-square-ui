@@ -5,8 +5,7 @@ import {
   ShareIcon,
   MessageIcon,
 } from "@iconicicons/react";
-import Image from "next/image";
-import Button from "../comp/Button/Button";
+import Follow from "../comp/Follow_post/follow_post";
 import Post from "../comp/Post/Post";
 
 const Notifications = () => {
@@ -49,23 +48,13 @@ const Notifications = () => {
               />
               <span> Marton Lederer</span> now follows you
             </h2>
-            <div className={styles.notification_containers}>
-              <div className={styles.upper_post}>
-                <div className={styles.profil_data}>
-                  <div className={styles.profile_div}>
-                    <img src="/profile.png" alt="profile-picutre" />
-                  </div>
-                  <div className={styles.data_user2}>
-                    <div className={styles.user_name}>Axel</div>
-                    <div className={styles.profile_name}>@bidetaggle</div>
-                  </div>
-                </div>
-                <Button outlined>Follow</Button>
-              </div>
-              <div className={styles.post_content}>
-                This is the users bio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa fugiat neque qui id beatae rerum maiores quaerat, ducimus voluptates, exercitationem ipsam facere. Nam, libero maxime. Molestiae doloremque tempore placeat soluta.
-              </div>
-            </div>
+            <Follow notification id="1" body="This is the users bio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa fugiat neque qui id beatae rerum maiores quaerat, ducimus voluptates, exercitationem ipsam facere. Nam, libero maxime. Molestiae doloremque tempore placeat soluta."
+              user={{
+                avatar: "/profile.png",
+                name: "Axel",
+                username: "bidetaggle"
+
+              }} />
           </div>
           <div
             className={styles.notification + " " + styles.reply_notification}
@@ -74,7 +63,6 @@ const Notifications = () => {
               <ShareIcon className={styles.post_icons + " " + styles.comment} />{" "}
               <span> Marton Lederer</span> replied your weeve
             </h2>
-
             <Post notification
           id="sf3ZF...eBCK4"
           body="Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -93,6 +81,7 @@ const Notifications = () => {
             likes: 30
           }}
         />
+
           </div>
         </div>
       </div>
