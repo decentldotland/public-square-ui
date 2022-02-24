@@ -34,7 +34,7 @@ const Right_Side = () => {
                     <div className={styles.profile_name}>@martonlederer</div>
                   </div>
                 </div>
-                <Button>Follow</Button>
+                <Button outlined>Follow</Button>
               </div>
 
               <div className={styles.suggestion_div}>
@@ -47,7 +47,7 @@ const Right_Side = () => {
                     <div className={styles.profile_name}>@zsombinagy</div>
                   </div>
                 </div>
-                <Button>Follow</Button>
+                <Button outlined>Follow</Button>
               </div>
             </div>
           </div>

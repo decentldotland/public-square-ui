@@ -8,8 +8,6 @@ import {
   SunIcon,
 } from "@iconicicons/react";
 import Link from "next/link";
-import Image from "next/image";
-import { useState } from "react";
 
 const Navbar = () => {
   return (
@@ -44,7 +42,7 @@ const Navbar = () => {
           </div>
         
         <div className={styles.picture}>
-          <Link href="/">
+          <Link href="/user">
             <div className={styles.profile_div}>
               <img src="/profile.png" alt="" />
             </div>

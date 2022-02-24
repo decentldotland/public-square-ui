@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ShareIcon, HeartIcon, MessageIcon } from "@iconicicons/react";
 import Link from "next/link";
 import Button from "../comp/Button/Button";
+import Post from "../comp/Post/Post";
 const Explore = () => {
   return (
     <>
@@ -18,7 +19,7 @@ const Explore = () => {
             <div className={styles.user_name}>Marton Lederer</div>
             <div className={styles.profile_name1}>@martonlederer</div>
             <div className={styles.follow_button}>
-              <Button>Follow</Button>
+              <Button outlined>Follow</Button>
             </div>
           </div>
           <div className={styles.popular_profile_div}>
@@ -32,7 +33,7 @@ const Explore = () => {
             <div className={styles.user_name}>Marton Lederer</div>
             <div className={styles.profile_name1}>@martonlederer</div>
             <div className={styles.follow_button}>
-              <Button>Follow</Button>
+              <Button outlined>Follow</Button>
             </div>
           </div>
           <div className={styles.popular_profile_div}>
@@ -46,7 +47,7 @@ const Explore = () => {
             <div className={styles.user_name}>Marton Lederer</div>
             <div className={styles.profile_name1}>@martonlederer</div>
             <div className={styles.follow_button}>
-              <Button>Follow</Button>
+              <Button outlined>Follow</Button>
             </div>
           </div>
           <div className={styles.popular_profile_div}>
@@ -60,53 +61,48 @@ const Explore = () => {
             <div className={styles.user_name}>Marton Lederer</div>
             <div className={styles.profile_name1}>@martonlederer</div>
             <div className={styles.follow_button}>
-              <Button>Follow</Button>
+              <Button outlined>Follow</Button>
             </div>
           </div>
         </div>
         <div className={styles.trending_weeves}>
           <h1>Trending weeves</h1>
-          <div className={styles.trending_weeve}>
-            <div className={styles.upper_post}>
-              <div className={styles.left_section}>
-                <div className={styles.profile_div}>
-                  <img src="/profile.png" alt="profile-picutre" />
-                </div>
-                <div className={styles.data_user}>
-                  <div className={styles.user_name}>Axel</div>
-                  <div className={styles.profile_name}>@bidetaggle</div>
-                </div>
-              </div>
-              <div className={styles.right_section}>
-                <div className={styles.time}>3 hours ago</div>
-                <div className={styles.link_post}>
-                  <a>sf3ZF...eBCK4</a>
-                </div>
-              </div>
-            </div>
-            <div className={styles.post_content}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged.
-            </div>
-            <div className={styles.below_post}>
-              <div className={styles.comment_section}>
-                
-                <MessageIcon className={styles.post_icons} /> 10 Comments
-              </div>
-              <div className={styles.like_section}>
-                <HeartIcon className={styles.post_icons} />
-                28 likes
-              </div>
-              <div className={styles.share_section}>
-                <ShareIcon className={styles.post_icons} />
-                share
-              </div>
-            </div>
-          </div>
+          <Post 
+          id="sf3ZF...eBCK4"
+          body="Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged." 
+          user={{
+              avatar: "/profile.png",
+              name: "Axel",
+              username: "bidataggle"
+            }}
+          interactions={{
+            comments: 5,
+            likes: 30
+          }}
+        />
+        
+        <Post 
+          id="sf3ZF...eBCK4"
+          body="Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged." 
+          user={{
+              avatar: "/profile.png",
+              name: "Axel",
+              username: "bidataggle"
+            }}
+          interactions={{
+            comments: 1,
+            likes: 14
+          }} />
         </div>
       </div>
     </>

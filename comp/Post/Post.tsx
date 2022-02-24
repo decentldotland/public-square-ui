@@ -1,9 +1,9 @@
 import { HeartIcon, MessageIcon, ShareIcon } from "@iconicicons/react"
 import styles from "./Post.module.sass";
 
-export default function Post({ user, id, body, interactions }: PostProps) {
+export default function Post({ user, id, body, interactions, notification = false, className }: PostProps) {
   return (
-    <div className={styles.home_page_containers}>
+    <div className={styles.posts + " " + (notification ? styles.plus_margin : "") + " " + (className || "")}>
           <div className={styles.upper_post}>
             <div className={styles.left_section}>
               <div className={styles.profile_div}>
@@ -44,16 +44,19 @@ export default function Post({ user, id, body, interactions }: PostProps) {
 }
 
 interface PostProps {
+
   id: string;
   user: {
     avatar: string;
     name: string;
     username: string; // usertag
   };
-  date: Date;
+  date?: Date;
   body: string;
   interactions: {
     comments: number;
     likes: number;
   };
+  notification?: boolean;
+  className?: string;
 }
