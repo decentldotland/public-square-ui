@@ -4,7 +4,7 @@
             
 
 .notification_containers
-    box-shadow: 0px 10px 25px rgba(149, 147, 255, 0.13)
+    box-shadow: 0px 10px 25px var(--post-shadow)
     border-radius: 35px
     display: flex
     margin:
@@ -12,6 +12,7 @@
         bottom: 2em
     flex-wrap: wrap
     padding: 2em
+    background-color: var(--post-background)
 
     &.plus_margin
         margin:
@@ -41,13 +42,14 @@
         font-size: 0.8em
         line-height: 1em
         cursor: pointer
-        color: var(--light-text-color)
+        color: var(--username-color)
     .user_name
         font-family: Poppins
         font-style: normal
         font-weight: 500
         font-size: 1.4em
         line-height: 1em
+        color: var(--title-text-color)
 
 
 
@@ -62,6 +64,7 @@
     font-size: 0.9em
     line-height: 1.4em
     letter-spacing: 0.02em
+    color: var(--light-text-color)
 
 
 

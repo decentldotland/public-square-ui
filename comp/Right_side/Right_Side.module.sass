@@ -18,13 +18,15 @@
 
     .searcher
         display: flex
-        box-shadow: 0px 10px 25px rgba(149, 147, 255, 0.13)
+        box-shadow: 0px 10px 25px var(--post-shadow)
         border-radius: 20px
         justify-content: space-between
         padding: 1em
         align-items: center
         margin:
             top: 3em
+        background-color: var(--post-background)
+
         input
             color: var(--light-text-color)
             letter-spacing: 0.2px
@@ -49,7 +51,7 @@
             transition: 0.3s
             cursor: pointer
         .icon_div:hover
-            background-color: #fff
+            background-color: transparent
             border: 2px solid $lighter-theme-solid
             .icon
                 color: $lighter-theme-solid
@@ -75,6 +77,7 @@
         font-weight: 600
         font-size: 1.5em
         letter-spacing: 1px
+        color: var(--title-text-color)
     .title_button
         border: none
         background-color: rgba(254, 254, 254, 0)
@@ -93,11 +96,12 @@
         display: flex
         flex-wrap: wrap
     .suggestion_div
+        background-color: var(--post-background)
         margin:
             top: 1em
         align-items: center
         width: 100%
-        box-shadow: 0px 10px 25px rgba(149, 147, 255, 0.13)
+        box-shadow: 0px 10px 25px var(--post-shadow)
         border-radius: 26px
         display: flex
         padding: 1.5em 1.5em
@@ -113,12 +117,14 @@
             font-style: normal
             font-weight: 500
             font-size: 1.2em
+            
+            color: var(--title-text-color)
         .profile_name
             font-family: Poppins
             font-style: normal
             font-weight: 500
             font-size: 0.7em
-            color: var(--light-text-color)
+            color: var(--username-color)
             cursor: pointer
         
 
@@ -162,6 +168,7 @@
     width: 100%
     margin:
         bottom: 2em
+    color: var(--time-color)
     .left_footer
         a
             margin:
