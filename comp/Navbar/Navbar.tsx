@@ -8,8 +8,30 @@ import {
   SunIcon,
 } from "@iconicicons/react";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
+  function toggleDarkMode() {
+    if (!window) return;
+    setDarkMode((val) => {
+      localStorage.setItem("DarkMode", String(!val));
+      return !val;
+    });
+  }
+
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (!window) return;
+    setDarkMode(localStorage.getItem("DarkMode") === "true");
+  }, []);
+
+  useEffect(() => {
+    if (!window) return;
+    if (darkMode) window.document.body.classList.add("DarkMode");
+    else window.document.body.classList.remove("DarkMode");
+  }, [darkMode]);
+
   return (
     <>
       <div className={styles.navbar_div}>
@@ -37,7 +59,10 @@ const Navbar = () => {
             </div>
           </div>
           <div className={styles.below_icons}>
-            <div className={styles.icon_div_moon}>
+            <div
+              className={styles.icon_div_moon}
+              onClick={() => toggleDarkMode()}
+            >
               <MoonIcon className={styles.icon} />
             </div>
 

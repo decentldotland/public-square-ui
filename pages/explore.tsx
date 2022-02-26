@@ -65,8 +65,8 @@ const Explore = () => {
             </div>
           </div>
         </div>
-        <div className={styles.trending_weeves}>
-          <h1>Trending weeves</h1>
+        <div className={styles.trending_posts}>
+          <h1>Trending posts</h1>
           <Post
             id="sf3ZF...eBCK4"
             body="Lorem Ipsum is simply dummy text of the printing and typesetting

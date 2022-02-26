@@ -17,7 +17,7 @@ const Notifications = () => {
           <div className={styles.notification + " " + styles.like_notification}>
             <h2>
               <HeartIcon className={styles.post_icons + " " + styles.heart} />
-              <span> Marton Lederer</span> likes your weeve
+              <span> Marton Lederer</span> likes your post
             </h2>
 
             <Post
@@ -65,7 +65,7 @@ const Notifications = () => {
           >
             <h2>
               <ShareIcon className={styles.post_icons + " " + styles.comment} />{" "}
-              <span> Marton Lederer</span> replied your weeve
+              <span> Marton Lederer</span> replied your post
             </h2>
             <Post
               notification

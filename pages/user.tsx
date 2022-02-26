@@ -41,8 +41,8 @@ const User = () => {
             <div className={styles.icons_div}></div>
           </div>
         </div>
-        <div className={styles.users_weeves}>
-          <h1>Weeves</h1>
+        <div className={styles.users_posts}>
+          <h1>Posts</h1>
           <Post
             id="sf3ZF...eBCK4"
             body="Lorem Ipsum is simply dummy text of the printing and typesetting

@@ -9,8 +9,10 @@
         top: 2em
     flex-wrap: wrap
     padding: 2em
+    background-color: var(--post-background)
     margin:
         bottom: 2em
+    transition: all .23s ease-in-out
 
     .profile_div
         
@@ -38,13 +40,14 @@
         font-size:  0.8em
         line-height: 1em
         cursor: pointer
-        color: $lighter-text
+        color: var(--light-text-color)
     .user_name
         font-family: Poppins
         font-style: normal
         font-weight: 500
         font-size: 1.4em
         line-height: 1em
+        color: var(--title-text-color)
     .time
         font-family: Poppins
         font-style: normal
@@ -71,12 +74,13 @@
         font-size: 0.9em
         line-height: 1.4em
         letter-spacing: 0.02em
+        color: var(--light-text-color)
 
 
 
     .below_post
         display: flex
-        color: $lighter-text
+        color: var(--light-text-color)
         letter-spacing: 0.1rem
         margin:
             left: 3.5em
