@@ -35,7 +35,7 @@ const Navbar = () => {
   return (
     <>
       <div className={styles.navbar_div}>
-        <nav className={styles.navbar}>
+        <div className={styles.navbar}>
           <div className={styles.upper_icons}>
             <div className={styles.icon_div}>
               <Link href="/">
@@ -75,7 +75,7 @@ const Navbar = () => {
               </Link>
             </div>
           </div>
-        </nav>
+        </div>
       </div>
     </>
   );

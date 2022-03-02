@@ -1,111 +1,97 @@
 @import "../../styles/Variables.sass"
 
-.right_side
-    position: fixed
-    top: 0
-    margin:
-        left: 70%
-    display: flex
-    flex-wrap: wrap
-    flex-direction: column
-    width: 27vw
-    height: 100%
-    min-height: 35em
-    min-width: 20em
-    .upper_section
+.upper_section
         flex-grow: 1
 
 
-    .searcher
+.searcher
+    display: flex
+    box-shadow: 0px 10px 25px var(--post-shadow)
+    border-radius: 20px
+    justify-content: space-between
+    padding: 1em
+    align-items: center
+    margin:
+        top: 3em
+    background-color: var(--post-background)
+    input
+        color: var(--light-text-color)
+        letter-spacing: 0.2px
+        outline: none
+        border: none
+        width: 20vw
+        font-family: Poppins
+        font-style: normal
+        font-weight: 500
+        font-size: 0.9em
+        line-height: 1em
+        background-color: transparent
+    .icon_div
+        transition: 0.3s
         display: flex
-        box-shadow: 0px 10px 25px var(--post-shadow)
-        border-radius: 20px
-        justify-content: space-between
-        padding: 1em
+        color: #fff
+        background-color: $lighter-theme-solid
+        text-align: center
+        vertical-align: middle
+        border-radius: 10px
+        border: 2px solid $lighter-theme-solid
+        padding: 0.25em
         align-items: center
-        margin:
-            top: 3em
-        background-color: var(--post-background)
 
-        input
-            color: var(--light-text-color)
-            letter-spacing: 0.2px
-            outline: none
-            border: none
-            width: 20vw
-            font-family: Poppins
-            font-style: normal
-            font-weight: 500
-            font-size: 0.9em
-            line-height: 1em
-            background-color: transparent
-        .icon_div
-            display: flex
-            background-color: $lighter-theme-solid
-            text-align: center
-            vertical-align: middle
-            border-radius: 10px
-            border: 2px solid $lighter-theme-solid
-            padding: 0.25em
-            align-items: center
-            transition: 0.3s
-            cursor: pointer
-        .icon_div:hover
-            background-color: transparent
-            border: 2px solid $lighter-theme-solid
-            .icon
-                color: $lighter-theme-solid
-            &:active
-                transform: scale(.89)
+        cursor: pointer
+    .icon_div:hover
+        background-color: transparent
+        border: 2px solid $lighter-theme-solid
+        &:active
+            transform: scale(.89)
         .icon
-            color: #fff
-    .suggestion_section
-        display: flex
+            color: $lighter-theme-solid
+.suggestion_section
         flex-wrap: wrap
         width: 100%
         margin:
             top: 1em
-    .title_section
-        display: flex
-        width: 100%
-        justify-content: space-between
+.title_section
+    display: flex
+    width: 100%
+    justify-content: space-between
             
 
-    .title
-        font-family: Poppins
-        font-style: normal
-        font-weight: 600
-        font-size: 1.5em
-        letter-spacing: 1px
-        color: var(--title-text-color)
-    .title_button
-        border: none
-        background-color: rgba(254, 254, 254, 0)
-        color: $lighter-theme-solid
-        font-size: 0.8rem
-        cursor: pointer
-        font-family: Poppins
-        font-style: normal
-        font-weight: 500 
-        letter-spacing: 0.4px
-        margin:
-            right: 1em
-        &:active
-            transform: scale(.89)    
-    .suggestions_div
-        display: flex
-        flex-wrap: wrap
-    .suggestion_div
-        background-color: var(--post-background)
-        margin:
-            top: 1em
-        align-items: center
-        width: 100%
-        box-shadow: 0px 10px 25px var(--post-shadow)
-        border-radius: 26px
-        display: flex
-        padding: 1.5em 1.2em
-        justify-content: space-between
+.title
+    font-family: Poppins
+    font-style: normal
+    font-weight: 600
+    font-size: 1.5em
+    letter-spacing: 1px
+    color: var(--title-text-color)
+.title_button
+    border: none
+    background-color: rgba(254, 254, 254, 0)
+    color: $lighter-theme-solid
+    font-size: 0.8rem
+    cursor: pointer
+    font-family: Poppins
+    font-style: normal
+    font-weight: 500 
+    letter-spacing: 0.4px
+    margin:
+        right: 1em
+    &:active
+        transform: scale(.89)    
+.suggestions_div
+    display: flex
+    flex-wrap: wrap
+.suggestion_div
+    background-color: var(--post-background)
+    margin:
+        top: 1em
+    align-items: center
+    width: 100%
+    box-shadow: 0px 10px 25px var(--post-shadow)
+    border-radius: 26px
+    display: flex
+    padding: 1.5em 1.2em
+    justify-content: space-between
     .profile_data
         display: flex
         align-items: center
@@ -128,14 +114,14 @@
             cursor: pointer
         
 
-    .profile_div
-        overflow: hidden
-        filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.2))
-        border-radius: 16px
-        cursor: pointer
-        img
-            width: 3.7em
-            height: 3.7em
+.profile_div
+    overflow: hidden
+    filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.2))
+    border-radius: 16px
+    cursor: pointer
+    img
+        width: 3.7em
+        height: 3.7em
             
 
 .footer
@@ -154,3 +140,26 @@
             margin:
                 right: 2em
             cursor: pointer
+@media screen and ( max-width: 760px )
+    .suggestion_section
+        display: none
+
+
+
+@media screen and ( min-width: 760px )
+
+    
+    .right_side
+        position: fixed
+        top: 0
+        margin:
+            left: 70%
+        display: flex
+        flex-wrap: wrap
+        flex-direction: column
+        width: 27vw
+        height: 100%
+        min-height: 35em
+        min-width: 20em
+        .suggestion_section
+            display: flex
