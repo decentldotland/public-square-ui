@@ -8,23 +8,17 @@
     display: flex
     box-shadow: 0px 10px 25px var(--post-shadow)
     border-radius: 20px
-    justify-content: space-between
-    padding: 1em
     align-items: center
-    margin:
-        top: 3em
+    justify-content: space-between
     background-color: var(--post-background)
+    padding: 1em
     input
         color: var(--light-text-color)
-        letter-spacing: 0.2px
         outline: none
         border: none
-        width: 20vw
         font-family: Poppins
         font-style: normal
         font-weight: 500
-        font-size: 0.9em
-        line-height: 1em
         background-color: transparent
     .icon_div
         transition: 0.3s
@@ -35,7 +29,6 @@
         vertical-align: middle
         border-radius: 10px
         border: 2px solid $lighter-theme-solid
-        padding: 0.25em
         align-items: center
 
         cursor: pointer
@@ -141,8 +134,32 @@
                 right: 2em
             cursor: pointer
 @media screen and ( max-width: 760px )
+
+    .right_side
+        display: flex
+        justify-content: center
+        .upper_section
+            position: fixed
+            top: 0
+            margin:
+                top: 2em
+            left: 5%
+            width: 90%
+            input
+                font-size: 1.5em
+    .icon
+        width: 2em
+        height: 2em
+    .icon_div
+        padding: 0.5em
+        
+
+            
     .suggestion_section
         display: none
+    .footer
+        display: none    
+
 
 
 
@@ -163,3 +180,28 @@
         min-width: 20em
         .suggestion_section
             display: flex
+    .searcher
+        display: flex
+        box-shadow: 0px 10px 25px var(--post-shadow)
+        border-radius: 20px
+        justify-content: space-between
+        padding: 1em
+        align-items: center
+        margin:
+            top: 3em
+        background-color: var(--post-background)
+        input
+            color: var(--light-text-color)
+            letter-spacing: 0.2px
+            outline: none
+            border: none
+            width: 20vw
+            font-family: Poppins
+            font-style: normal
+            font-weight: 500
+            font-size: 0.9em
+            line-height: 1em
+            background-color: transparent
+        .icon_div
+            padding: 0.25em
+            
