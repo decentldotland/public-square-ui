@@ -119,15 +119,11 @@
 
 .footer
     display: flex
-    justify-content: space-between
     font-family: Poppins
     font-style: normal
     font-weight: normal
-    font-size: 0.8em
-    width: 100%
-    margin:
-        bottom: 2em
     color: var(--time-color)
+    justify-content: space-between
     .left_footer
         a
             margin:
@@ -160,7 +156,10 @@
     .suggestion_section
         display: none
     .footer
-        display: none    
+        margin:
+            bottom: 10em
+        width: min(100% - 5em)
+        font-size: 0.7em
 
 
 
@@ -206,4 +205,9 @@
             background-color: transparent
         .icon_div
             padding: 0.25em
+    .footer
+        width: 100%
+        font-size: 0.8em
+        margin:
+            bottom: 2em
             
