@@ -8,8 +8,8 @@ const Explore = () => {
   return (
     <>
       <div className={styles.page}>
+        <h1>Popular communitites & profiles</h1>
         <div className={styles.popular_profiles}>
-          <h1>Popular communitites & profiles</h1>
           <div className={styles.popular_profile_div}>
             <div className={styles.picture_div}>
               <Link href="/">
@@ -66,7 +66,7 @@ const Explore = () => {
           </div>
         </div>
         <div className={styles.trending_posts}>
-          <h1>Trending posts</h1>
+          <h2>Trending posts</h2>
           <Post
             id="sf3ZF...eBCK4"
             body="Lorem Ipsum is simply dummy text of the printing and typesetting
