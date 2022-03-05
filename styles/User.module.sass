@@ -1,23 +1,14 @@
 @import Variables.sass
     
 .page
-    position: absolute
-    margin:
-        left: 14%
-    width: 52vw
-    display: flex
-    flex-wrap: wrap
     font-family: Poppins
     font-style: normal
-    min-width: 30em
     h1
         color: var(--title-text-color)
     .top_section
         width: 100%
         display: flex
         justify-content: space-between
-        margin:
-            top: 2em
         align-items: center
         h2
             font-size: 1.5em
@@ -37,33 +28,26 @@
         
     
 
-.data_user1
+.data_user
     margin:
         top: 1em
         bottom: 1em
-    display: flex
     .picture_div
         filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.2))
         img
-            width: 9em
-            height: 9em
             border-radius: 130px
     .right_site
         display: flex
         flex-wrap: wrap
-        margin:
-            left: 1.5em
     .upper_section   
         width: 100%
         display: flex
         justify-content: space-between
-    .user_name1
+    .user_name
         font-weight: 600
-        font-size: 2em
         color: var(--title-text-color)
-    .profile_name1
+    .profile_name
         font-weight: 400
-        font-size: 1em
         margin:
             top: -0.5em
         color: var(--username-color)
@@ -73,6 +57,58 @@
             top: 0.5em
         font-size: 0.9em
         color: var(--light-text-color)
+
+
+@media screen and ( max-width: 760px )
+    .page
+        padding: 0em 1.5em
+        h1
+            font-size: 1.1em
+    .top_section
+        margin:
+            top: 5em
+    .user_name
+        font-size: 1.5em
+    .profile_name
+        font-size: 0.9em
+    .data_user
+        .picture_div
+            display: flex
+            justify-content: center
+            margin:
+                bottom: 2em
+            img
+                width: 7em
+                height: 7em
+
+
+
+@media screen and ( min-width: 760px )
+    .page
+        position: absolute
+        margin:
+            left: 14%
+        width: 52vw
+        min-width: 30em
+    .top_section
+        margin:
+            top: 2em
+    .data_user
+        .picture_div
+            img
+                width: 9em
+                height: 9em
+    .right_section
+        margin:
+            left: 1.5em
+    .user_name
+        font-size: 2em
+
+    .profile_name
+        font-size: 1em
+
+
+        
 
 
 

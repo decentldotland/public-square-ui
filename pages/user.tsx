@@ -18,15 +18,15 @@ const User = () => {
           </div>
           <a>Viewblock</a>
         </div>
-        <div className={styles.data_user1}>
+        <div className={styles.data_user}>
           <div className={styles.picture_div}>
             <img src="/profile.png" alt="profile-picutre" />
           </div>
           <div className={styles.right_site}>
             <div className={styles.upper_section}>
               <div className={styles.data_name}>
-                <div className={styles.user_name1}>Axel</div>
-                <div className={styles.profile_name1}>@bidetaggle</div>
+                <div className={styles.user_name}>Axel</div>
+                <div className={styles.profile_name}>@bidetaggle</div>
               </div>
               <div className={styles.edit_button}>
                 <Button outlined>Edit</Button>
