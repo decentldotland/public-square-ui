@@ -17,7 +17,7 @@ const Explore = () => {
               </Link>
             </div>
             <div className={styles.user_name}>Marton Lederer</div>
-            <div className={styles.profile_name1}>@martonlederer</div>
+            <div className={styles.profile_name}>@martonlederer</div>
             <div className={styles.follow_button}>
               <Button outlined>Follow</Button>
             </div>
@@ -31,7 +31,7 @@ const Explore = () => {
               </Link>
             </div>
             <div className={styles.user_name}>Marton Lederer</div>
-            <div className={styles.profile_name1}>@martonlederer</div>
+            <div className={styles.profile_name}>@martonlederer</div>
             <div className={styles.follow_button}>
               <Button outlined>Follow</Button>
             </div>
@@ -45,7 +45,7 @@ const Explore = () => {
               </Link>
             </div>
             <div className={styles.user_name}>Marton Lederer</div>
-            <div className={styles.profile_name1}>@martonlederer</div>
+            <div className={styles.profile_name}>@martonlederer</div>
             <div className={styles.follow_button}>
               <Button outlined>Follow</Button>
             </div>
@@ -59,7 +59,7 @@ const Explore = () => {
               </Link>
             </div>
             <div className={styles.user_name}>Marton Lederer</div>
-            <div className={styles.profile_name1}>@martonlederer</div>
+            <div className={styles.profile_name}>@martonlederer</div>
             <div className={styles.follow_button}>
               <Button outlined>Follow</Button>
             </div>
