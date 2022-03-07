@@ -4,7 +4,111 @@ import { ShareIcon, HeartIcon, MessageIcon } from "@iconicicons/react";
 import Link from "next/link";
 import Button from "../comp/Button/Button";
 import Post from "../comp/Post/Post";
+import { useState, useEffect } from "react";
+
+/**
+ * case "mirror-xyz":
+      return await getMirror();
+
+    case "argora-xyz":
+      return await getArgora();
+
+    case "arweave-saves":
+      return await getArweaveSaves(option);
+
+    case "ardrive":
+      return await getPublicDrives(option);
+
+    case "koii":
+      return await getKoii(option);
+
+    case "permacast":
+      return await getPermacast();
+      
+    case "permacast-size":
+      return await getTotalPermacastSize();
+      
+    case "pianity":
+      return await getPianitySongs();
+
+    case "uaru-pdf":
+      return await getUkRuPdf();
+
+    case "uaru-tweets":
+      return await getUaRuTweets();
+ 
+    case "uaru-reddit":
+      return await getUaRuReddit();
+
+    case "uaru-articles":
+      return await getUaRuArticles();
+ */
+
 const Explore = () => {
+  const explorePlatforms: { name: string; val: string }[] = [
+    {
+      name: "Mirror.xyz",
+      val: "mirror-xyz",
+    },
+    {
+      name: "Argora",
+      val: "argora-xyz",
+    },
+    {
+      name: "Arweave-saves",
+      val: "arweave-saves",
+    },
+    {
+      name: "Ardrive",
+      val: "ardrive",
+    },
+    {
+      name: "Koii",
+      val: "koii",
+    },
+    {
+      name: "Permacast",
+      val: "permacast",
+    },
+    {
+      name: "Permacast-size",
+      val: "permacast-size",
+    },
+    {
+      name: "Pianity",
+      val: "pianity",
+    },
+    {
+      name: "Uaru-pdf",
+      val: "uaru-pdf",
+    },
+    {
+      name: "Uaru-tweets",
+      val: "uaru-tweets",
+    },
+    {
+      name: "Uaru-reddit",
+      val: "uaru-reddit",
+    },
+    {
+      name: "Uaru-articles",
+      val: "uaru-articles",
+    },
+  ];
+
+  const [platform, setPlatform] = useState(explorePlatforms[0].val);
+
+  // useState-et használsz
+  // ennek az értéke lesz az éppen kiválasztott platform által visszaadott érték
+
+  // useEffect-et használsz
+  useEffect(() => {
+    (async () => {
+      // api használata
+      // https://github.com/decentldotland/weave-aggregator/#get-permacast-podcasts
+    })();
+  }, [platform]);
+
   return (
     <>
       <div className={styles.page}>
@@ -66,44 +170,14 @@ const Explore = () => {
           </div>
         </div>
         <div className={styles.trending_posts}>
-          <h2>Trending posts</h2>
-          <Post
-            id="sf3ZF...eBCK4"
-            body="Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged."
-            user={{
-              avatar: "/profile.png",
-              name: "Axel",
-              username: "bidataggle",
-            }}
-            interactions={{
-              comments: 5,
-              likes: 30,
-            }}
-          />
-
-          <Post
-            id="sf3ZF...eBCK4"
-            body="Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged."
-            user={{
-              avatar: "/profile.png",
-              name: "Axel",
-              username: "bidataggle",
-            }}
-            interactions={{
-              comments: 1,
-              likes: 14,
-            }}
-          />
+          <h2>
+            Explore platforms
+            <select>
+              {explorePlatforms.map((platform, i) => (
+                <option value={platform.val}>{platform.name}</option>
+              ))}
+            </select>
+          </h2>
         </div>
       </div>
     </>
