@@ -97,6 +97,7 @@ const Explore = () => {
   ];
 
   const [platform, setPlatform] = useState(explorePlatforms[0].val);
+  const [datas, setDatas] = useState([]);
 
   // useState-et használsz
   // ennek az értéke lesz az éppen kiválasztott platform által visszaadott érték
@@ -106,6 +107,8 @@ const Explore = () => {
     (async () => {
       // api használata
       // https://github.com/decentldotland/weave-aggregator/#get-permacast-podcasts
+
+      console.log(platform);
     })();
   }, [platform]);
 
@@ -170,9 +173,9 @@ const Explore = () => {
           </div>
         </div>
         <div className={styles.trending_posts}>
-          <h2>
+          <h2 className={styles.explore_title}>
             Explore platforms
-            <select>
+            <select onChange={(e) => setPlatform(e.target.value)}>
               {explorePlatforms.map((platform, i) => (
                 <option value={platform.val}>{platform.name}</option>
               ))}
