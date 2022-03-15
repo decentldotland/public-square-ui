@@ -5,6 +5,8 @@ import Link from "next/link";
 import Button from "../comp/Button/Button";
 import Post from "../comp/Post/Post";
 import { useState, useEffect } from "react";
+// @ts-ignore
+import { getWeaveAggregator } from "weave-aggregator";
 
 /**
  * case "mirror-xyz":
@@ -47,14 +49,6 @@ import { useState, useEffect } from "react";
 const Explore = () => {
   const explorePlatforms: { name: string; val: string }[] = [
     {
-      name: "Mirror.xyz",
-      val: "mirror-xyz",
-    },
-    {
-      name: "Argora",
-      val: "argora-xyz",
-    },
-    {
       name: "Arweave-saves",
       val: "arweave-saves",
     },
@@ -70,30 +64,6 @@ const Explore = () => {
       name: "Permacast",
       val: "permacast",
     },
-    {
-      name: "Permacast-size",
-      val: "permacast-size",
-    },
-    {
-      name: "Pianity",
-      val: "pianity",
-    },
-    {
-      name: "Uaru-pdf",
-      val: "uaru-pdf",
-    },
-    {
-      name: "Uaru-tweets",
-      val: "uaru-tweets",
-    },
-    {
-      name: "Uaru-reddit",
-      val: "uaru-reddit",
-    },
-    {
-      name: "Uaru-articles",
-      val: "uaru-articles",
-    },
   ];
 
   const [platform, setPlatform] = useState(explorePlatforms[0].val);
@@ -102,16 +72,14 @@ const Explore = () => {
   // useState-et használsz
   // ennek az értéke lesz az éppen kiválasztott platform által visszaadott érték
 
-  // useEffect-et használsz
   useEffect(() => {
     (async () => {
       // api használata
       // https://github.com/decentldotland/weave-aggregator/#get-permacast-podcasts
-
-      console.log(platform);
+      setDatas(await getWeaveAggregator(platform));
+      console.log(datas);
     })();
   }, [platform]);
-
   return (
     <>
       <div className={styles.page}>
@@ -181,6 +149,21 @@ const Explore = () => {
               ))}
             </select>
           </h2>
+          {datas.map((data) => {
+            <Post
+              id="sf3ZF...eBCK4"
+              body={JSON.stringify(data.poster)}
+              user={{
+                avatar: "/profile.png",
+                name: "Axel",
+                username: "bidataggle",
+              }}
+              interactions={{
+                comments: 5,
+                likes: 30,
+              }}
+            ></Post>;
+          })}
         </div>
       </div>
     </>
