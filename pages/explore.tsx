@@ -148,23 +148,7 @@ const Explore = () => {
               ))}
             </select>
           </h2>
-          {datas.map((data) => {
-            return (
-              <Post
-                id="sf3ZF...eBCK4"
-                body={JSON.stringify(data)}
-                user={{
-                  avatar: "/profile.png",
-                  name: "Axel",
-                  username: "bidataggle",
-                }}
-                interactions={{
-                  comments: 5,
-                  likes: 30,
-                }}
-              ></Post>
-            );
-          })}
+          {datas.map((data) => {})}
         </div>
       </div>
     </>
