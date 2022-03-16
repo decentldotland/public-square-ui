@@ -7,44 +7,7 @@ import Post from "../comp/Post/Post";
 import { useState, useEffect } from "react";
 // @ts-ignore
 import { getWeaveAggregator } from "weave-aggregator";
-
-/**
- * case "mirror-xyz":
-      return await getMirror();
-
-    case "argora-xyz":
-      return await getArgora();
-
-    case "arweave-saves":
-      return await getArweaveSaves(option);
-
-    case "ardrive":
-      return await getPublicDrives(option);
-
-    case "koii":
-      return await getKoii(option);
-
-    case "permacast":
-      return await getPermacast();
-      
-    case "permacast-size":
-      return await getTotalPermacastSize();
-      
-    case "pianity":
-      return await getPianitySongs();
-
-    case "uaru-pdf":
-      return await getUkRuPdf();
-
-    case "uaru-tweets":
-      return await getUaRuTweets();
- 
-    case "uaru-reddit":
-      return await getUaRuReddit();
-
-    case "uaru-articles":
-      return await getUaRuArticles();
- */
+import { url } from "inspector";
 
 const Explore = () => {
   const explorePlatforms: { name: string; val: string }[] = [
@@ -148,7 +111,38 @@ const Explore = () => {
               ))}
             </select>
           </h2>
-          {datas.map((data) => {})}
+          {datas.map((data) => {
+            switch (platform) {
+              case "arweave-saves":
+                return (
+                  <Post
+                    key={data.title}
+                    title={data.title}
+                    url={data.url}
+                  ></Post>
+                );
+
+              case "koii":
+                return (
+                  <Post
+                    key={data.id}
+                    id={`https://arweave.net/${data.id}`}
+                    description={data.description}
+                  ></Post>
+                );
+
+              case "ardrive":
+                return (
+                  <Post
+                    key={data.poster}
+                    url={data.url}
+                    poster={`https://arweave.net/${data.poster}`}
+                  ></Post>
+                );
+              default:
+                console.log("baaad");
+            }
+          })}
         </div>
       </div>
     </>
