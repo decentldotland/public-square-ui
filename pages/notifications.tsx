@@ -8,7 +8,8 @@ import {
 import Follow from "../comp/Follow_post/follow_post";
 import Post from "../comp/Post/Post";
 
-const Notifications = () => {
+{
+  /**const Notifications = () => {
   return (
     <>
       <div className={styles.page}>
@@ -94,3 +95,5 @@ const Notifications = () => {
 };
 
 export default Notifications;
+**/
+}

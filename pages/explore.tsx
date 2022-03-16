@@ -77,7 +77,6 @@ const Explore = () => {
       // api használata
       // https://github.com/decentldotland/weave-aggregator/#get-permacast-podcasts
       setDatas(await getWeaveAggregator(platform));
-      console.log(datas);
     })();
   }, [platform]);
   return (
@@ -150,19 +149,21 @@ const Explore = () => {
             </select>
           </h2>
           {datas.map((data) => {
-            <Post
-              id="sf3ZF...eBCK4"
-              body={JSON.stringify(data.poster)}
-              user={{
-                avatar: "/profile.png",
-                name: "Axel",
-                username: "bidataggle",
-              }}
-              interactions={{
-                comments: 5,
-                likes: 30,
-              }}
-            ></Post>;
+            return (
+              <Post
+                id="sf3ZF...eBCK4"
+                body={JSON.stringify(data)}
+                user={{
+                  avatar: "/profile.png",
+                  name: "Axel",
+                  username: "bidataggle",
+                }}
+                interactions={{
+                  comments: 5,
+                  likes: 30,
+                }}
+              ></Post>
+            );
           })}
         </div>
       </div>

@@ -47,11 +47,11 @@ const Navbar = () => {
                 <GlobeIcon className={styles.icon} />
               </Link>
             </div>
-            <div className={styles.icon_div}>
+            {/**<div className={styles.icon_div}>
               <Link href="/notifications">
                 <BellIcon className={styles.icon} />
               </Link>
-            </div>
+  </div>**/}
             <div className={styles.icon_div}>
               <Link href="/user">
                 <UserIcon className={styles.icon} />

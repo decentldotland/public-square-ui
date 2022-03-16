@@ -15,7 +15,7 @@ const Right_Side = () => {
               <SearchIcon className={styles.icon} />
             </div>
           </div>
-          <div className={styles.suggestion_section}>
+          {/**         <div className={styles.suggestion_section}>
             <div className={styles.title_section}>
               <div className={styles.title}>Suggestions</div>
               <button className={styles.title_button}>See All</button>
@@ -47,7 +47,7 @@ const Right_Side = () => {
                 <Button outlined>Follow</Button>
               </div>
             </div>
-          </div>
+        </div> **/}
         </div>
         <div className={styles.footer}>
           <div className={styles.left_footer}>
