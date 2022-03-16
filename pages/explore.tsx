@@ -82,7 +82,7 @@ const Explore = () => {
   return (
     <>
       <div className={styles.page}>
-        <h1>Popular communitites & profiles</h1>
+        {/**        <h1>Popular communitites & profiles</h1>
         <div className={styles.popular_profiles}>
           <div className={styles.popular_profile_div}>
             <div className={styles.picture_div}>
@@ -138,7 +138,7 @@ const Explore = () => {
               <Button outlined>Follow</Button>
             </div>
           </div>
-        </div>
+  </div>**/}
         <div className={styles.trending_posts}>
           <h2 className={styles.explore_title}>
             Explore platforms
