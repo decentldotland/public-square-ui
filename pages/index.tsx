@@ -5,14 +5,7 @@ import styles from "../styles/Home.module.sass";
 
 import Link from "next/link";
 
-import {
-  PhotoIcon,
-  EmojiHappyIcon,
-  SendIcon,
-  HeartIcon,
-  ShareIcon,
-  MessageIcon,
-} from "@iconicicons/react";
+import { PhotoIcon, EmojiHappyIcon, SendIcon } from "@iconicicons/react";
 import Button from "../comp/Button/Button";
 
 const Home: NextPage = () => {
@@ -43,7 +36,63 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-        <div className={styles.posts}></div>
+        <div className={styles.posts}>
+          <Post
+            id="sf3ZF...eBCK4"
+            body="Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged."
+            user={{
+              avatar: "/profile.png",
+              name: "Axel",
+              username: "bidataggle",
+            }}
+            interactions={{
+              comments: 5,
+              likes: 30,
+            }}
+          ></Post>
+
+          <Post
+            id="sf3ZF...eBCK4"
+            body="Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged."
+            user={{
+              avatar: "/profile.png",
+              name: "Axel",
+              username: "bidataggle",
+            }}
+            interactions={{
+              comments: 1,
+              likes: 14,
+            }}
+          />
+          <Post
+            id="sf3ZF...eBCK4"
+            body="Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged."
+            user={{
+              avatar: "/profile.png",
+              name: "Axel",
+              username: "bidataggle",
+            }}
+            interactions={{
+              comments: 8,
+              likes: 40,
+            }}
+          />
+        </div>
       </div>
     </>
   );

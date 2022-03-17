@@ -31,6 +31,7 @@ const Explore = () => {
 
   const [platform, setPlatform] = useState(explorePlatforms[0].val);
   const [datas, setDatas] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   // useState-et használsz
   // ennek az értéke lesz az éppen kiválasztott platform által visszaadott érték
@@ -39,7 +40,9 @@ const Explore = () => {
     (async () => {
       // api használata
       // https://github.com/decentldotland/weave-aggregator/#get-permacast-podcasts
+      setLoading(true);
       setDatas(await getWeaveAggregator(platform));
+      setLoading(false);
     })();
   }, [platform]);
   return (
@@ -107,44 +110,52 @@ const Explore = () => {
             Explore platforms
             <select onChange={(e) => setPlatform(e.target.value)}>
               {explorePlatforms.map((platform, i) => (
-                <option value={platform.val}>{platform.name}</option>
+                <option value={platform.val} key={i}>
+                  {platform.name}
+                </option>
               ))}
             </select>
           </h2>
-          {datas.map((data) => {
+          {datas.map((data: any, i) => {
             switch (platform) {
               case "arweave-saves":
                 return (
-                  <Post
-                    key={JSON.stringify(data.title)}
-                    title={JSON.stringify(data.title)}
-                    url={JSON.stringify(data.url)}
-                  ></Post>
+                  <div key={i}>
+                    <h2>Arweave saves</h2>
+                    {JSON.stringify(data)}
+                  </div>
                 );
 
               case "koii":
                 return (
-                  <Post
-                    key={JSON.stringify(data.id)}
-                    id={`https://arweave.net/${JSON.stringify(data.id)}`}
-                    description={JSON.stringify(data.description)}
-                  ></Post>
+                  <div key={i}>
+                    <h2>Koii</h2>
+                    <img src={`https://arweave.net/${data.id}`} alt="" />
+                    <p>{data.description}</p>
+                  </div>
                 );
 
               case "ardrive":
                 return (
-                  <Post
-                    key={JSON.stringify(data.poster)}
-                    url={JSON.stringify(data.url)}
-                    poster={`https://arweave.net/${JSON.stringify(
-                      data.poster
-                    )}`}
-                  ></Post>
+                  <div key={i}>
+                    <a href={data.url}>URL / Link</a>
+                    <img src={`https://arweave.net/${data.poster}`} alt="" />
+                  </div>
                 );
+
+              case "permacast":
+                return (
+                  <iframe
+                    src={`https://permacast-cache.herokuapp.com/embed/${data.id}`}
+                    key={i}
+                  ></iframe>
+                );
+
               default:
-                console.log("baaad");
+                return <></>;
             }
           })}
+          {loading && <p>Loading...</p>}
         </div>
       </div>
     </>
