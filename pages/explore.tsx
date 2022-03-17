@@ -116,27 +116,29 @@ const Explore = () => {
               case "arweave-saves":
                 return (
                   <Post
-                    key={data.title}
-                    title={data.title}
-                    url={data.url}
+                    key={JSON.stringify(data.title)}
+                    title={JSON.stringify(data.title)}
+                    url={JSON.stringify(data.url)}
                   ></Post>
                 );
 
               case "koii":
                 return (
                   <Post
-                    key={data.id}
-                    id={`https://arweave.net/${data.id}`}
-                    description={data.description}
+                    key={JSON.stringify(data.id)}
+                    id={`https://arweave.net/${JSON.stringify(data.id)}`}
+                    description={JSON.stringify(data.description)}
                   ></Post>
                 );
 
               case "ardrive":
                 return (
                   <Post
-                    key={data.poster}
-                    url={data.url}
-                    poster={`https://arweave.net/${data.poster}`}
+                    key={JSON.stringify(data.poster)}
+                    url={JSON.stringify(data.url)}
+                    poster={`https://arweave.net/${JSON.stringify(
+                      data.poster
+                    )}`}
                   ></Post>
                 );
               default:
