@@ -120,35 +120,43 @@ const Explore = () => {
             switch (platform) {
               case "arweave-saves":
                 return (
-                  <div key={i}>
-                    <h2>Arweave saves</h2>
-                    {JSON.stringify(data)}
+                  <div className={styles.posts} key={i}>
+                    <h3>Arweave saves</h3>
+                    <h4>{JSON.stringify(data.title)}</h4>
+                    <a href={data.url}>URL / Link</a>
                   </div>
                 );
 
               case "koii":
                 return (
-                  <div key={i}>
-                    <h2>Koii</h2>
-                    <img src={`https://arweave.net/${data.id}`} alt="" />
-                    <p>{data.description}</p>
+                  <div className={styles.posts} key={i}>
+                    <div className={styles.details}>
+                      <h3>Koii</h3>
+                      <h4>{data.description}</h4>
+                    </div>
+                    <div className={styles.img_div}>
+                      <img src={`https://arweave.net/${data.id}`} alt="" />
+                    </div>
                   </div>
                 );
 
               case "ardrive":
                 return (
-                  <div key={i}>
+                  <div className={styles.posts} key={i}>
+                    <h3>Ardrive</h3>
                     <a href={data.url}>URL / Link</a>
-                    <img src={`https://arweave.net/${data.poster}`} alt="" />
                   </div>
                 );
 
               case "permacast":
                 return (
-                  <iframe
-                    src={`https://permacast-cache.herokuapp.com/embed/${data.id}`}
-                    key={i}
-                  ></iframe>
+                  <div className={styles.posts}>
+                    <h3>Permacast</h3>
+                    <iframe
+                      src={`https://permacast-cache.herokuapp.com/embed/${data.id}`}
+                      key={i}
+                    ></iframe>
+                  </div>
                 );
 
               default:

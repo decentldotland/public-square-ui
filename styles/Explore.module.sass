@@ -67,6 +67,20 @@
             font-style: normal
             font-weight: 500
 
+.posts
+    box-shadow: 0px 10px 25px var(--post-shadow)
+    border-radius: 35px
+    display: flex
+    flex-wrap: wrap
+    background-color: var(--post-background)
+    margin:
+        bottom: 2em
+    transition: all .23s ease-in-out
+    h3
+        color: var(--username-color)
+    h4
+        color: var(--title-text-color)
+
 
 @media screen and ( max-width: 760px )
     .page
@@ -131,6 +145,33 @@
             text-align: center
             margin:
                 top: 2em
+    .posts
+        padding: 2em
+        h3
+            font-size: 1em
+            width: 100%
+            margin:
+                bottom: 0.5em
+
+        h4
+            font-size: 1.2em
+            width: 100%
+            margin:
+                bottom: 0.2em
+        a
+            color: $lighter-theme-solid
+        
+        img
+            width: 80%
+                   
+        .details
+            width: 70%
+        .img_div
+            
+            width: 30%
+            display: flex
+            justify-content: flex-end 
+
 
 @media screen and ( min-width: 1024px )
 
