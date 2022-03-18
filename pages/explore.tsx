@@ -122,8 +122,10 @@ const Explore = () => {
                 return (
                   <div className={styles.posts} key={i}>
                     <h3>Arweave saves</h3>
-                    <h4>{JSON.stringify(data.title)}</h4>
-                    <a href={data.url}>URL / Link</a>
+                    <div className={styles.details}>
+                      <h4>{JSON.stringify(data.title)}</h4>
+                      <a href={data.url}>URL / Link</a>
+                    </div>
                   </div>
                 );
 
@@ -145,8 +147,10 @@ const Explore = () => {
                 return (
                   <div className={styles.posts} key={i}>
                     <h3>Ardrive</h3>
-                    <h5>{data.poster}</h5>
-                    <a href={data.url}>URL / Link</a>
+                    <div className={styles.details}>
+                      <h5>{data.poster}</h5>
+                      <a href={data.url}>URL / Link</a>
+                    </div>
                   </div>
                 );
 
