@@ -112,9 +112,11 @@
         bottom: 2em
     transition: all .23s ease-in-out
     h3
-        color: var(--username-color)
+        color: var(--light-text-color)
     h4
         color: var(--title-text-color)
+    h5
+        color: var(--poster)  
 
 
 @media screen and ( max-width: 760px )
@@ -182,6 +184,8 @@
                 top: 2em
     .posts
         padding: 2em
+        margin:
+            top: 2em
         h3
             font-size: 1em
             width: 100%
@@ -192,20 +196,29 @@
             font-size: 1.2em
             width: 100%
             margin:
-                bottom: 0.2em
+                bottom: 0.5em
+        h5
+            width: 100%
+            margin:
+                bottom: 0.5em
         a
             color: $lighter-theme-solid
         
         img
-            width: 80%
+            width: 40%
                    
         .details
-            width: 70%
-        .img_div
-            
-            width: 30%
+            width: 100%
+            text-align: center
             display: flex
-            justify-content: flex-end 
+            justify-content: center
+            flex-wrap: wrap
+        .img_div
+            margin:
+                bottom: 1em
+            width: 100%
+            display: flex
+            justify-content: center
 
 
 @media screen and ( min-width: 1024px )

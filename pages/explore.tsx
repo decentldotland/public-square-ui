@@ -130,12 +130,13 @@ const Explore = () => {
               case "koii":
                 return (
                   <div className={styles.posts} key={i}>
-                    <div className={styles.details}>
-                      <h3>Koii</h3>
-                      <h4>{data.description}</h4>
-                    </div>
+                    <h3>Koii</h3>
                     <div className={styles.img_div}>
                       <img src={`https://arweave.net/${data.id}`} alt="" />
+                    </div>
+                    <div className={styles.details}>
+                      <h4>{data.description}</h4>
+                      <h5>{data.poster}</h5>
                     </div>
                   </div>
                 );
@@ -144,6 +145,7 @@ const Explore = () => {
                 return (
                   <div className={styles.posts} key={i}>
                     <h3>Ardrive</h3>
+                    <h5>{data.poster}</h5>
                     <a href={data.url}>URL / Link</a>
                   </div>
                 );
