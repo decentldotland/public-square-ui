@@ -48,7 +48,7 @@ const Explore = () => {
   return (
     <>
       <div className={styles.page}>
-        {/**        <h1>Popular communitites & profiles</h1>
+        {/**   <h1>Popular communitites & profiles</h1>
         <div className={styles.popular_profiles}>
           <div className={styles.popular_profile_div}>
             <div className={styles.picture_div}>
@@ -104,7 +104,7 @@ const Explore = () => {
               <Button outlined>Follow</Button>
             </div>
           </div>
-  </div>**/}
+        </div>**/}
         <div className={styles.trending_posts}>
           <h2 className={styles.explore_title}>
             Explore platforms
@@ -163,7 +163,15 @@ const Explore = () => {
                 return <></>;
             }
           })}
-          {loading && <p>Loading...</p>}
+          {loading && (
+            <div className={styles.circle}>
+              <div className={styles.loading_container}>
+                <div className={styles.dot + " " + styles.j1}></div>
+                <div className={styles.dot + " " + styles.j2}></div>
+                <div className={styles.dot + " " + styles.j3}></div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </>
