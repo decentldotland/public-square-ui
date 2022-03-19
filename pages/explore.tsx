@@ -124,6 +124,14 @@ const Explore = () => {
                     <h3>Arweave saves</h3>
                     <div className={styles.details}>
                       <h4>{JSON.stringify(data.title)}</h4>
+                      <h5>
+                        <a
+                          className={styles.poster}
+                          href={`https://viewblock.io/arweave/address/${data.poster}`}
+                        >
+                          {data.poster}
+                        </a>
+                      </h5>
                       <a href={data.url}>URL / Link</a>
                     </div>
                   </div>
@@ -138,7 +146,14 @@ const Explore = () => {
                     </div>
                     <div className={styles.details}>
                       <h4>{data.description}</h4>
-                      <h5>{data.poster}</h5>
+                      <h5>
+                        <a
+                          className={styles.poster}
+                          href={`https://viewblock.io/arweave/address/${data.poster}`}
+                        >
+                          {data.poster}
+                        </a>
+                      </h5>
                     </div>
                   </div>
                 );
@@ -148,7 +163,20 @@ const Explore = () => {
                   <div className={styles.posts} key={i}>
                     <h3>Ardrive</h3>
                     <div className={styles.details}>
-                      <h5>{data.poster}</h5>
+                      <h5>
+                        <a
+                          className={styles.poster}
+                          href={`https://viewblock.io/arweave/address/${data.poster}`}
+                        >
+                          {data.poster}
+                        </a>
+                      </h5>
+                      <a
+                        className={styles.metadata}
+                        href={`https://viewblock.io/arweave/tx/${data.metadata}`}
+                      >
+                        {data.metadata}
+                      </a>
                       <a href={data.url}>URL / Link</a>
                     </div>
                   </div>

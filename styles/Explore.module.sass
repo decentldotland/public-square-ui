@@ -116,8 +116,25 @@
         color: var(--light-text-color)
     h4
         color: var(--title-text-color)
-    h5
+    .poster
         color: var(--poster)
+        text-decoration: none
+        width: 100%
+        &:hover
+            text-decoration: underline
+    .metadata
+        color: var(--title-text-color)
+        font-size: 1.2
+        width: 100%
+        text-decoration: none
+        margin:
+            bottom: 0.5em
+        &:hover
+            text-decoration: underline
+        
+
+
+        
     .details
         width: 100%
         text-align: center
@@ -126,6 +143,8 @@
         flex-wrap: wrap
     a
         color: $lighter-theme-solid
+        &:active
+            transform: scale(.89)
 .img_div
     margin:
         top: 1em
