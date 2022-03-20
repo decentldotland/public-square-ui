@@ -114,12 +114,21 @@
     transition: all .23s ease-in-out
     h3
         color: var(--light-text-color)
+        font-family: Poppins
+        font-style: normal
+        font-weight: 500
     h4
         color: var(--title-text-color)
+        font-family: Poppins
+        font-style: normal
+        font-weight: 50
     .poster
         color: var(--poster)
         text-decoration: none
         width: 100%
+        font-family: Poppins
+        font-style: normal
+        font-weight: 50
         &:hover
             text-decoration: underline
     .metadata
@@ -129,6 +138,9 @@
         text-decoration: none
         margin:
             bottom: 0.5em
+        font-family: Poppins
+        font-style: normal
+        font-weight: 50
         &:hover
             text-decoration: underline
         
@@ -284,3 +296,19 @@
 
     .user_name
         font-size: 1em
+
+.iframe_container
+    position: relative
+    overflow: hidden
+    width: 100%
+    padding-top: 41%
+
+    iframe
+        position: absolute
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+        width: 100%
+        height: 100%
+        border: none

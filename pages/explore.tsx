@@ -184,12 +184,14 @@ const Explore = () => {
 
               case "permacast":
                 return (
-                  <div className={styles.posts}>
+                  <div className={styles.posts} key={i}>
                     <h3>Permacast</h3>
-                    <iframe
-                      src={`https://permacast-cache.herokuapp.com/embed/${data.id}`}
-                      key={i}
-                    ></iframe>
+                    <div className={styles.iframe_container}>
+                      <iframe
+                        src={`https://permacast-cache.herokuapp.com/embed/${data.pid}`}
+                        key={i}
+                      ></iframe>
+                    </div>
                   </div>
                 );
 
