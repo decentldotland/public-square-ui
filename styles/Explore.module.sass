@@ -66,6 +66,9 @@
             font-family: Poppins
             font-style: normal
             font-weight: 500
+        option
+            background-color: rgba(255, 255, 255, 0)
+            
 
 .loading_container
     width: 100%
@@ -112,37 +115,31 @@
     margin:
         bottom: 2em
     transition: all .23s ease-in-out
+    font-family: Poppins
+    font-style: normal
+    font-weight: 500
+    justify-content: space-between
     h3
         color: var(--light-text-color)
-        font-family: Poppins
-        font-style: normal
-        font-weight: 500
+
     h4
         color: var(--title-text-color)
-        font-family: Poppins
-        font-style: normal
-        font-weight: 50
+
     .poster
         color: var(--poster)
         text-decoration: none
         width: 100%
-        font-family: Poppins
-        font-style: normal
-        font-weight: 50
+
         &:hover
             text-decoration: underline
     .metadata
         color: var(--title-text-color)
-        font-size: 1.2
-        width: 100%
-        text-decoration: none
-        margin:
-            bottom: 0.5em
-        font-family: Poppins
-        font-style: normal
-        font-weight: 50
-        &:hover
-            text-decoration: underline
+    
+    .ardrive_title
+        width: 50%
+    .timestamp
+        font-size: 0.9em
+        color: var(--time-color)
         
 
 
@@ -212,7 +209,6 @@
             margin:
                 top: 1em
                 bottom: 1em
-            width: 100%
             font-size: 1em
         h5
             margin:
@@ -222,6 +218,11 @@
     .img_div
         img
             width: 100%
+    .iframe_container
+        min-height: 3em
+    .metadata
+        font-size: 0.8em
+
 
 
         
@@ -287,6 +288,10 @@
             justify-content: center
             img
                 width: 40%
+    .iframe_container
+        min-height: 3.5em
+    .metadata
+        font-size: 0.8em
 
 
 @media screen and ( min-width: 1024px )
@@ -296,11 +301,15 @@
 
     .user_name
         font-size: 1em
+    .iframe_container
+        height: 0em
 
 .iframe_container
     position: relative
     overflow: hidden
     width: 100%
+    margin:
+        top: 1em
     padding-top: 41%
 
     iframe
@@ -310,5 +319,6 @@
         bottom: 0
         right: 0
         width: 100%
-        height: 100%
         border: none
+        height: 100%
+        

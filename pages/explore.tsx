@@ -1,6 +1,11 @@
 import styles from "../styles/Explore.module.sass";
 import Image from "next/image";
-import { ShareIcon, HeartIcon, MessageIcon } from "@iconicicons/react";
+import {
+  ShareIcon,
+  HeartIcon,
+  MessageIcon,
+  ColumnsHorizontalIcon,
+} from "@iconicicons/react";
 import Link from "next/link";
 import Button from "../comp/Button/Button";
 import Post from "../comp/Post/Post";
@@ -161,7 +166,21 @@ const Explore = () => {
               case "ardrive":
                 return (
                   <div className={styles.posts} key={i}>
-                    <h3>Ardrive</h3>
+                    <h3 className={styles.ardrive_title}>Ardrive</h3>
+                    {(function () {
+                      let dateObj = new Date(data.timestamp * 1000);
+                      let month = dateObj.getMonth() + 1;
+                      let year = dateObj.getFullYear();
+                      let date = dateObj.getDate();
+                      let hour = dateObj.getHours();
+                      let minutes = dateObj.getMinutes();
+
+                      return (
+                        <h1 className={styles.timestamp}>
+                          {month}/{date}/{year} {hour}:{minutes}
+                        </h1>
+                      );
+                    })()}
                     <div className={styles.details}>
                       <h5>
                         <a
@@ -171,12 +190,14 @@ const Explore = () => {
                           {data.poster}
                         </a>
                       </h5>
-                      <a
-                        className={styles.metadata}
-                        href={`https://viewblock.io/arweave/tx/${data.metadata}`}
-                      >
-                        {data.metadata}
-                      </a>
+                      <h4>
+                        <a
+                          className={styles.metadata}
+                          href={`https://viewblock.io/arweave/tx/${data.metadata}`}
+                        >
+                          {data.metadata}
+                        </a>
+                      </h4>
                       <a href={data.url}>URL / Link</a>
                     </div>
                   </div>
