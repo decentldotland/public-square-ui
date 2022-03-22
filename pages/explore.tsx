@@ -170,14 +170,19 @@ const Explore = () => {
                     {(function () {
                       let dateObj = new Date(data.timestamp * 1000);
                       let month = dateObj.getMonth() + 1;
-                      let year = dateObj.getFullYear();
-                      let date = dateObj.getDate();
-                      let hour = dateObj.getHours();
-                      let minutes = dateObj.getMinutes();
+                      let year = dateObj.getUTCFullYear();
+                      let day = dateObj.getUTCDate();
+                      let hour = dateObj.getUTCHours();
+                      let min = dateObj.getUTCMinutes();
 
                       return (
                         <h1 className={styles.timestamp}>
-                          {month}/{date}/{year} {hour}:{minutes}
+                          {(month < 10 ? "0" : "") + month}/
+                          {(day < 10 ? "0" : "") + day}/{year}{" "}
+                          {(hour < 10 ? "0" : "") + hour}:
+                          {(min < 10 ? "0" : "") +
+                            min +
+                            (hour < 12 ? "AM" : "PM")}
                         </h1>
                       );
                     })()}
