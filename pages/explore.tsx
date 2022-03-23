@@ -43,7 +43,6 @@ const Explore = () => {
 
   useEffect(() => {
     (async () => {
-      console.log(await getWeaveAggregator("permacast"));
       // api használat
       // https://github.com/decentldotland/weave-aggregator/#get-permacast-podcasts
       setLoading(true);
@@ -215,7 +214,7 @@ const Explore = () => {
                     <h3>Permacast</h3>
                     <div className={styles.iframe_container}>
                       <iframe
-                        src={`https://permacast-cache.herokuapp.com/embed/${data.pid}`}
+                        src={`https://permacast-cache.herokuapp.com/embed/${data.factory_id}`}
                         key={i}
                       ></iframe>
                     </div>
