@@ -43,7 +43,8 @@ const Explore = () => {
 
   useEffect(() => {
     (async () => {
-      // api használata
+      console.log(await getWeaveAggregator("permacast"));
+      // api használat
       // https://github.com/decentldotland/weave-aggregator/#get-permacast-podcasts
       setLoading(true);
       setDatas(await getWeaveAggregator(platform));
@@ -170,10 +171,10 @@ const Explore = () => {
                     {(function () {
                       let dateObj = new Date(data.timestamp * 1000);
                       let month = dateObj.getMonth() + 1;
-                      let year = dateObj.getUTCFullYear();
-                      let day = dateObj.getUTCDate();
-                      let hour = dateObj.getUTCHours();
-                      let min = dateObj.getUTCMinutes();
+                      let year = dateObj.getFullYear();
+                      let day = dateObj.getDate();
+                      let hour = dateObj.getHours();
+                      let min = dateObj.getMinutes();
 
                       return (
                         <h1 className={styles.timestamp}>
