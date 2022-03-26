@@ -32,6 +32,10 @@ const Explore = () => {
       name: "Permacast",
       val: "permacast",
     },
+    {
+      name: "Pianity",
+      val: "pianity",
+    },
   ];
 
   const [platform, setPlatform] = useState(explorePlatforms[0].val);
@@ -50,10 +54,28 @@ const Explore = () => {
       } else {
         setDatas(await getWeaveAggregator(platform));
       }
+      console.log(datas);
 
       setLoading(false);
     })();
   }, [platform]);
+
+  function TimeStamp(data: any) {
+    let dateObj = new Date(data.timestamp * 1000);
+    let month = dateObj.getMonth() + 1;
+    let year = dateObj.getFullYear();
+    let day = dateObj.getDate();
+    let hour = dateObj.getHours();
+    let min = dateObj.getMinutes();
+
+    return (
+      <h1 className={styles.timestamp}>
+        {(month < 10 ? "0" : "") + month}/{(day < 10 ? "0" : "") + day}/{year}{" "}
+        {(hour < 10 ? "0" : "") + hour}:
+        {(min < 10 ? "0" : "") + min + (hour < 12 ? "AM" : "PM")}
+      </h1>
+    );
+  }
   return (
     <>
       <div className={styles.page}>
@@ -180,26 +202,8 @@ const Explore = () => {
                 case "ardrive":
                   return (
                     <div className={styles.posts} key={i}>
-                      <h3 className={styles.ardrive_title}>Ardrive</h3>
-                      {(function () {
-                        let dateObj = new Date(data.timestamp * 1000);
-                        let month = dateObj.getMonth() + 1;
-                        let year = dateObj.getFullYear();
-                        let day = dateObj.getDate();
-                        let hour = dateObj.getHours();
-                        let min = dateObj.getMinutes();
-
-                        return (
-                          <h1 className={styles.timestamp}>
-                            {(month < 10 ? "0" : "") + month}/
-                            {(day < 10 ? "0" : "") + day}/{year}{" "}
-                            {(hour < 10 ? "0" : "") + hour}:
-                            {(min < 10 ? "0" : "") +
-                              min +
-                              (hour < 12 ? "AM" : "PM")}
-                          </h1>
-                        );
-                      })()}
+                      <h3 className={styles.title}>Ardrive</h3>
+                      {TimeStamp(data)}
                       <div className={styles.details}>
                         <h5>
                           <a
@@ -231,6 +235,25 @@ const Explore = () => {
                           src={`https://permacast-cache.herokuapp.com/embed/${data.eid}`}
                           key={i}
                         ></iframe>
+                      </div>
+                    </div>
+                  );
+                case "pianity":
+                  return (
+                    <div className={styles.posts} key={i}>
+                      <h3 className={styles.title}>Pianity</h3>
+                      {TimeStamp(data)}
+                      <div className={styles.details}>
+                        <h4>{data.title}</h4>
+                        <h5>
+                          <a
+                            className={styles.poster}
+                            href={`https://viewblock.io/arweave/address/${data.poster}`}
+                          >
+                            {data.poster}
+                          </a>
+                        </h5>
+                        <a href={`https://arweave.net/${data.url}`}>Download</a>
                       </div>
                     </div>
                   );
