@@ -253,6 +253,12 @@ const Explore = () => {
                             {data.poster}
                           </a>
                         </h5>
+                        <div className={styles.thumnail}>
+                          <iframe
+                            src={`https://arweave.net/${data.thumnail}`}
+                            key={i}
+                          ></iframe>
+                        </div>
                         <a href={`https://arweave.net/${data.url}`}>Download</a>
                       </div>
                     </div>
