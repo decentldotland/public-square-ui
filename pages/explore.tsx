@@ -50,11 +50,10 @@ const Explore = () => {
         const res = await (
           await fetch("https://permacast-cache.herokuapp.com/feeds/allcontent")
         ).json();
-        setDatas(res.res);
+        setDatas(res.res.slice(0, 15));
       } else {
         setDatas(await getWeaveAggregator(platform));
       }
-      console.log(datas);
 
       setLoading(false);
     })();
