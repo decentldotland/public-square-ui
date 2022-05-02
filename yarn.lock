@@ -1552,10 +1552,10 @@ util@^0.12.4:
     safe-buffer "^5.1.2"
     which-typed-array "^1.1.2"
 
-weave-aggregator@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/weave-aggregator/-/weave-aggregator-0.2.0.tgz#633a5ffb0ccaadde823aa515ee6e6d25b7b835ec"
-  integrity sha512-IMrGvBi2xyIMxtDoidQx5+r3u0AZJFegPs1YrDCy6bJxn/+IQK2jI9uz+Z0l8H+KNVEusyLzTa1d7ZETR5jUaA==
+weave-aggregator@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/weave-aggregator/-/weave-aggregator-0.2.1.tgz#3e24306b816ef325eb51c0e92dd4fd4e11c7df31"
+  integrity sha512-58pusnpyy0sbhK7S3UpnpYWR6TCdddvNO5LjQrXAbA3TQbfvUeUWdjMb+VtF35457Tp0Pz5agjRB0s+4l86AmA==
   dependencies:
     arweave "^1.10.18"
     axios "^0.24.0"
@@ -1600,6 +1600,11 @@ yallist@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-2.1.2.tgz#1c11f9218f076089a47dd512f93c6699a6a81d52"
   integrity sha1-HBH5IY8HYImkfdUS+TxmmaaoHVI=
+
+yarn@^1.22.18:
+  version "1.22.18"
+  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.18.tgz#05b822ade8c672987bab8858635145da0850f78a"
+  integrity sha512-oFffv6Jp2+BTUBItzx1Z0dpikTX+raRdqupfqzeMKnoh7WD6RuPAxcqDkMUy9vafJkrB0YaV708znpuMhEBKGQ==
 
 yorkie@^2.0.0:
   version "2.0.0"

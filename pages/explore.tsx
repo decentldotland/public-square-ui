@@ -205,7 +205,7 @@ const Explore = () => {
                         <p>NFT</p>
                       </div>
                       <div className={styles.details_1}>
-                        <p>NFTTICKER</p>
+                        <p>{data.ticker}</p>
                         <p>
                           <a
                             className={styles.nft_poster}
