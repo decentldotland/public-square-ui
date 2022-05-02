@@ -263,25 +263,32 @@ const Explore = () => {
                 case "pianity":
                   return (
                     <div className={styles.posts} key={i}>
-                      <h3 className={styles.title}>Pianity</h3>
-                      {TimeStamp(data)}
-                      <div className={styles.details}>
-                        <h4>{data.title}</h4>
-                        <h5>
+                      <div className={styles.titles}>
+                        <p className={styles.nft_title}>{data.title}</p>
+                        <p>{TimeStamp(data)}</p>
+                      </div>
+                      <div className={styles.details_1}>
+                        <p>
+                          <a href={`https://arweave.net/${data.url}`}>
+                            Download
+                          </a>
+                        </p>
+                        <p>
                           <a
-                            className={styles.poster}
+                            className={styles.nft_poster}
                             href={`https://viewblock.io/arweave/address/${data.poster}`}
                           >
-                            {data.poster}
+                            {formatPoster(data.poster)}
                           </a>
-                        </h5>
+                        </p>
+                      </div>
+                      <div className={styles.details}>
                         <div className={styles.thumnail}>
                           <iframe
                             src={`https://arweave.net/${data.thumnail}`}
                             key={i}
                           ></iframe>
                         </div>
-                        <a href={`https://arweave.net/${data.url}`}>Download</a>
                       </div>
                     </div>
                   );
