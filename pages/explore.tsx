@@ -45,7 +45,7 @@ const Explore = () => {
   useEffect(() => {
     (async () => {
       setLoading(true);
-
+      console.log(datas);
       if (platform === "permacast") {
         const res = await (
           await fetch("https://permacast-cache.herokuapp.com/feeds/allcontent")
@@ -58,6 +58,26 @@ const Explore = () => {
       setLoading(false);
     })();
   }, [platform]);
+
+  function formatAddress(address: string, length = 26) {
+    if (!address) return "";
+
+    return (
+      address.substring(0, length / 2) +
+      "..." +
+      address.substring(address.length - length / 2, address.length)
+    );
+  }
+
+  function formatPoster(address: string, length = 26) {
+    if (!address) return "";
+
+    return (
+      address.substring(0, 5) +
+      "..." +
+      address.substring(address.length - 5, address.length)
+    );
+  }
 
   function TimeStamp(data: any) {
     let dateObj = new Date(data.timestamp * 1000);
@@ -169,7 +189,7 @@ const Explore = () => {
                             className={styles.poster}
                             href={`https://viewblock.io/arweave/address/${data.poster}`}
                           >
-                            {data.poster}
+                            {formatPoster(data.poster)}
                           </a>
                         </h5>
                         <a href={data.url}>Go to transaction</a>
@@ -180,20 +200,23 @@ const Explore = () => {
                 case "koii":
                   return (
                     <div className={styles.posts} key={i}>
-                      <h3>Koii</h3>
-                      <div className={styles.img_div}>
-                        <img src={`https://arweave.net/${data.id}`} alt="" />
+                      <div className={styles.titles}>
+                        <p className={styles.nft_title}>{data.title}</p>
+                        <p>NFT</p>
                       </div>
-                      <div className={styles.details}>
-                        <h4>{data.description}</h4>
-                        <h5>
+                      <div className={styles.details_1}>
+                        <p>NFTTICKER</p>
+                        <p>
                           <a
-                            className={styles.poster}
+                            className={styles.nft_poster}
                             href={`https://viewblock.io/arweave/address/${data.poster}`}
                           >
-                            {data.poster}
+                            {formatPoster(data.poster)}
                           </a>
-                        </h5>
+                        </p>
+                      </div>
+                      <div className={styles.img_div}>
+                        <img src={`https://arweave.net/${data.id}`} alt="" />
                       </div>
                     </div>
                   );
@@ -209,7 +232,7 @@ const Explore = () => {
                             className={styles.poster}
                             href={`https://viewblock.io/arweave/address/${data.poster}`}
                           >
-                            {data.poster}
+                            {formatPoster(data.poster)}
                           </a>
                         </h5>
                         <h4>
@@ -217,7 +240,7 @@ const Explore = () => {
                             className={styles.metadata}
                             href={`https://viewblock.io/arweave/tx/${data.metadata}`}
                           >
-                            {data.metadata}
+                            {formatAddress(data.metadata)}
                           </a>
                         </h4>
                         <a href={data.url}>See on Viewblock</a>

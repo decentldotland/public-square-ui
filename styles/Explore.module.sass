@@ -142,7 +142,23 @@
     .timestamp
         font-size: 0.8em
         color: var(--time-color)
-        
+
+    .details_1, .titles
+            justify-content: space-between
+            width: 100%
+            display: flex
+    .titles
+        margin-bottom: -0.5em
+    .nft_title
+            color: var(--title-text-color)
+            font-size: 1.5em
+    p
+        color: var(--username-color)
+        font-size: 0.9em
+    .nft_poster
+        color: var(--poster)
+        text-decoration: none
+        font-size: 0.8em
 
 
         
@@ -153,7 +169,7 @@
         justify-content: center
         flex-wrap: wrap
     a
-        color: $lighter-theme-solid
+        color: var(--post-below-section)
         &:active
             transform: scale(.89)
 .img_div
@@ -277,6 +293,9 @@
             width: 100%
             margin:
                 bottom: 0.5em
+
+
+
                 
         .details
             width: 100%
