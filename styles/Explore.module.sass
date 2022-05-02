@@ -122,9 +122,11 @@
     font-weight: 500
     justify-content: space-between
     h3
+        width: 100%
         color: var(--light-text-color)
 
     h4
+        width: 100%
         color: var(--title-text-color)
 
     .poster
@@ -177,7 +179,10 @@
         top: 1em
         bottom: 1em
         display: flex
-        justify-content: center
+        justify-content: flex-end
+    img
+        border-radius: 25px
+        filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.2))
 .circle
     margin:
         bottom: min(100vh-37vh)
@@ -234,8 +239,9 @@
                 bottom: 1em
         
     .img_div
+        text-align: center
         img
-            width: 100%
+            width: 80%
     .iframe_container
         min-height: 3em
     .metadata
@@ -280,17 +286,16 @@
             top: 2em
         h3
             font-size: 1em
-            width: 100%
             margin:
                 bottom: 0.5em
         h4
             font-size: 1.2em
-            width: 100%
+
             margin:
                 top: 1em
                 bottom: 1em
         h5
-            width: 100%
+
             margin:
                 bottom: 0.5em
 
@@ -306,9 +311,9 @@
         .img_div
             width: 100%
             display: flex
-            justify-content: center
+            justify-content: flex-end
             img
-                width: 40%
+                width: 50%
     .iframe_container
         min-height: 3.5em
     .metadata
