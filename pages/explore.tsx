@@ -13,6 +13,7 @@ import { useState, useEffect } from "react";
 // @ts-ignore
 import { getWeaveAggregator } from "weave-aggregator";
 import { url } from "inspector";
+import dayjs from "dayjs";
 
 const Explore = () => {
   const explorePlatforms: { name: string; val: string }[] = [
@@ -79,22 +80,13 @@ const Explore = () => {
     );
   }
 
-  function TimeStamp(data: any) {
-    let dateObj = new Date(data.timestamp * 1000);
-    let month = dateObj.getMonth() + 1;
-    let year = dateObj.getFullYear();
-    let day = dateObj.getDate();
-    let hour = dateObj.getHours();
-    let min = dateObj.getMinutes();
+  function timeStamp(timestamp: number = 0) {
+    const timeStampLength = timestamp.toString().length;
+    const date = new Date(timestamp * Math.pow(10, 13 - timeStampLength));
 
-    return (
-      <h1 className={styles.timestamp}>
-        {(month < 10 ? "0" : "") + month}/{(day < 10 ? "0" : "") + day}/{year}{" "}
-        {(hour < 10 ? "0" : "") + hour}:
-        {(min < 10 ? "0" : "") + min + (hour < 12 ? "AM" : "PM")}
-      </h1>
-    );
+    return dayjs(date).format("MMM DD, YYYY");
   }
+
   return (
     <>
       <div className={styles.page}>
@@ -228,7 +220,9 @@ const Explore = () => {
                   return (
                     <div className={styles.posts} key={i}>
                       <h3 className={styles.title}>Ardrive</h3>
-                      {TimeStamp(data)}
+                      <h1 className={styles.timestamp}>
+                        {timeStamp(data.timestamp)}
+                      </h1>
                       <div className={styles.details}>
                         <h5>
                           <a
@@ -265,7 +259,11 @@ const Explore = () => {
                     <div className={styles.posts} key={i}>
                       <div className={styles.titles}>
                         <p className={styles.nft_title}>{data.title}</p>
-                        <p>{TimeStamp(data)}</p>
+                        <p>
+                          <h1 className={styles.timestamp}>
+                            {timeStamp(data.timestamp)}
+                          </h1>
+                        </p>
                       </div>
                       <div className={styles.details_1}>
                         <p>
