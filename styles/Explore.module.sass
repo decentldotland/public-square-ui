@@ -265,11 +265,66 @@
         font-size: 0.8em
 
 
+.arweave_save
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 0.6em 1.24em
+    box-shadow: 0px 10px 25px var(--post-shadow)
+    border-radius: 14px
+    background-color: var(--post-background)
+    font-family: Poppins
+    margin: 2em 0
 
-        
+    .save_data
+        display: flex
+        align-items: center
 
-        
+        img
+            height: 2em
+            user-select: none
+            margin-right: 1em
 
+        h1, a
+            margin: 0
+
+        h1
+            color: var(--title-text-color)
+            font-size: 1.5em
+            line-height: 1.1em
+            font-weight: 500
+            text-overflow: ellipsis
+            white-space: nowrap
+            overflow: hidden
+            max-width: 200px
+
+        a
+            font-size: .7em
+            color: var(--poster)
+            text-decoration: none
+            transition: all .23s ease-in-out
+
+            &:hover
+                opacity: .8
+
+        .texts
+            display: flex
+            flex-direction: column
+
+    .link_icon
+        display: flex
+        align-items: center
+        cursor: pointer
+        transition: all .23s ease-in-out
+
+        &:hover
+            opacity: .8
+
+        svg
+            color: var(--light-text-color)
+            font-size: 1.45em
+            width: 1em
+            height: 1em
 
 @media screen and ( min-width: 760px )
     .page

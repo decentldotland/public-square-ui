@@ -172,20 +172,20 @@ const Explore = () => {
               switch (platform) {
                 case "arweave-saves":
                   return (
-                    <div className={styles.posts} key={i}>
-                      <h3>Arweave saves</h3>
-                      <div className={styles.details}>
-                        <h4>{data.title}</h4>
-                        <h5>
-                          <a
-                            className={styles.poster}
-                            href={`https://viewblock.io/arweave/address/${data.poster}`}
-                          >
-                            {formatPoster(data.poster)}
-                          </a>
-                        </h5>
-                        <a href={data.url}>Go to transaction</a>
+                    <div className={styles.arweave_save} key={i}>
+                      <div className={styles.save_data}>
+                        <img src="/arweave.png" alt="ardrive" />
+                        <div className={styles.texts}>
+                          <h1>{data.title}</h1>
+                          <a href={data.url}>{formatAddress(data.sid)}</a>
+                        </div>
                       </div>
+                      <a
+                        href={`https://arweave.net/${data.sid}`}
+                        className={styles.link_icon}
+                      >
+                        <ShareIcon />
+                      </a>
                     </div>
                   );
 
@@ -218,30 +218,21 @@ const Explore = () => {
 
                 case "ardrive":
                   return (
-                    <div className={styles.posts} key={i}>
-                      <h3 className={styles.title}>Ardrive</h3>
-                      <h1 className={styles.timestamp}>
-                        {timeStamp(data.timestamp)}
-                      </h1>
-                      <div className={styles.details}>
-                        <h5>
+                    <div className={styles.arweave_save} key={i}>
+                      <div className={styles.save_data}>
+                        <img src="/ardrive.png" alt="ardrive" />
+                        <div className={styles.texts}>
+                          <h1>{formatAddress(data.metadata)}</h1>
                           <a
-                            className={styles.poster}
-                            href={`https://viewblock.io/arweave/address/${data.poster}`}
-                          >
-                            {formatPoster(data.poster)}
-                          </a>
-                        </h5>
-                        <h4>
-                          <a
-                            className={styles.metadata}
                             href={`https://viewblock.io/arweave/tx/${data.metadata}`}
                           >
-                            {formatAddress(data.metadata)}
+                            {timeStamp(data.timestamp)}
                           </a>
-                        </h4>
-                        <a href={data.url}>See on Viewblock</a>
+                        </div>
                       </div>
+                      <a href={data.url} className={styles.link_icon}>
+                        <ShareIcon />
+                      </a>
                     </div>
                   );
 
