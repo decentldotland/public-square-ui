@@ -215,6 +215,9 @@ const Explore = () => {
                           </a>
                         </p>
                       </div>
+                      <p className={styles.nft_description}>
+                        {data.description}
+                      </p>
                       <div className={styles.img_div}>
                         <img src={`https://arweave.net/${data.id}`} alt="" />
                       </div>
