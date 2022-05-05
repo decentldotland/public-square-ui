@@ -253,14 +253,11 @@ const Explore = () => {
 
                 case "permacast":
                   return (
-                    <div className={styles.posts} key={i}>
-                      <h3>Permacast</h3>
-                      <div className={styles.iframe_container}>
-                        <iframe
-                          src={`https://permacast-cache.herokuapp.com/embed/${data.eid}`}
-                          key={i}
-                        ></iframe>
-                      </div>
+                    <div className={styles.iframe_container} key={i}>
+                      <iframe
+                        src={`https://permacast-cache.herokuapp.com/embed/${data.eid}`}
+                        key={i}
+                      ></iframe>
                     </div>
                   );
                 case "pianity":
