@@ -12,10 +12,24 @@ import {
 import Link from "next/link";
 import useUITheme from "../../utils/dark_mode";
 import useArConnect from "../../utils/arconnect";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const { darkMode, toggleDarkMode } = useUITheme();
   const [address, connect, disconnect] = useArConnect();
+
+  const [ans, setAns] = useState<Record<string, any>>();
+
+  useEffect(() => {
+    (async () => {
+      if (!address) return;
+      const res = await (
+        await fetch(`https://ans-testnet.herokuapp.com/profile/${address}`)
+      ).json();
+
+      setAns(res);
+    })();
+  }, [address]);
 
   return (
     <>
@@ -58,12 +72,27 @@ const Navbar = () => {
             </div>
 
             {address && (
-              <div className={styles.picture} title="Click to disconnect">
-                <Link href="/">
+              <div className={styles.picture}>
+                <a
+                  href={
+                    ans?.currentLabel
+                      ? `https://${ans.currentLabel}.ar.page`
+                      : undefined
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <div className={styles.profile_div}>
-                    <img src="/profile.png" alt="" />
+                    <img
+                      src={
+                        ans?.avatar
+                          ? `https://arweave.net/${ans.avatar}`
+                          : "/profile.png"
+                      }
+                      alt=""
+                    />
                   </div>
-                </Link>
+                </a>
               </div>
             )}
           </div>

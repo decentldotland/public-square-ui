@@ -16,31 +16,9 @@ import dayjs from "dayjs";
 import useUITheme from "../utils/dark_mode";
 import Head from "next/head";
 import useArConnect from "../utils/arconnect";
+import { explorePlatforms } from "../utils/platforms";
 
 const Explore = () => {
-  const explorePlatforms: { name: string; val: string }[] = [
-    {
-      name: "Arweave-saves",
-      val: "arweave-saves",
-    },
-    {
-      name: "Ardrive",
-      val: "ardrive",
-    },
-    {
-      name: "Koii",
-      val: "koii",
-    },
-    {
-      name: "Permacast",
-      val: "permacast",
-    },
-    {
-      name: "Pianity",
-      val: "pianity",
-    },
-  ];
-
   const [platform, setPlatform] = useState(explorePlatforms[0].val);
   const [datas, setDatas] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -54,9 +32,11 @@ const Explore = () => {
         const res = await (
           await fetch("https://permacast-cache.herokuapp.com/feeds/allcontent")
         ).json();
+
         setDatas(res.res.slice(0, 15));
       } else {
-        setDatas(await getWeaveAggregator(platform, address));
+        const res = await getWeaveAggregator(platform, address);
+        setDatas(res);
       }
 
       setLoading(false);
@@ -73,7 +53,7 @@ const Explore = () => {
     );
   }
 
-  function timeStamp(timestamp: number = 0) {
+  function timestamp(timestamp: number = 0) {
     const timeStampLength = timestamp.toString().length;
     const date = new Date(timestamp * Math.pow(10, 13 - timeStampLength));
 
@@ -227,7 +207,7 @@ const Explore = () => {
                           <a
                             href={`https://viewblock.io/arweave/tx/${data.metadata}`}
                           >
-                            {timeStamp(data.timestamp)}
+                            {timestamp(data.timestamp)}
                           </a>
                         </div>
                       </div>
@@ -253,7 +233,7 @@ const Explore = () => {
                         <p className={styles.nft_title}>{data.title}</p>
                         <p>
                           <h1 className={styles.timestamp}>
-                            {timeStamp(data.timestamp)}
+                            {timestamp(data.timestamp)}
                           </h1>
                         </p>
                       </div>
