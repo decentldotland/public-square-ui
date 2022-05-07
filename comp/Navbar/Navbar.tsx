@@ -6,12 +6,16 @@ import {
   MoonIcon,
   GlobeIcon,
   SunIcon,
+  LogOutIcon,
+  LogInIcon,
 } from "@iconicicons/react";
 import Link from "next/link";
 import useUITheme from "../../utils/dark_mode";
+import useArConnect from "../../utils/arconnect";
 
 const Navbar = () => {
   const { darkMode, toggleDarkMode } = useUITheme();
+  const [address, connect, disconnect] = useArConnect();
 
   return (
     <>
@@ -34,9 +38,14 @@ const Navbar = () => {
               </Link>
   </div>**/}
             <div className={styles.icon_div}>
-              <Link href="/">
-                <UserIcon className={styles.icon} />
-              </Link>
+              <a onClick={address ? disconnect : connect}>
+                {/*<UserIcon className={styles.icon} />*/}
+                {address ? (
+                  <LogOutIcon className={styles.icon} />
+                ) : (
+                  <LogInIcon className={styles.icon} />
+                )}
+              </a>
             </div>
           </div>
           <div className={styles.below_icons}>
@@ -48,13 +57,15 @@ const Navbar = () => {
               {darkMode && <SunIcon className={styles.icon} />}
             </div>
 
-            <div className={styles.picture}>
-              <Link href="/">
-                <div className={styles.profile_div}>
-                  <img src="/profile.png" alt="" />
-                </div>
-              </Link>
-            </div>
+            {address && (
+              <div className={styles.picture} title="Click to disconnect">
+                <Link href="/">
+                  <div className={styles.profile_div}>
+                    <img src="/profile.png" alt="" />
+                  </div>
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </div>

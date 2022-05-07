@@ -15,6 +15,7 @@ import { getWeaveAggregator } from "weave-aggregator";
 import dayjs from "dayjs";
 import useUITheme from "../utils/dark_mode";
 import Head from "next/head";
+import useArConnect from "../utils/arconnect";
 
 const Explore = () => {
   const explorePlatforms: { name: string; val: string }[] = [
@@ -43,41 +44,32 @@ const Explore = () => {
   const [platform, setPlatform] = useState(explorePlatforms[0].val);
   const [datas, setDatas] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [address] = useArConnect();
 
   useEffect(() => {
     (async () => {
       setLoading(true);
-      console.log(datas);
+
       if (platform === "permacast") {
         const res = await (
           await fetch("https://permacast-cache.herokuapp.com/feeds/allcontent")
         ).json();
         setDatas(res.res.slice(0, 15));
       } else {
-        setDatas(await getWeaveAggregator(platform));
+        setDatas(await getWeaveAggregator(platform, address));
       }
 
       setLoading(false);
     })();
-  }, [platform]);
+  }, [platform, address]);
 
-  function formatAddress(address: string, length = 26) {
-    if (!address) return "";
-
-    return (
-      address.substring(0, length / 2) +
-      "..." +
-      address.substring(address.length - length / 2, address.length)
-    );
-  }
-
-  function formatPoster(address: string, length = 26) {
-    if (!address) return "";
+  function formatAddress(addr: string, length = 26) {
+    if (!addr) return "";
 
     return (
-      address.substring(0, 5) +
+      addr.substring(0, length / 2) +
       "..." +
-      address.substring(address.length - 5, address.length)
+      addr.substring(addr.length - length / 2, addr.length)
     );
   }
 
@@ -212,7 +204,7 @@ const Explore = () => {
                             className={styles.nft_poster}
                             href={`https://viewblock.io/arweave/address/${data.poster}`}
                           >
-                            {formatPoster(data.poster)}
+                            {formatAddress(data.poster, 10)}
                           </a>
                         </p>
                       </div>
@@ -276,7 +268,7 @@ const Explore = () => {
                             className={styles.nft_poster}
                             href={`https://viewblock.io/arweave/address/${data.poster}`}
                           >
-                            {formatPoster(data.poster)}
+                            {formatAddress(data.poster, 5)}
                           </a>
                         </p>
                       </div>

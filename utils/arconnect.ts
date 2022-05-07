@@ -1,41 +1,38 @@
 import { useEffect, useState } from "react";
 
-export default function useArConnect() {
+export default function useArConnect(): [
+  string | undefined,
+  () => Promise<void>,
+  () => Promise<void>
+] {
   const [address, setAddress] = useState<string>();
 
   // get the address on connect event
   useEffect(() => {
     if (!window) return;
-    window.addEventListener("arweaveWalletLoaded", getAddressIfConnected);
+    const onWalletSwitch = (e: CustomEvent<{ address: string }>) =>
+      setAddress(e.detail.address);
 
-    // make sure we checked for the address
-    // in case the wallet load event was missed
-    setTimeout(() => {
-      if (!window.arweaveWallet) return;
-      getAddressIfConnected();
-    }, 250);
+    window.addEventListener("arweaveWalletLoaded", getAddressIfConnected);
+    window.addEventListener("walletSwitch", onWalletSwitch);
 
     return () => {
       window.removeEventListener("arweaveWalletLoaded", getAddressIfConnected);
-
-      if (address) window.removeEventListener("walletSwitch", onWalletSwitch);
+      window.removeEventListener("walletSwitch", onWalletSwitch);
     };
   }, []);
 
   async function getAddressIfConnected() {
-    const addr = await window.arweaveWallet.getActiveAddress();
+    try {
+      const addr = await window.arweaveWallet.getActiveAddress();
 
-    if (addr === address) return;
-    window.addEventListener("walletSwitch", onWalletSwitch);
-
-    setAddress(addr);
+      setAddress(addr);
+    } catch {
+      setAddress(undefined);
+    }
   }
 
-  const onWalletSwitch = (e: CustomEvent<{ address: string }>) =>
-    setAddress(e.detail.address);
-
   async function connect() {
-    if (!window?.arweaveWallet || !!address) return;
     try {
       await window.arweaveWallet.connect(
         ["ACCESS_ADDRESS", "ACCESS_ALL_ADDRESSES"],
@@ -49,12 +46,11 @@ export default function useArConnect() {
   }
 
   async function disconnect() {
-    if (!address) return;
     try {
       await window.arweaveWallet.disconnect();
       setAddress(undefined);
     } catch {}
   }
 
-  return { address, connect, disconnect };
+  return [address, connect, disconnect];
 }
