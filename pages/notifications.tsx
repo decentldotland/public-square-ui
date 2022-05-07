@@ -60,7 +60,7 @@ const Notifications = () => {
               user={{
                 avatar: "/profile.png",
                 name: "Name",
-                username: "bidetaggle",
+                username: "username",
               }}
             />
           </div>
