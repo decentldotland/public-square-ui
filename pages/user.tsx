@@ -3,10 +3,14 @@ import { ArrowLeftIcon } from "@iconicicons/react";
 import Link from "next/link";
 import Button from "../comp/Button/Button";
 import Post from "../comp/Post/Post";
+import Head from "next/head";
 
 const User = () => {
   return (
     <>
+      <Head>
+        <title>Public Square - User Profile</title>
+      </Head>
       <div className={styles.page}>
         <div className={styles.top_section}>
           <div className={styles.left_section}>
@@ -14,7 +18,7 @@ const User = () => {
               <ArrowLeftIcon className={styles.arrow_icon} />
             </Link>
 
-            <h2>Axel</h2>
+            <h2>Name</h2>
           </div>
           <a>Viewblock</a>
         </div>
@@ -25,8 +29,8 @@ const User = () => {
           <div className={styles.right_site}>
             <div className={styles.upper_section}>
               <div className={styles.data_name}>
-                <div className={styles.user_name}>Axel</div>
-                <div className={styles.profile_name}>@bidetaggle</div>
+                <div className={styles.user_name}>Name</div>
+                <div className={styles.profile_name}>@username</div>
               </div>
               <div className={styles.edit_button}>
                 <Button outlined>Edit</Button>
@@ -53,8 +57,8 @@ const User = () => {
             remaining essentially unchanged."
             user={{
               avatar: "/profile.png",
-              name: "Axel",
-              username: "bidataggle",
+              name: "Name",
+              username: "usename",
             }}
             interactions={{
               comments: 5,
@@ -72,8 +76,8 @@ const User = () => {
             remaining essentially unchanged."
             user={{
               avatar: "/profile.png",
-              name: "Axel",
-              username: "bidataggle",
+              name: "Name",
+              username: "usename",
             }}
             interactions={{
               comments: 1,
@@ -87,3 +91,12 @@ const User = () => {
 };
 
 export default User;
+
+export function getStaticProps() {
+  return {
+    redirect: {
+      destination: "/explore",
+      permanent: false,
+    },
+  };
+}

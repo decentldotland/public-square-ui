@@ -7,10 +7,14 @@ import {
 } from "@iconicicons/react";
 import Follow from "../comp/Follow_post/follow_post";
 import Post from "../comp/Post/Post";
+import Head from "next/head";
 
 const Notifications = () => {
   return (
     <>
+      <Head>
+        <title>Public Square - Home</title>
+      </Head>
       <div className={styles.page}>
         <div className={styles.notifications}>
           <h1>Notifications</h1>
@@ -31,8 +35,8 @@ const Notifications = () => {
             remaining essentially unchanged."
               user={{
                 avatar: "/profile.png",
-                name: "Axel",
-                username: "bidataggle",
+                name: "Name",
+                username: "usename",
               }}
               interactions={{
                 comments: 5,
@@ -55,7 +59,7 @@ const Notifications = () => {
               body="This is the users bio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa fugiat neque qui id beatae rerum maiores quaerat, ducimus voluptates, exercitationem ipsam facere. Nam, libero maxime. Molestiae doloremque tempore placeat soluta."
               user={{
                 avatar: "/profile.png",
-                name: "Axel",
+                name: "Name",
                 username: "bidetaggle",
               }}
             />
@@ -78,8 +82,8 @@ const Notifications = () => {
             remaining essentially unchanged."
               user={{
                 avatar: "/profile.png",
-                name: "Axel",
-                username: "bidataggle",
+                name: "Name",
+                username: "usename",
               }}
               interactions={{
                 comments: 5,
@@ -94,3 +98,12 @@ const Notifications = () => {
 };
 
 export default Notifications;
+
+export function getStaticProps() {
+  return {
+    redirect: {
+      destination: "/explore",
+      permanent: false,
+    },
+  };
+}

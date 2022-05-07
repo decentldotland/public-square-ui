@@ -10,7 +10,7 @@ const Right_Side = () => {
       <div className={styles.right_side}>
         <div className={styles.upper_section}>
           <div className={styles.searcher}>
-            <input type="text" placeholder="@username / wallet id" />
+            <input type="text" placeholder="@username / wallet id" disabled />
             <div className={styles.icon_div}>
               <SearchIcon className={styles.icon} />
             </div>
@@ -51,8 +51,8 @@ const Right_Side = () => {
         </div>
         <div className={styles.footer}>
           <div className={styles.left_footer}>
-            <a>Terms of Service</a>
-            <a>Privacy Policy</a>
+            {/*<a>Terms of Service</a>
+            <a>Privacy Policy</a>*/}
           </div>
           <div className={styles.copyright}> &copy; 2021, Public Square</div>
         </div>

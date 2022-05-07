@@ -7,10 +7,14 @@ import Link from "next/link";
 
 import { PhotoIcon, EmojiHappyIcon, SendIcon } from "@iconicicons/react";
 import Button from "../comp/Button/Button";
+import Head from "next/head";
 
 const Home: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>Public Square - Home</title>
+      </Head>
       <div className={styles.home_page}>
         <div className={styles.top_container}>
           <div className={styles.upper_items}>
@@ -47,8 +51,8 @@ const Home: NextPage = () => {
             remaining essentially unchanged."
             user={{
               avatar: "/profile.png",
-              name: "Axel",
-              username: "bidataggle",
+              name: "Name",
+              username: "usename",
             }}
             interactions={{
               comments: 5,
@@ -66,8 +70,8 @@ const Home: NextPage = () => {
             remaining essentially unchanged."
             user={{
               avatar: "/profile.png",
-              name: "Axel",
-              username: "bidataggle",
+              name: "Name",
+              username: "usename",
             }}
             interactions={{
               comments: 1,
@@ -84,8 +88,8 @@ const Home: NextPage = () => {
             remaining essentially unchanged."
             user={{
               avatar: "/profile.png",
-              name: "Axel",
-              username: "bidataggle",
+              name: "Name",
+              username: "usename",
             }}
             interactions={{
               comments: 8,
@@ -99,3 +103,12 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export function getStaticProps() {
+  return {
+    redirect: {
+      destination: "/explore",
+      permanent: false,
+    },
+  };
+}

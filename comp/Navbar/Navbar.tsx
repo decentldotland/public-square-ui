@@ -8,29 +8,10 @@ import {
   SunIcon,
 } from "@iconicicons/react";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import useUITheme from "../../utils/dark_mode";
 
 const Navbar = () => {
-  function toggleDarkMode() {
-    if (!window) return;
-    setDarkMode((val) => {
-      localStorage.setItem("DarkMode", String(!val));
-      return !val;
-    });
-  }
-
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    if (!window) return;
-    setDarkMode(localStorage.getItem("DarkMode") === "true");
-  }, []);
-
-  useEffect(() => {
-    if (!window) return;
-    if (darkMode) window.document.body.classList.add("DarkMode");
-    else window.document.body.classList.remove("DarkMode");
-  }, [darkMode]);
+  const { darkMode, toggleDarkMode } = useUITheme();
 
   return (
     <>
@@ -43,7 +24,7 @@ const Navbar = () => {
               </Link>
             </div>
             <div className={styles.icon_div}>
-              <Link href="/explore">
+              <Link href="/">
                 <GlobeIcon className={styles.icon} />
               </Link>
             </div>
@@ -53,7 +34,7 @@ const Navbar = () => {
               </Link>
   </div>**/}
             <div className={styles.icon_div}>
-              <Link href="/user">
+              <Link href="/">
                 <UserIcon className={styles.icon} />
               </Link>
             </div>
@@ -68,7 +49,7 @@ const Navbar = () => {
             </div>
 
             <div className={styles.picture}>
-              <Link href="/user">
+              <Link href="/">
                 <div className={styles.profile_div}>
                   <img src="/profile.png" alt="" />
                 </div>

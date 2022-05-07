@@ -12,8 +12,9 @@ import Post from "../comp/Post/Post";
 import { useState, useEffect } from "react";
 // @ts-ignore
 import { getWeaveAggregator } from "weave-aggregator";
-import { url } from "inspector";
 import dayjs from "dayjs";
+import useUITheme from "../utils/dark_mode";
+import Head from "next/head";
 
 const Explore = () => {
   const explorePlatforms: { name: string; val: string }[] = [
@@ -87,8 +88,13 @@ const Explore = () => {
     return dayjs(date).format("MMM DD, YYYY");
   }
 
+  const { darkMode } = useUITheme();
+
   return (
     <>
+      <Head>
+        <title>Public Square - Explore</title>
+      </Head>
       <div className={styles.page}>
         {/**   <h1>Popular communitites & profiles</h1>
         <div className={styles.popular_profiles}>
@@ -174,7 +180,10 @@ const Explore = () => {
                   return (
                     <div className={styles.arweave_save} key={i}>
                       <div className={styles.save_data}>
-                        <img src="/arweave.png" alt="ardrive" />
+                        <img
+                          src={darkMode ? "/arweave_dark.png" : "/arweave.png"}
+                          alt="ardrive"
+                        />
                         <div className={styles.texts}>
                           <h1>{data.title}</h1>
                           <a href={data.url}>{formatAddress(data.sid)}</a>
