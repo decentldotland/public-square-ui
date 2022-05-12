@@ -99,7 +99,7 @@ const Notifications = () => {
 
 export default Notifications;
 
-export function getStaticProps() {
+export function getServerSideProps() {
   return {
     redirect: {
       destination: "/explore",

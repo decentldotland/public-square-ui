@@ -92,7 +92,7 @@ const User = () => {
 
 export default User;
 
-export function getStaticProps() {
+export function getServerSideProps() {
   return {
     redirect: {
       destination: "/explore",

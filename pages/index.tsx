@@ -104,7 +104,7 @@ const Home: NextPage = () => {
 
 export default Home;
 
-export function getStaticProps() {
+export function getServerSideProps() {
   return {
     redirect: {
       destination: "/explore",
