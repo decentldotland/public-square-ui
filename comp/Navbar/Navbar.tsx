@@ -67,8 +67,8 @@ const Navbar = () => {
               className={styles.icon_div_moon}
               onClick={() => toggleDarkMode()}
             >
-              {!darkMode && <MoonIcon className={styles.icon} />}
-              {darkMode && <SunIcon className={styles.icon} />}
+              {!darkMode && <SunIcon className={styles.icon} />}
+              {darkMode && <MoonIcon className={styles.icon} />}
             </div>
 
             {address && (
