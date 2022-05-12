@@ -54,7 +54,7 @@ const Right_Side = () => {
             {/*<a>Terms of Service</a>
             <a>Privacy Policy</a>*/}
           </div>
-          <div className={styles.copyright}> &copy; 2021, Public Square</div>
+          <div className={styles.copyright}> &copy; 2021-2022 DecentLand</div>
         </div>
       </div>
     </>
