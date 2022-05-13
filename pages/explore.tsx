@@ -19,13 +19,17 @@ import useArConnect from "../utils/arconnect";
 import { explorePlatforms } from "../utils/platforms";
 
 const Explore = () => {
-  const [platform, setPlatform] = useState(explorePlatforms[0].val);
+  const [darkMode] = useUITheme();
+  const [platform, setPlatform] = useState<string>();
   const [datas, setDatas] = useState([]);
   const [loading, setLoading] = useState(false);
   const [address] = useArConnect();
 
+  useEffect(() => setPlatform(explorePlatforms[0].val), []);
+
   useEffect(() => {
     (async () => {
+      if (!platform) return;
       setLoading(true);
 
       if (platform === "permacast") {
@@ -59,8 +63,6 @@ const Explore = () => {
 
     return dayjs(date).format("MMM DD, YYYY");
   }
-
-  const { darkMode } = useUITheme();
 
   return (
     <>
@@ -154,7 +156,7 @@ const Explore = () => {
                       <div className={styles.save_data}>
                         <img
                           src={darkMode ? "/arweave_dark.png" : "/arweave.png"}
-                          alt="ardrive"
+                          alt="arweave"
                         />
                         <div className={styles.texts}>
                           <h1>{data.title}</h1>

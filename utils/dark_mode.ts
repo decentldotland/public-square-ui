@@ -1,14 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, SetStateAction, Dispatch } from "react";
 
-export default function useUITheme() {
-  function toggleDarkMode() {
-    if (!window) return;
-    setDarkMode((val) => {
-      localStorage.setItem("DarkMode", String(!val));
-      return !val;
-    });
-  }
-
+export default function useUITheme(): [
+  boolean,
+  Dispatch<SetStateAction<boolean>>
+] {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
@@ -18,9 +13,12 @@ export default function useUITheme() {
 
   useEffect(() => {
     if (!window) return;
+
     if (darkMode) window.document.body.classList.add("DarkMode");
     else window.document.body.classList.remove("DarkMode");
+
+    localStorage.setItem("DarkMode", darkMode.toString());
   }, [darkMode]);
 
-  return { darkMode, toggleDarkMode };
+  return [darkMode, setDarkMode];
 }

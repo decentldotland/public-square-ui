@@ -15,7 +15,7 @@ import useArConnect from "../../utils/arconnect";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
-  const { darkMode, toggleDarkMode } = useUITheme();
+  const [darkMode, setDarkMode] = useUITheme();
   const [address, connect, disconnect] = useArConnect();
 
   const [ans, setAns] = useState<Record<string, any>>();
@@ -65,7 +65,7 @@ const Navbar = () => {
           <div className={styles.below_icons}>
             <div
               className={styles.icon_div_moon}
-              onClick={() => toggleDarkMode()}
+              onClick={() => setDarkMode((val) => !val)}
             >
               {!darkMode && <SunIcon className={styles.icon} />}
               {darkMode && <MoonIcon className={styles.icon} />}
