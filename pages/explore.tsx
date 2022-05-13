@@ -34,7 +34,7 @@ const Explore = () => {
 
       if (platform === "permacast") {
         const res = await (
-          await fetch("https://permacast-cache.herokuapp.com/feeds/allcontent")
+          await fetch("https://whispering-retreat-94540.herokuapp.com/feeds/allcontent")
         ).json();
 
         setDatas(res.res.slice(0, 15));
