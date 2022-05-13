@@ -127,7 +127,6 @@ const Explore = () => {
         </div>**/}
         <div className={styles.trending_posts}>
           <h2 className={styles.explore_title}>
-            Explore platforms
             <select onChange={(e) => setPlatform(e.target.value)}>
               {explorePlatforms.map((platform, i) => (
                 <option value={platform.val} key={i}>
@@ -135,6 +134,7 @@ const Explore = () => {
                 </option>
               ))}
             </select>
+            Permaweb Explorer
           </h2>
           {loading && (
             <div className={styles.circle}>
