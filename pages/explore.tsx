@@ -284,7 +284,7 @@ const Explore = () => {
                             <img src={data.profile.pfp} alt="profile-picutre" />
                           </div>
                           <div className={styles.data_user}>
-                            <div className={styles.profile_name}>
+                            <div className={styles.user_lens}>
                               @{data.profile.handle}
                             </div>
                           </div>
@@ -296,7 +296,7 @@ const Explore = () => {
                         </div>
                       </a>
                       <div className={styles.post_content}>
-                        {data.metadata.content}
+                        <h2>{data.metadata.content}</h2>
                       </div>
                     </div>
                   );
