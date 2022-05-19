@@ -21,6 +21,6 @@ export const explorePlatforms: { name: string; val: string }[] = [
   },
   {
     name: "Lens Protocol",
-    val: "lens-protocol",
+    val: "lens",
   },
 ];
