@@ -1569,10 +1569,10 @@ util@^0.12.4:
     safe-buffer "^5.1.2"
     which-typed-array "^1.1.2"
 
-weave-aggregator@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/weave-aggregator/-/weave-aggregator-0.2.1.tgz#3e24306b816ef325eb51c0e92dd4fd4e11c7df31"
-  integrity sha512-58pusnpyy0sbhK7S3UpnpYWR6TCdddvNO5LjQrXAbA3TQbfvUeUWdjMb+VtF35457Tp0Pz5agjRB0s+4l86AmA==
+weave-aggregator@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/weave-aggregator/-/weave-aggregator-0.2.4.tgz#b1b64cf470006f2e476bfbe874ad8ae11e9ea88a"
+  integrity sha512-9X4MFY4ByE4LuYWGyWbnvF7b3KnZTR+PNPwrrQHdqBEP0cx0ovcxdEh1QJtGwdro86aa+x9G/p5lYpUkASzk4w==
   dependencies:
     arweave "^1.10.18"
     axios "^0.24.0"

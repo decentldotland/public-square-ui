@@ -34,7 +34,9 @@ const Explore = () => {
 
       if (platform === "permacast") {
         const res = await (
-          await fetch("https://whispering-retreat-94540.herokuapp.com/feeds/allcontent")
+          await fetch(
+            "https://whispering-retreat-94540.herokuapp.com/feeds/allcontent"
+          )
         ).json();
 
         setDatas(res.res.slice(0, 15));
@@ -264,6 +266,35 @@ const Explore = () => {
                       </div>
                     </div>
                   );
+
+                case "lens-protocol":
+                  <div className={styles.posts} key={i}>
+                    <a
+                      className={styles.upper_post}
+                      href={data.profile.url}
+                      rel="noopener noreferer"
+                      target="_blank"
+                    >
+                      <div className={styles.left_section}>
+                        <div className={styles.profile_div}>
+                          <img src={data.profile.pfp} alt="profile-picutre" />
+                        </div>
+                        <div className={styles.data_user}>
+                          <div className={styles.profile_name}>
+                            @{data.profile.handle}
+                          </div>
+                        </div>
+                      </div>
+                      <div className={styles.right_section}>
+                        <div className={styles.time}>
+                          {timestamp(new Date(data.createdAt).getTime())}
+                        </div>
+                      </div>
+                    </a>
+                    <div className={styles.post_content}>
+                      {data.metadata.content}
+                    </div>
+                  </div>;
 
                 default:
                   return <></>;

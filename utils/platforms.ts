@@ -19,4 +19,8 @@ export const explorePlatforms: { name: string; val: string }[] = [
     name: "Pianity",
     val: "pianity",
   },
+  {
+    name: "Lens Protocol",
+    val: "lens-protocol",
+  },
 ];
