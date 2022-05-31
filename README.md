@@ -17,7 +17,7 @@ This repository is about the FrontEnd of [app.decent.land](https://app.decent.la
 | feed name  | feed source |
 | ------------- |:-------------:|
 | Ardrive      | [ardrive.io](https://ardrive.io)     |
-| ArweaveSaves     | -    |
+| ArweaveSaves     | [Arconnect](https://arconnect.io)    |
 | Permacast     | [permacast.dev](https://permacast.dev)     |
 | Pianity       | [pianity.com](https://pianity.com/) |
 | Koii Network  | [koi.rocks](https://koi.rocks/contents?layout=list&time=1w&sort=top) |
