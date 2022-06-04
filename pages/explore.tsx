@@ -160,7 +160,7 @@ const Explore = () => {
                         />
                         <div className={styles.texts}>
                           <h1>{data.title}</h1>
-                          <a href={data.url}>{formatAddress(data.sid)}</a>
+                          <a href={data.url}>{formatAddress(data.url)}</a>
                         </div>
                       </div>
                       <a
