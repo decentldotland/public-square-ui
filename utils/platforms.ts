@@ -23,4 +23,8 @@ export const explorePlatforms: { name: string; val: string }[] = [
     name: "Lens Protocol",
     val: "lens",
   },
+  {
+    name: "ANS Labels",
+    val: "ans-cache",
+  },
 ];

@@ -300,6 +300,9 @@ const Explore = () => {
                       </div>
                     </div>
                   );
+                case "ans-cache":
+                  console.log(data);
+                  return <div></div>;
 
                 default:
                   return <></>;
