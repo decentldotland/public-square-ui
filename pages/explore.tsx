@@ -273,28 +273,34 @@ const Explore = () => {
 
                   return (
                     <div className={styles.posts} key={i}>
-                      <a
-                        className={styles.upper_post}
-                        href={data.profile.url}
-                        rel="noopener noreferer"
-                        target="_blank"
-                      >
-                        <div className={styles.left_section}>
+                      <div className={styles.upper_post}>
+                        <a
+                          className={styles.profile_datas}
+                          href={data.profile.url}
+                          rel="noopener noreferer"
+                          target="_blank"
+                        >
                           <div className={styles.profile_div}>
-                            <img src={data.profile.pfp} alt="profile-picutre" />
+                            <img
+                              src={
+                                data.profile.pfp
+                                  ? data.profile.pfp
+                                  : "profile.png"
+                              }
+                            />
                           </div>
                           <div className={styles.data_user}>
                             <div className={styles.user_lens}>
                               @{data.profile.handle}
                             </div>
                           </div>
-                        </div>
+                        </a>
                         <div className={styles.right_section}>
                           <div className={styles.time}>
                             {timestamp(new Date(data.createdAt).getTime())}
                           </div>
                         </div>
-                      </a>
+                      </div>
                       <div className={styles.post_content}>
                         <h2>{data.metadata.content}</h2>
                       </div>
