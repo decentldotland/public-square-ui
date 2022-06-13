@@ -268,6 +268,7 @@ const Explore = () => {
                   );
 
                 case "lens":
+                  console.log(data);
                   if (!data?.profile?.url || !data?.metadata?.content)
                     return <></>;
 
@@ -308,7 +309,46 @@ const Explore = () => {
                   );
                 case "ans-cache":
                   console.log(data);
-                  return <div></div>;
+                  return (
+                    <div className={styles.posts} key={i}>
+                      <div className={styles.upper_post}>
+                        <a
+                          className={styles.profile_datas}
+                          href={`https://viewblock.io/arweave/address/${data.user}`}
+                          rel="noopener noreferer"
+                          target="_blank"
+                        >
+                          <div className={styles.profile_div}>
+                            <img
+                              src={
+                                data.avatar
+                                  ? `https://arweave.net/${data.avatar}`
+                                  : "profile.png"
+                              }
+                            />
+                          </div>
+                          <div className={styles.data_user}>
+                            <div className={styles.user_lens}>
+                              @{data.nickname}
+                            </div>
+                          </div>
+                        </a>
+                        <div className={styles.right_section}>
+                          <p>
+                            <a
+                              className={styles.nft_poster}
+                              href={`https://viewblock.io/arweave/address/${data.user}`}
+                            >
+                              {formatAddress(data.user, 10)}
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+                      <div className={styles.post_content}>
+                        <h2>{data.bio}</h2>
+                      </div>
+                    </div>
+                  );
 
                 default:
                   return <></>;
