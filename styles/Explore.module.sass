@@ -64,19 +64,32 @@
             .right_section
                 text-align: right
 
-            .post_content
-                font-family: Poppins
-                font-style: normal
-                font-weight: normal
-                font-size: 0.9em
-                line-height: 1.4em
-                letter-spacing: 0.02em
-
             img
                 width: 2.2em
                 height: 2.2em
                 filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.2))
                 border-radius: 47px
+
+    .post_content
+        font-family: Poppins
+        font-style: normal
+        font-weight: normal
+        font-size: 0.9em
+        line-height: 1.4em
+        letter-spacing: 0.02em
+        color: var(--title-text-color)
+        width: 100%
+
+        a
+            word-break: break-all
+
+        p
+            color: var(--title-text-color)
+
+        img, video
+            width: 100%
+            margin-top: .8em
+            border-radius: 12px
             
 
     .popular_profile_div

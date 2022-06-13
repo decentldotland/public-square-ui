@@ -17,6 +17,8 @@ import useUITheme from "../utils/dark_mode";
 import Head from "next/head";
 import useArConnect from "../utils/arconnect";
 import { explorePlatforms } from "../utils/platforms";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const Explore = () => {
   const [darkMode] = useUITheme();
@@ -303,12 +305,28 @@ const Explore = () => {
                         </div>
                       </div>
                       <div className={styles.post_content}>
-                        <h2>{data.metadata.content}</h2>
+                        <ReactMarkdown
+                          children={data.metadata.content}
+                          remarkPlugins={[remarkGfm]}
+                        />
+                        {data.metadata.media.map((media: any, i: number) => {
+                          if (media.original.mimeType.includes("image")) {
+                            return <img src={media.original.url} alt="" />;
+                          } else {
+                            return (
+                              <video muted={true} autoPlay>
+                                <source
+                                  src={media.original.url}
+                                  type={media.original.mimeType}
+                                />
+                              </video>
+                            );
+                          }
+                        })}
                       </div>
                     </div>
                   );
                 case "ans-cache":
-                  console.log(data);
                   return (
                     <div className={styles.posts} key={i}>
                       <div className={styles.upper_post}>
@@ -344,9 +362,7 @@ const Explore = () => {
                           </p>
                         </div>
                       </div>
-                      <div className={styles.post_content}>
-                        <h2>{data.bio}</h2>
-                      </div>
+                      <div className={styles.post_content}>{data.bio}</div>
                     </div>
                   );
 
