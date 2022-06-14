@@ -18,10 +18,12 @@
     "public-square-api": "^0.1.4",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-markdown": "^8.0.3",
     "react-media-hook": "^0.4.9",
+    "remark-gfm": "^3.0.1",
     "sass": "^1.49.7",
     "styled-components": "^5.3.3",
-    "weave-aggregator": "^0.3.1",
+    "weave-aggregator": "^0.3.4",
     "yarn": "^1.22.18"
   },
   "devDependencies": {

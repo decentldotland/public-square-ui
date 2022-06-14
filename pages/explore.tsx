@@ -17,6 +17,8 @@ import useUITheme from "../utils/dark_mode";
 import Head from "next/head";
 import useArConnect from "../utils/arconnect";
 import { explorePlatforms } from "../utils/platforms";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const Explore = () => {
   const [darkMode] = useUITheme();
@@ -34,7 +36,9 @@ const Explore = () => {
 
       if (platform === "permacast") {
         const res = await (
-          await fetch("https://whispering-retreat-94540.herokuapp.com/feeds/allcontent")
+          await fetch(
+            "https://whispering-retreat-94540.herokuapp.com/feeds/allcontent"
+          )
         ).json();
 
         setDatas(res.res.slice(0, 15));
@@ -177,10 +181,10 @@ const Explore = () => {
                     <div className={styles.posts} key={i}>
                       <div className={styles.titles}>
                         <p className={styles.nft_title}>{data.title}</p>
-                        <p>NFT</p>
+                        <p className={styles.else}>NFT</p>
                       </div>
                       <div className={styles.details_1}>
-                        <p>{data.ticker}</p>
+                        <p className={styles.else}>{data.ticker}</p>
                         <p>
                           <a
                             className={styles.nft_poster}
@@ -190,9 +194,7 @@ const Explore = () => {
                           </a>
                         </p>
                       </div>
-                      <p className={styles.nft_description}>
-                        {data.description}
-                      </p>
+                      <p className={styles.post_content}>{data.description}</p>
                       <div className={styles.img_div}>
                         <img src={`https://arweave.net/${data.id}`} alt="" />
                       </div>
@@ -262,6 +264,109 @@ const Explore = () => {
                           ></iframe>
                         </div>
                       </div>
+                    </div>
+                  );
+
+                case "lens":
+                  if (!data?.profile?.url || !data?.metadata?.content)
+                    return <></>;
+
+                  return (
+                    <div className={styles.posts} key={i}>
+                      <div className={styles.upper_post}>
+                        <a
+                          className={styles.profile_datas}
+                          href={data.profile.url}
+                          rel="noopener noreferer"
+                          target="_blank"
+                        >
+                          <div className={styles.profile_div}>
+                            <img
+                              src={
+                                data.profile.pfp
+                                  ? data.profile.pfp
+                                  : "profile.png"
+                              }
+                            />
+                          </div>
+                          <div className={styles.data_user}>
+                            <div className={styles.user_name}>
+                              @{data.profile.handle}
+                            </div>
+                          </div>
+                        </a>
+                        <div className={styles.right_section}>
+                          <div className={styles.time}>
+                            {timestamp(new Date(data.createdAt).getTime())}
+                          </div>
+                        </div>
+                      </div>
+                      <div className={styles.post_content}>
+                        <ReactMarkdown
+                          className={styles.post_content}
+                          children={data.metadata.content}
+                          remarkPlugins={[remarkGfm]}
+                        />
+                        {data.metadata.media.map((media: any, i: number) => {
+                          if (media.original.mimeType.includes("image")) {
+                            return <img src={media.original.url} alt="" />;
+                          } else {
+                            return (
+                              <video muted={true} autoPlay>
+                                <source
+                                  src={media.original.url}
+                                  type={media.original.mimeType}
+                                />
+                              </video>
+                            );
+                          }
+                        })}
+                      </div>
+                    </div>
+                  );
+                case "ans-cache":
+                  console.log(data);
+                  return (
+                    <div className={styles.posts} key={i}>
+                      <div className={styles.upper_post}>
+                        <a
+                          className={styles.profile_datas}
+                          href={`https://viewblock.io/arweave/address/${data.user}`}
+                          rel="noopener noreferer"
+                          target="_blank"
+                        >
+                          <div className={styles.left_section}>
+                            <div className={styles.profile_div}>
+                              <img
+                                src={
+                                  data.avatar
+                                    ? `https://arweave.net/${data.avatar}`
+                                    : "profile.png"
+                                }
+                              />
+                            </div>
+                            <div className={styles.data_user}>
+                              <div className={styles.user_name}>
+                                {data.nickname}
+                              </div>
+                              <div className={styles.profile_name}>
+                                @{data.currentLabel}
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                        <div className={styles.right_section}>
+                          <p>
+                            <a
+                              className={styles.nft_poster}
+                              href={`https://viewblock.io/arweave/address/${data.user}`}
+                            >
+                              {formatAddress(data.user, 10)}
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+                      <div className={styles.post_content}>{data.bio}</div>
                     </div>
                   );
 
