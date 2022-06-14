@@ -164,7 +164,7 @@ const Explore = () => {
                         />
                         <div className={styles.texts}>
                           <h1>{data.title}</h1>
-                          <a href={data.url}>{formatAddress(data.sid)}</a>
+                          <a href={data.url}>{formatAddress(data.url)}</a>
                         </div>
                       </div>
                       <a
@@ -225,7 +225,7 @@ const Explore = () => {
                   return (
                     <div className={styles.iframe_container} key={i}>
                       <iframe
-                        src={`https://permacast-cache.herokuapp.com/embed/${data.eid}`}
+                        src={`https://whispering-retreat-94540.herokuapp.com/embed/${data.eid}`}
                         key={i}
                       ></iframe>
                     </div>
