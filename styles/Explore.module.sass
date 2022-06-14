@@ -31,12 +31,15 @@
             .profile_datas
                 display: flex
                 align-items: center
+                text-decoration: none
             .left_section
                 display: flex
+                align-items: center
                 
             .data_user
                 margin:
                     left: 1.2em
+                    top: 0.5em
 
     
                 
@@ -74,17 +77,14 @@
         font-family: Poppins
         font-style: normal
         font-weight: normal
-        font-size: 0.9em
+        font-size: 1em
         line-height: 1.4em
         letter-spacing: 0.02em
-        color: var(--title-text-color)
+        color: var(--light-text-color) 
         width: 100%
 
         a
-            word-break: break-all
-
-        p
-            color: var(--title-text-color)
+            word-break: break-all        
 
         img, video
             width: 100%
@@ -104,8 +104,6 @@
             bottom: 0.5em
 
     .user_name
-        margin:
-            bottom: 0.2em
         width: 100%
         font-family: Poppins
         font-style: normal
@@ -194,6 +192,7 @@
     font-weight: 500
     justify-content: space-between
     
+    
     h3
         width: 100%
         color: var(--light-text-color)
@@ -225,6 +224,8 @@
             justify-content: space-between
             width: 100%
             display: flex
+            margin:
+                bottom: 1em
 
             a
                 text-decoration: none
@@ -237,7 +238,6 @@
             color: var(--title-text-color)
             font-size: 1.4em
     p
-        color: var(--username-color)
         font-size: 0.9em
 
         &.nft_description
@@ -250,7 +250,8 @@
         color: var(--poster)
         text-decoration: none
         font-size: 0.8em
-
+    .else
+        color: var(--username-color)
 
 
         
@@ -509,3 +510,4 @@
         width: 100%
         border: none
         height: 100%
+    

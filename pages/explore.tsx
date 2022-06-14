@@ -181,10 +181,10 @@ const Explore = () => {
                     <div className={styles.posts} key={i}>
                       <div className={styles.titles}>
                         <p className={styles.nft_title}>{data.title}</p>
-                        <p>NFT</p>
+                        <p className={styles.else}>NFT</p>
                       </div>
                       <div className={styles.details_1}>
-                        <p>{data.ticker}</p>
+                        <p className={styles.else}>{data.ticker}</p>
                         <p>
                           <a
                             className={styles.nft_poster}
@@ -194,9 +194,7 @@ const Explore = () => {
                           </a>
                         </p>
                       </div>
-                      <p className={styles.nft_description}>
-                        {data.description}
-                      </p>
+                      <p className={styles.post_content}>{data.description}</p>
                       <div className={styles.img_div}>
                         <img src={`https://arweave.net/${data.id}`} alt="" />
                       </div>
@@ -270,7 +268,6 @@ const Explore = () => {
                   );
 
                 case "lens":
-                  console.log(data);
                   if (!data?.profile?.url || !data?.metadata?.content)
                     return <></>;
 
@@ -293,7 +290,7 @@ const Explore = () => {
                             />
                           </div>
                           <div className={styles.data_user}>
-                            <div className={styles.user_lens}>
+                            <div className={styles.user_name}>
                               @{data.profile.handle}
                             </div>
                           </div>
@@ -306,6 +303,7 @@ const Explore = () => {
                       </div>
                       <div className={styles.post_content}>
                         <ReactMarkdown
+                          className={styles.post_content}
                           children={data.metadata.content}
                           remarkPlugins={[remarkGfm]}
                         />
@@ -327,6 +325,7 @@ const Explore = () => {
                     </div>
                   );
                 case "ans-cache":
+                  console.log(data);
                   return (
                     <div className={styles.posts} key={i}>
                       <div className={styles.upper_post}>
@@ -336,18 +335,23 @@ const Explore = () => {
                           rel="noopener noreferer"
                           target="_blank"
                         >
-                          <div className={styles.profile_div}>
-                            <img
-                              src={
-                                data.avatar
-                                  ? `https://arweave.net/${data.avatar}`
-                                  : "profile.png"
-                              }
-                            />
-                          </div>
-                          <div className={styles.data_user}>
-                            <div className={styles.user_lens}>
-                              @{data.nickname}
+                          <div className={styles.left_section}>
+                            <div className={styles.profile_div}>
+                              <img
+                                src={
+                                  data.avatar
+                                    ? `https://arweave.net/${data.avatar}`
+                                    : "profile.png"
+                                }
+                              />
+                            </div>
+                            <div className={styles.data_user}>
+                              <div className={styles.user_name}>
+                                {data.nickname}
+                              </div>
+                              <div className={styles.profile_name}>
+                                @{data.currentLabel}
+                              </div>
                             </div>
                           </div>
                         </a>
