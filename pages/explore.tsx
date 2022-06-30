@@ -202,6 +202,7 @@ const Explore = () => {
                   );
 
                 case "ardrive":
+                  console.log(data);
                   return (
                     <div className={styles.arweave_save} key={i}>
                       <div className={styles.save_data}>
@@ -290,7 +291,7 @@ const Explore = () => {
                             />
                           </div>
                           <div className={styles.data_user}>
-                            <div className={styles.user_name}>
+                            <div className={styles.profile_name}>
                               @{data.profile.handle}
                             </div>
                           </div>
@@ -325,13 +326,12 @@ const Explore = () => {
                     </div>
                   );
                 case "ans-cache":
-                  console.log(data);
                   return (
                     <div className={styles.posts} key={i}>
                       <div className={styles.upper_post}>
                         <a
                           className={styles.profile_datas}
-                          href={`https://viewblock.io/arweave/address/${data.user}`}
+                          href={`https://${data.currentlabel}.ar.page`}
                           rel="noopener noreferer"
                           target="_blank"
                         >
@@ -346,9 +346,6 @@ const Explore = () => {
                               />
                             </div>
                             <div className={styles.data_user}>
-                              <div className={styles.user_name}>
-                                {data.nickname}
-                              </div>
                               <div className={styles.profile_name}>
                                 @{data.currentLabel}
                               </div>

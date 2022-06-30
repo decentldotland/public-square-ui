@@ -7,20 +7,24 @@
 </p>
 
 ## Synopsis
+
 This repository is about the FrontEnd of [app.decent.land](https://app.decent.land/explore) -- the web3.0 protocols feeds aggregator.
 
 ## APIs Used
+
 - weave-aggregator: [repo](https://github.com/decentldotland/weave-aggregator)
 - Permacast API: [repo](https://github.com/Parallel-news/permacast-cache)
 
 ## Integrated Feeds
-| feed name  | feed source |
-| ------------- |:-------------:|
-| Ardrive      | [ardrive.io](https://ardrive.io)     |
-| ArweaveSaves     | [Arconnect](https://arconnect.io)    |
-| Permacast     | [permacast.dev](https://permacast.dev)     |
-| Pianity       | [pianity.com](https://pianity.com/) |
-| Koii Network  | [koi.rocks](https://koi.rocks/contents?layout=list&time=1w&sort=top) |
+
+| feed name    |                             feed source                              |
+| ------------ | :------------------------------------------------------------------: |
+| Ardrive      |                   [ardrive.io](https://ardrive.io)                   |
+| ArweaveSaves |                  [Arconnect](https://arconnect.io)                   |
+| Permacast    |                [permacast.dev](https://permacast.dev)                |
+| Pianity      |                 [pianity.com](https://pianity.com/)                  |
+| Koii Network | [koi.rocks](https://koi.rocks/contents?layout=list&time=1w&sort=top) |
 
 ## License
+
 This project is licensed under the [MIT license](./LICENSE).
