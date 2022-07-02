@@ -42,11 +42,6 @@ const Explore = () => {
         ).json();
 
         setDatas(res.res.slice(0, 15));
-      }
-      if (platform === "ardrive") {
-        const rest = await (
-          await fetch("https://shielded-cove-06097.herokuapp.com/protocols")
-        ).json();
       } else {
         const res = await getWeaveAggregator(platform, address);
         setDatas(res);
@@ -207,13 +202,12 @@ const Explore = () => {
                   );
 
                 case "ardrive":
-                  console.log(data);
                   return (
                     <div className={styles.arweave_save} key={i}>
                       <div className={styles.save_data}>
                         <img src="/ardrive.png" alt="ardrive" />
                         <div className={styles.texts}>
-                          <h1>{data.title}</h1>
+                          <h1>{formatAddress(data.metadata)}</h1>
                           <a
                             href={`https://viewblock.io/arweave/tx/${data.metadata}`}
                           >
@@ -369,6 +363,29 @@ const Explore = () => {
                         </div>
                       </div>
                       <div className={styles.post_content}>{data.bio}</div>
+                    </div>
+                  );
+                case "mirror-xyz":
+                  console.log(data);
+                  return (
+                    <div className={styles.arweave_save} key={i}>
+                      <div className={styles.save_data}>
+                        <img src="/ardrive.png" alt="ardrive" />
+                        <div className={styles.texts}>
+                          <h1>blog title</h1>
+                          <a
+                            href={`https://viewblock.io/arweave/tx/${data.owner}`}
+                          >
+                            {timestamp(data.timestamp)}
+                          </a>
+                        </div>
+                      </div>
+                      <a
+                        href={`https://arweave.net/${data.id}`}
+                        className={styles.link_icon}
+                      >
+                        <ShareIcon />
+                      </a>
                     </div>
                   );
 
