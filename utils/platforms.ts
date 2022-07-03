@@ -31,4 +31,8 @@ export const explorePlatforms: { name: string; val: string }[] = [
     name: "Mirror.xyz",
     val: "mirror-xyz",
   },
+  {
+    name: "Art By City",
+    val: "art-by-city",
+  },
 ];

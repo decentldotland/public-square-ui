@@ -366,7 +366,6 @@ const Explore = () => {
                     </div>
                   );
                 case "mirror-xyz":
-                  console.log(data);
                   return (
                     <div className={styles.arweave_save} key={i}>
                       <div className={styles.save_data}>
@@ -386,6 +385,34 @@ const Explore = () => {
                       >
                         <ShareIcon />
                       </a>
+                    </div>
+                  );
+
+                case "art-by-city":
+                  console.log(data);
+                  return (
+                    <div className={styles.posts} key={i}>
+                      <div className={styles.titles}>
+                        <p className={styles.nft_title}>{data.title}</p>
+                        <p className={styles.else}>NFT</p>
+                      </div>
+                      <div className={styles.details_1}>
+                        <p className={styles.else}>{data.ticker}</p>
+                        <p>
+                          <a
+                            className={styles.nft_poster}
+                            href={`https://viewblock.io/arweave/address/${data.poster}`}
+                          >
+                            {timestamp(data.timestamp)}
+                          </a>
+                        </p>
+                      </div>
+                      <p className={styles.post_content}>
+                        {/**data.description**/}
+                      </p>
+                      <div className={styles.img_div}>
+                        {/**<img src={`https://arweave.net/${data.id}`} alt="" /> **/}
+                      </div>
                     </div>
                   );
 
