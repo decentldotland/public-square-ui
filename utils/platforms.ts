@@ -27,4 +27,12 @@ export const explorePlatforms: { name: string; val: string }[] = [
     name: "ANS Labels",
     val: "ans-cache",
   },
+  {
+    name: "Mirror.xyz",
+    val: "mirror",
+  },
+  {
+    name: "Art By City",
+    val: "abc",
+  },
 ];

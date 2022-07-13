@@ -19,6 +19,7 @@ import useArConnect from "../utils/arconnect";
 import { explorePlatforms } from "../utils/platforms";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { red } from "@mui/material/colors";
 
 const Explore = () => {
   const [darkMode] = useUITheme();
@@ -42,6 +43,17 @@ const Explore = () => {
         ).json();
 
         setDatas(res.res.slice(0, 15));
+      }
+      if (
+        platform === "ardrive" ||
+        platform === "abc" ||
+        platform === "mirror"
+      ) {
+        const res = await (
+          await fetch("https://shielded-cove-06097.herokuapp.com/protocols")
+        ).json();
+
+        setDatas(res[platform]);
       } else {
         const res = await getWeaveAggregator(platform, address);
         setDatas(res);
@@ -290,7 +302,7 @@ const Explore = () => {
                             />
                           </div>
                           <div className={styles.data_user}>
-                            <div className={styles.user_name}>
+                            <div className={styles.profile_name}>
                               @{data.profile.handle}
                             </div>
                           </div>
@@ -325,30 +337,34 @@ const Explore = () => {
                     </div>
                   );
                 case "ans-cache":
-                  console.log(data);
                   return (
                     <div className={styles.posts} key={i}>
                       <div className={styles.upper_post}>
                         <a
                           className={styles.profile_datas}
-                          href={`https://viewblock.io/arweave/address/${data.user}`}
+                          href={`https://${data.currentlabel}.ar.page`}
                           rel="noopener noreferer"
                           target="_blank"
                         >
                           <div className={styles.left_section}>
                             <div className={styles.profile_div}>
-                              <img
-                                src={
-                                  data.avatar
-                                    ? `https://arweave.net/${data.avatar}`
-                                    : "profile.png"
-                                }
-                              />
+                              {data.avatar ? (
+                                <img
+                                  className={styles.ans_cache_avatar}
+                                  style={{ color: `${data.address_color}` }}
+                                  src={`https://arweave.net/${data.avatar}`}
+                                />
+                              ) : (
+                                <div
+                                  style={{
+                                    color: `${data.address_color}`,
+                                    background: `${data.address_color}`,
+                                  }}
+                                  className={styles.instead_of_avatar}
+                                ></div>
+                              )}
                             </div>
                             <div className={styles.data_user}>
-                              <div className={styles.user_name}>
-                                {data.nickname}
-                              </div>
                               <div className={styles.profile_name}>
                                 @{data.currentLabel}
                               </div>
@@ -367,6 +383,56 @@ const Explore = () => {
                         </div>
                       </div>
                       <div className={styles.post_content}>{data.bio}</div>
+                    </div>
+                  );
+                case "mirror":
+                  return (
+                    <div className={styles.arweave_save} key={i}>
+                      <div className={styles.save_data}>
+                        <img
+                          className={styles.cover_img}
+                          src={data.cover_img}
+                          alt="cover_img"
+                        />
+                        <div className={styles.texts}>
+                          <h1>{data.title}</h1>
+                          <a href={data.mirror_url}>
+                            {timestamp(data.timestamp)}
+                          </a>
+                        </div>
+                      </div>
+                      <a
+                        href={`https://arweave.net/${data.bid}`}
+                        className={styles.link_icon}
+                      >
+                        <ShareIcon />
+                      </a>
+                    </div>
+                  );
+
+                case "abc":
+                  console.log(data);
+                  return (
+                    <div className={styles.posts} key={i}>
+                      <div className={styles.titles}>
+                        <p className={styles.nft_title}>{data.title}</p>
+                        <p className={styles.else}>NFT</p>
+                      </div>
+                      <div className={styles.details_1}>
+                        <p className={styles.else}>{data.ticker}</p>
+                        <p>
+                          <a
+                            className={styles.nft_poster}
+                            href={`https://viewblock.io/arweave/address/${data.creator}`}
+                          >
+                            {data.creationDate}
+                          </a>
+                        </p>
+                      </div>
+                      <p className={styles.post_content}>{data.desc}</p>
+                      <div className={styles.img_div}>
+                        {<img src={data.image} alt="" />}
+                      </div>
                     </div>
                   );
 
