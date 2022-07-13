@@ -19,6 +19,7 @@ import useArConnect from "../utils/arconnect";
 import { explorePlatforms } from "../utils/platforms";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { red } from "@mui/material/colors";
 
 const Explore = () => {
   const [darkMode] = useUITheme();
@@ -347,13 +348,21 @@ const Explore = () => {
                         >
                           <div className={styles.left_section}>
                             <div className={styles.profile_div}>
-                              <img
-                                src={
-                                  data.avatar
-                                    ? `https://arweave.net/${data.avatar}`
-                                    : "profile.png"
-                                }
-                              />
+                              {data.avatar ? (
+                                <img
+                                  className={styles.ans_cache_avatar}
+                                  style={{ color: `${data.address_color}` }}
+                                  src={`https://arweave.net/${data.avatar}`}
+                                />
+                              ) : (
+                                <div
+                                  style={{
+                                    color: `${data.address_color}`,
+                                    background: `${data.address_color}`,
+                                  }}
+                                  className={styles.instead_of_avatar}
+                                ></div>
+                              )}
                             </div>
                             <div className={styles.data_user}>
                               <div className={styles.profile_name}>
@@ -380,7 +389,11 @@ const Explore = () => {
                   return (
                     <div className={styles.arweave_save} key={i}>
                       <div className={styles.save_data}>
-                        <img src="/ardrive.png" alt="ardrive" />
+                        <img
+                          className={styles.cover_img}
+                          src={data.cover_img}
+                          alt="cover_img"
+                        />
                         <div className={styles.texts}>
                           <h1>{data.title}</h1>
                           <a
@@ -391,7 +404,7 @@ const Explore = () => {
                         </div>
                       </div>
                       <a
-                        href={`https://arweave.net/${data.id}`}
+                        href={`https://arweave.net/${data.bid}`}
                         className={styles.link_icon}
                       >
                         <ShareIcon />
