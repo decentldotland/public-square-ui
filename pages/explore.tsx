@@ -396,9 +396,7 @@ const Explore = () => {
                         />
                         <div className={styles.texts}>
                           <h1>{data.title}</h1>
-                          <a
-                            href={`https://viewblock.io/arweave/tx/${data.owner}`}
-                          >
+                          <a href={data.mirror_url}>
                             {timestamp(data.timestamp)}
                           </a>
                         </div>
