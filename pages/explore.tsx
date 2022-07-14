@@ -395,16 +395,15 @@ const Explore = () => {
                           alt="cover_img"
                         />
                         <div className={styles.texts}>
-                          <h1>{data.title}</h1>
-                          <a href={data.mirror_url}>
-                            {timestamp(data.timestamp)}
+                          <a href={`https://arweave.net/${data.bid}`}>
+                            <h1>{data.title}</h1>
                           </a>
+                          <p className={styles.timestamp}>
+                            {timestamp(data.timestamp)}
+                          </p>
                         </div>
                       </div>
-                      <a
-                        href={`https://arweave.net/${data.bid}`}
-                        className={styles.link_icon}
-                      >
+                      <a href={data.mirror_url} className={styles.link_icon}>
                         <ShareIcon />
                       </a>
                     </div>
