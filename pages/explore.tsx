@@ -424,7 +424,7 @@ const Explore = () => {
                             className={styles.nft_poster}
                             href={`https://viewblock.io/arweave/address/${data.creator}`}
                           >
-                            {data.creationDate}
+                            {timestamp(data.timestamp)}
                           </a>
                         </p>
                       </div>
