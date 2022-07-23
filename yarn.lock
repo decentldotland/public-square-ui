@@ -2301,10 +2301,10 @@ vfile@^5.0.0:
     unist-util-stringify-position "^3.0.0"
     vfile-message "^3.0.0"
 
-weave-aggregator@^0.3.6:
-  version "0.3.6"
-  resolved "https://registry.yarnpkg.com/weave-aggregator/-/weave-aggregator-0.3.6.tgz#136abf1a0f396fe0e537a27d7bbeaa3cf73dd74d"
-  integrity sha512-KqRvfX2YkA0I7PHH9cZkl6ItiTH/bwPC/Ki1W+BQB+JpQAcQb28qCXhONhI4bDV1LeXwp6lh7UdoJziDscMXDA==
+weave-aggregator@^0.3.7:
+  version "0.3.7"
+  resolved "https://registry.yarnpkg.com/weave-aggregator/-/weave-aggregator-0.3.7.tgz#266c3dad553f940454ff02be918af488d0c4fba0"
+  integrity sha512-/EEA8uQvGz6f5gHR/6O8uF6yp2bc3TSK4JzVlTi7tMWX5unK0HhRXkhugffqyn1x/7I9c2lFBHgmh8EFPYUMzg==
   dependencies:
     arweave "^1.10.18"
     axios "^0.24.0"

@@ -35,4 +35,8 @@ export const explorePlatforms: { name: string; val: string }[] = [
     name: "Art By City",
     val: "abc",
   },
+  {
+    name: "Metaweave Permatweets",
+    val: "metaweave-permatweets",
+  },
 ];

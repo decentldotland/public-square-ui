@@ -410,7 +410,6 @@ const Explore = () => {
                   );
 
                 case "abc":
-                  console.log(data);
                   return (
                     <div className={styles.posts} key={i}>
                       <div className={styles.titles}>
@@ -432,6 +431,13 @@ const Explore = () => {
                       <div className={styles.img_div}>
                         {<img src={data.image} alt="" />}
                       </div>
+                    </div>
+                  );
+                case "metaweave-permatweets":
+                  console.log(data);
+                  return (
+                    <div className={styles.posts} key={i}>
+                      <div>{data.poster}</div>
                     </div>
                   );
 
